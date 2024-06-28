@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/DevRel Funnel.md",
+                "file": "Welcome.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/DevRel Funnel.md",
+                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/DevRel Funnel.md",
+                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/DevRel Funnel.md"
+                "file": "Welcome.md"
               }
             }
           }
@@ -148,9 +148,9 @@
   },
   "active": "9555ef7dd6720255",
   "lastOpenFiles": [
+    "posts/DevRel Funnel.md",
     "Welcome.md",
     "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
-    "posts/DevRel Funnel.md",
     "posts"
   ]
 }
