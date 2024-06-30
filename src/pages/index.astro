@@ -3,8 +3,15 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
+import type { MarkdownInstance } from "astro";
 
+let readme: MarkdownInstance<Record<string, any>> | null = null;
+try {
+  const items = await Astro.glob("../../notes/readme.md");
+  readme = items[0];
+} catch (error) {}
+const { Content } = readme || { Content: () => null };
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -13,18 +20,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<p>
-				Hi there 👋. I'm Frank van Puffelen, more commonly known as <em>puf</em> and 
-				I'm a Firebase engineer at Google. 
-			</p>
-			<p>
-				I'm mostly known for <a href="https://stackoverflow.com/users/209103/frank-van-puffelen">answering questions</a> on Stack Overflow,
-				my monthly <a href="https://www.youtube.com/playlist?list=PLl-K7zZEsYLm9G2M1W5ztrDvMv-CiFzLM">Firebase Release Notes</a> videos, and
-				as a speaker about Firebase and Flutter at large and small conferences around the world.
-			</p>
-			<p>
-				This is my personal web site, and yes indeed - it is rather bare at the moment...
-			</p>
+			{
+				readme != null && (
+				  <article>
+					<Content />
+				  </article>
+				)
+			  }			
 		</main>
 		<Footer />
 	</body>
