@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "books/The Ride of a Lifetime - Bob Iger.md",
+                "file": "books/The Rule of Threes - Jeffery Deaver.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "books/The Ride of a Lifetime - Bob Iger.md",
+                "file": "books/The Rule of Threes - Jeffery Deaver.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "books/The Ride of a Lifetime - Bob Iger.md",
+                "file": "books/The Rule of Threes - Jeffery Deaver.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "books/The Ride of a Lifetime - Bob Iger.md"
+                "file": "books/The Rule of Threes - Jeffery Deaver.md"
               }
             }
           }
@@ -161,14 +161,14 @@
   },
   "active": "1365a4023b87afb4",
   "lastOpenFiles": [
+    "books/The Ride of a Lifetime - Bob Iger.md",
+    "books/Chip War - Chris Miller.md",
+    "books/The Lost Cause - Cory Doctorrow.md",
+    "books/The Rule of Threes - Jeffery Deaver.md",
     "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
     "Software.md",
     "Welcome.md",
     "readme.md",
-    "books/Chip War - Chris Miller.md",
-    "books/The Ride of a Lifetime - Bob Iger.md",
-    "books/The Lost Cause - Cory Doctorrow.md",
-    "books/The Rule of Threes - Jeffery Deaver.md",
     "posts/DevRel Funnel.md",
     "templates/books.md",
     "templates",
