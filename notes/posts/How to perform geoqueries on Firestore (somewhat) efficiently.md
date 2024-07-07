@@ -1,18 +1,15 @@
 ---
 title: 'How to perform geoqueries on Firestore (somewhat) efficiently'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+description: 'Searching for documents in a gerographical range on Firestore always required workarounds, but not anymore.'
 pubDate: 'May 30, 2024'
 heroImage: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*teIrX51jyNYyyCajHGYthA.png'
 ---
-
-
-# How to perform geoqueries on Firestore (somewhat) efficiently
 
 A geoquery allows you to find points-of-interest that are within a certain range of a specific location. For example, say you have a list of all restaurants and their location: how do you find the ones that are within 5km of the user’s current location?
 
 We’ve gotten the question of [how to implement geoqueries on Firestore](https://www.google.com/search?q=site:stackoverflow.com+firestore+geoquery) for many years. In this article I explain why this sort of query was hard on Firestore, how you can now do it much easier, and compare the two approaches.
 
-## **Firestore before March 2024 — geoqueries using geohashes**
+## Firestore before March 2024 — geoqueries using geohashes
 
 Google’s Firestore is a NoSQL database in which values are stored in documents, and each document is stored in a collection. Like most NoSQL databases, Firestore’s main selling point is its scalability — it only supports operations for which it can guarantee the performance at any scale. This becomes especially obvious when you see Firestore’s relatively meager set of query/filter operstions.
 

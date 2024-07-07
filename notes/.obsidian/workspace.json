@@ -15,17 +15,17 @@
               "state": {
                 "file": "Welcome.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           },
           {
-            "id": "7b92758d98bf7109",
+            "id": "1365a4023b87afb4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readme.md",
+                "file": "books/The Ride of a Lifetime - Bob Iger.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "readme.md",
+                "file": "books/The Ride of a Lifetime - Bob Iger.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "readme.md",
+                "file": "books/The Ride of a Lifetime - Bob Iger.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "readme.md"
+                "file": "books/The Ride of a Lifetime - Bob Iger.md"
               }
             }
           }
@@ -159,12 +159,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7b92758d98bf7109",
+  "active": "1365a4023b87afb4",
   "lastOpenFiles": [
+    "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
+    "Software.md",
     "Welcome.md",
     "readme.md",
-    "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
+    "books/Chip War - Chris Miller.md",
+    "books/The Ride of a Lifetime - Bob Iger.md",
+    "books/The Lost Cause - Cory Doctorrow.md",
+    "books/The Rule of Threes - Jeffery Deaver.md",
     "posts/DevRel Funnel.md",
+    "templates/books.md",
+    "templates",
+    "books/_readme.md",
+    "books",
     "posts"
   ]
 }
