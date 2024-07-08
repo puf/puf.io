@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "books/The Rule of Threes - Jeffery Deaver.md",
+                "file": "readme.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "books/The Rule of Threes - Jeffery Deaver.md",
+                "file": "readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "books/The Rule of Threes - Jeffery Deaver.md",
+                "file": "readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "books/The Rule of Threes - Jeffery Deaver.md"
+                "file": "readme.md"
               }
             }
           }
@@ -161,10 +161,11 @@
   },
   "active": "1365a4023b87afb4",
   "lastOpenFiles": [
+    "books/_readme.md",
+    "books/The Rule of Threes - Jeffery Deaver.md",
     "books/The Ride of a Lifetime - Bob Iger.md",
     "books/Chip War - Chris Miller.md",
     "books/The Lost Cause - Cory Doctorrow.md",
-    "books/The Rule of Threes - Jeffery Deaver.md",
     "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
     "Software.md",
     "Welcome.md",
@@ -172,7 +173,6 @@
     "posts/DevRel Funnel.md",
     "templates/books.md",
     "templates",
-    "books/_readme.md",
     "books",
     "posts"
   ]

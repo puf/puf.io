@@ -8,23 +8,28 @@ export async function getNotes(options?: { includeSkip?: boolean }) {
   let results = [];
   for (const target of targets) {
     const filePath = target.file || "";
-    let slug = filePath
+    const slug = filePath
       .replace(notesPath, "")
       .replace(/\.md$/, "")
       .replace(/^\//, "")
       .toLowerCase().replace(/\s/g, '-')
       .split("").filter(c => "()".indexOf(c) == -1).join("");
 
+    const type = slug.substring(0, slug.indexOf("/"))
+    const name = slug.substring(type.length+1)
+    let pubDate = target.frontmatter.pubDate;
+    if (!pubDate && target.frontmatter.type == "books" && target.frontmatter.finishedDate) pubDate = target.frontmatter.finishedDate;
+
     const skipped = target.frontmatter?.skip === true;
     const includeSkip = options?.includeSkip ?? false;
     if (includeSkip || !skipped) {
-      results.push({ params: { slug }, props: target });
+      results.push({ params: { slug, type, name, pubDate }, props: target });
     }
   }
   // Sort by date
   results.sort((a, b) => {
-    const aDate = new Date(a.props.frontmatter?.date);
-    const bDate = new Date(b.props.frontmatter?.date);
+    const aDate = new Date(a.params.pubDate);
+    const bDate = new Date(b.params.pubDate);
     return bDate.getTime() - aDate.getTime();
   });
 
