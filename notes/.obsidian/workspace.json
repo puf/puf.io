@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "readme.md",
+                "file": "books/_readme.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "readme.md",
+                "file": "books/_readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "readme.md",
+                "file": "books/_readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "readme.md"
+                "file": "books/_readme.md"
               }
             }
           }
@@ -161,6 +161,7 @@
   },
   "active": "1365a4023b87afb4",
   "lastOpenFiles": [
+    "readme.md",
     "books/_readme.md",
     "books/The Rule of Threes - Jeffery Deaver.md",
     "books/The Ride of a Lifetime - Bob Iger.md",
@@ -169,7 +170,6 @@
     "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
     "Software.md",
     "Welcome.md",
-    "readme.md",
     "posts/DevRel Funnel.md",
     "templates/books.md",
     "templates",

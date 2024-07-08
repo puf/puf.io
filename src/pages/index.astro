@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import type { MarkdownInstance } from "astro";
 import path from "path";
-import { pathHasLocale } from 'astro:i18n';
+import { getNotes } from '../components/Notes.astro';
 
 let readme: MarkdownInstance<Record<string, any>> | null = null;
 try {
@@ -14,38 +14,24 @@ try {
 } catch (error) {}
 const { Content } = readme || { Content: () => null };
 
-let recentNotes: MarkdownInstance<Record<string, any>> [] = [];
 const notesPath = path.join(process.cwd(), "notes");
 console.log(`CWD: ${process.cwd()}, Notes path: ${notesPath}`)
-const notes = await Astro.glob("../../notes/**/*.md")
+const notes = await getNotes(); // Loads all notes from disk
 const readmes = { "posts": "Intro", "books": "Intro" }
 const recents = { "posts": [], "books": [] }
 const CATEGORIES = ["posts", "books"]
 
-// calculate some useful properties for the node
-notes.forEach((note) => { 
-    let slug = note.file.replace(notesPath, "").replace(/\.md$/, "").replace(/^\//, "").toLowerCase().replace(/\s/g, '-').split("").filter(c => "()".indexOf(c) == -1).join("");
-	note.frontmatter.slug = slug;
-	note.frontmatter.type = slug.substring(0, slug.indexOf("/"));
-	note.frontmatter.name = slug.substring(note.frontmatter.type.length+1)
-	if (!note.frontmatter.pubDate && note.frontmatter.type == "books" && note.frontmatter.finishedDate) note.frontmatter.pubDate = note.frontmatter.finishedDate;
-	if (note.frontmatter.type === 'books') console.log(note.frontmatter);
-})
-notes.sort((a, b) => {
-	const aDate = new Date(a.frontmatter?.pubDate);
-	const bDate = new Date(b.frontmatter?.pubDate);
-	return bDate.getTime() - aDate.getTime();
-})
 // TODO: load recent notes (per category: maxcount=3, maxage=6m)
 notes.forEach((note) => {
-	if (["readme", "_readme"].indexOf(note.frontmatter.name) >= 0) {
-		console.log(note.file, "is a readme for ", note.frontmatter.type);
-		if (readmes[note.frontmatter.type]) readmes[note.frontmatter.type] = note;
+	const { name, type } = note.params;
+	if (["readme", "_readme"].indexOf(name) >= 0) {
+		console.log(note.file, "is a readme for ", type);
+		if (readmes[type]) readmes[type] = note;
 		return; // don't further process readmes
 	}
-	if (typeof recents[note.frontmatter.type] !== 'undefined') {
-		console.log('Added', note.file, 'to', note.frontmatter.type)
-		recents[note.frontmatter.type].push(note);
+	if (typeof recents[type] !== 'undefined') {
+		console.log('Added', note.file, 'to', type)
+		recents[type].push(note);
 	}
 	else {
 		console.log("SKIPPING", note.file)
@@ -53,19 +39,6 @@ notes.forEach((note) => {
 })
 console.log("READMES", readmes)
 //console.log("RECENT", JSON.stringify(recents));
-// Add missing pubDates for certain types
-recentNotes = notes.filter((a) => a.frontmatter?.pubDate || a.frontmatter.finishedDate).toSorted((a, b) => {
-	const aDate = new Date(a.frontmatter?.pubDate);
-	const bDate = new Date(b.frontmatter?.pubDate);
-	return bDate.getTime() - aDate.getTime();
-}).map((target) => {
-	const filePath = target.file || "";
-    let slug = filePath.replace(notesPath, "").replace(/\.md$/, "").replace(/^\//, "").toLowerCase().replace(/\s/g, '-').split("").filter(c => "()".indexOf(c) == -1).join("");
-	console.log(`${filePath} => ${slug}`)
-    target.frontmatter.slug = slug;
-	return target;
-});
-// TODO: load all draft posts on staging
 
 ---
 
@@ -87,19 +60,13 @@ recentNotes = notes.filter((a) => a.frontmatter?.pubDate || a.frontmatter.finish
 				<label>Recent {category} ({recents[category].length})</label>
 				<ol>
 					{recents[category].map((note) => (
-						<li><a href={note.frontmatter.slug}>{note.frontmatter.title}</a> ({note.frontmatter.pubDate})</li>
+						<li><a href={note.params.slug}>{note.props.frontmatter.title}</a> ({note.params.pubDate})</li>
 					))}
 				</ol>
 				<a href={category}>All {category} ({recents[category].length})</a>
 				<hr/>
 			))}
 			<hr/>
-			<label>Recent notes across all categories</label>
-			<ul>
-				{recentNotes.slice(0, 3).map((post) => (
-				  <li><a href={post.frontmatter.slug}>{post.frontmatter.title}</a></li>
-				))}
-			</ul>
 		</main>
 		<Footer />
 	</body>
