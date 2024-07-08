@@ -15,14 +15,15 @@ const { Content } = post;
 // quick hack to get the pubDate into the BlogPost layout
 const pubDate = post.frontmatter.pubDate ? new Date(post.frontmatter.pubDate) : null;
 
+console.log('\n\nSLUG', post.frontmatter, pubDate, '\n\n')
 // TODO:
 // * [ ] Read all notes with long slugs
 // * [ ] Assign layout based on note type
 // * [ ] Determine pubDate based on note type
 ---
 
-(pubDate &&
+{(pubDate &&
 <BlogPost {...post} pubDate={pubDate}>
   <Content />
 </BlogPost>
-)
+)}
