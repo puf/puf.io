@@ -21,6 +21,8 @@ const pubDate = post.frontmatter.pubDate ? new Date(post.frontmatter.pubDate) : 
 // * [ ] Determine pubDate based on note type
 ---
 
+(pubDate &&
 <BlogPost {...post} pubDate={pubDate}>
   <Content />
 </BlogPost>
+)
