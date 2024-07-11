@@ -1,29 +1,48 @@
 ---
 import path from "path";
 
+export const notesPath = path.join(process.cwd(), "notes");
+export function getSlugForNote(note) {
+  return (note.file || "")
+      .replace(notesPath, "") // remove local path
+      .replace(/\.md$/, "") // remove .md extension
+      .replace(/^\//, "") // remove leading /
+      .toLowerCase().replace(/\s/g, '-')  // replace spaces with -
+      .split("").filter(c => "()".indexOf(c) == -1).join("") // remove some chars
+      .replace(/_readme$/, "") // treat _readme.md like an index.html
+      ;
+}
+export function getTypeForNote(note) {
+  const slug = getSlugForNote(note);
+  return slug.substring(0, slug.indexOf("/"))
+}
+export function getNameForNote(note) {
+  const slug = getSlugForNote(note);
+  return slug.substring(getTypeForNote(note).length+1);
+}
+export function getPubDateForNote(note) {
+  if (note.frontmatter.pubDate) return note.frontmatter.pubDate;
+  if (note.frontmatter.finishedDate) return note.frontmatter.finishedDate;
+    // TODO: make extensible to other types too
+    return ""; // What should the default be here?
+}
+
 export async function getNotes(options?: { includeSkip?: boolean }) {
   // Get all notes recursively from the notes directory
-  const notesPath = path.join(process.cwd(), "notes");
-  const targets = await Astro.glob("../../notes/**/*.md");
+  const notes = await Astro.glob("../../notes/**/*.md");
+
+  // Convert notes to more usable type, and sort them
   let results: any[] = []; // TODO: define type
-  for (const target of targets) {
-    const filePath = target.file || "";
-    const slug = filePath
-      .replace(notesPath, "")
-      .replace(/\.md$/, "")
-      .replace(/^\//, "")
-      .toLowerCase().replace(/\s/g, '-')
-      .split("").filter(c => "()".indexOf(c) == -1).join("");
+  for (const note of notes) {
+    const slug = getSlugForNote(note);
+    const type = getTypeForNote(note)
+    const name = getNameForNote(note);
+    const pubDate = getPubDateForNote(note);
 
-    const type = slug.substring(0, slug.indexOf("/"))
-    const name = slug.substring(type.length+1)
-    let pubDate = target.frontmatter.pubDate;
-    if (!pubDate && target.frontmatter.type == "books" && target.frontmatter.finishedDate) pubDate = target.frontmatter.finishedDate;
-
-    const skipped = target.frontmatter?.skip === true;
+    const skipped = note.frontmatter?.skip === true;
     const includeSkip = options?.includeSkip ?? false;
     if (includeSkip || !skipped) {
-      results.push({ params: { slug, type, name, pubDate }, props: target });
+      results.push({ params: { slug, type, name, pubDate }, props: note });
     }
   }
   // Sort by date
@@ -51,10 +70,12 @@ export async function getNotes(options?: { includeSkip?: boolean }) {
     const isDraft = item.props.frontmatter?.draft === true;
     return !isDraft;
   });
-  
+
+  // console.log("getNotes", results)  
   return results;
 }
 
+// TODO: is this even used?
 const notes = await getNotes().then((notes) =>
   notes.map((item) => {
     const slug = item.params.slug;
@@ -62,7 +83,7 @@ const notes = await getNotes().then((notes) =>
     return {
       article: item.props,
       slug,
-    //   tags,
+      // tags,
     };
   })
 );

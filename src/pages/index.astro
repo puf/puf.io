@@ -24,17 +24,17 @@ const CATEGORIES = ["posts", "books"]
 // TODO: load recent notes (per category: maxcount=3, maxage=6m)
 notes.forEach((note) => {
 	const { name, type } = note.params;
-	if (["readme", "_readme"].indexOf(name) >= 0) {
-		console.log(note.file, "is a readme for ", type);
+	if (/readme.md$/.test(note.props.file)) {
+		console.log(note.props.file, "is a readme for ", type);
 		if (readmes[type]) readmes[type] = note;
 		return; // don't further process readmes
 	}
 	if (typeof recents[type] !== 'undefined') {
-		console.log('Added', note.file, 'to', type)
+		console.log('Added', note.props.file, 'to', type)
 		recents[type].push(note);
 	}
 	else {
-		console.log("SKIPPING", note.file)
+		console.log("SKIPPING", note.props.file)
 	}
 })
 console.log("READMES", readmes)

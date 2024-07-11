@@ -1,7 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../layouts/BlogPost.astro';
-import { getNotes } from '../components/Notes.astro';
+import IndexPage from '../layouts/IndexPage.astro';
+import { getNotes, getPubDateForNote } from '../components/Notes.astro';
 import type { MarkdownInstance } from "astro";
 
 export async function getStaticPaths() {
@@ -12,17 +13,28 @@ type Props = MarkdownInstance<Record<string, any>>;
 const post = Astro.props;
 const { Content } = post;
 
-// quick hack to get the pubDate into the BlogPost layout
-const pubDate = post.frontmatter.pubDate ? new Date(post.frontmatter.pubDate) : null;
+const pubDate = getPubDateForNote(post)
+const isReadme = (/readme.md$/.test(post.file))
+
+console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme ", isReadme, " to ", JSON.stringify(post))
 
 // TODO:
-// * [ ] Read all notes with long slugs
 // * [ ] Assign layout based on note type
-// * [ ] Determine pubDate based on note type
+// * [ ] Determine pubDate based on note type, instead of hard-coding them all above
+// * [ ] Generate additional nodes/paths for category pages  (in-progress in Notes.astro)
+// * [ ] Show readme on pages (in-progress in Notes.astro and here)
+// * [ ] Show one-line readme on main index.html
+
 ---
 
 {(pubDate &&
 <BlogPost {...post} pubDate={pubDate} title={post.frontmatter.title}>
   <Content />
 </BlogPost>
+)}
+{( isReadme && 
+  <meta charset="utf-8"/>
+  <IndexPage {...post}>
+    <article><Content /></article>
+  </IndexPage>
 )}

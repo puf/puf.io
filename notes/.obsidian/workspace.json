@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "books/_readme.md",
+                "file": "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "books/_readme.md",
+                "file": "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "books/_readme.md",
+                "file": "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "books/_readme.md"
+                "file": "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md"
               }
             }
           }
@@ -161,16 +161,18 @@
   },
   "active": "1365a4023b87afb4",
   "lastOpenFiles": [
+    "posts/DevRel Funnel.md",
+    "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
     "readme.md",
+    "Welcome.md",
     "books/_readme.md",
+    "posts/_readme.md",
+    "posts/Untitled.md",
+    "books/Chip War - Chris Miller.md",
     "books/The Rule of Threes - Jeffery Deaver.md",
     "books/The Ride of a Lifetime - Bob Iger.md",
-    "books/Chip War - Chris Miller.md",
     "books/The Lost Cause - Cory Doctorrow.md",
-    "posts/How to perform geoqueries on Firestore (somewhat) efficiently.md",
     "Software.md",
-    "Welcome.md",
-    "posts/DevRel Funnel.md",
     "templates/books.md",
     "templates",
     "books",

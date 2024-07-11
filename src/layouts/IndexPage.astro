@@ -4,10 +4,19 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import path from "path";
+import { notesPath, getSlugForNote, getTypeForNote } from '../components/Notes.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+console.log("IndexPage.astro: Astro.props=", Astro.props)
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+let { title, description, heroImage } = Astro.props;
+// const filePath = Astro.props.file || "";
+const slug = getSlugForNote(Astro.props);
+const type = slug.substring(0, slug.indexOf("/"))
+// const name = slug.substring(type.length+1)
+title = type
+
+console.log(slug, type, title)
 ---
 
 <html lang="en">
@@ -63,21 +72,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={new Date(pubDate)} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
 						<h1>{title}</h1>
 						<hr />
 					</div>
 					<slot />
-				</div>
+					<div class="date">
+						{
+							<div class="last-updated-on">
+								Last updated on <FormattedDate date={new Date()} />
+							</div>
+						}
+					</div>
+			</div>
 			</article>
 		</main>
 		<Footer />
