@@ -11,19 +11,25 @@ console.log("IndexPage.astro: Astro.props=", Astro.props)
 
 let { title, description, heroImage } = Astro.props;
 // const filePath = Astro.props.file || "";
-const slug = getSlugForNote(Astro.props);
-const type = slug.substring(0, slug.indexOf("/"))
-// const name = slug.substring(type.length+1)
+const slug = getSlugForNote(Astro.props)
+const type = getTypeForNote(Astro.props)
 title = type
 
 const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/readme.md$/.test(note.props.file) });
 
-function getAbsolutePathForSlug(slug) {
-	if (slug.indexOf('/') !== 0) return '/'+slug
-	return slug
-}
+/// 
+const { href, class: className, ...props } = Astro.props;
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + subpath?.[0];
 
-console.log(slug, type, title)
+console.log("IndexPage.astro", 'href=', href, 'className=', className, 'pathname=',pathname, 'subpath=', subpath, isActive)
+
+
+// HeaderLink.astro / undefined / null true
+
+// IndexPage.astro undefined undefined /posts [ 'posts' ] false
+// HeaderLink.astro / undefined /posts [ 'posts' ] false
 ---
 
 <html lang="en">
@@ -78,10 +84,6 @@ console.log(slug, type, title)
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
-					<div class="title">
-						<h1>{title}</h1>
-					</div>
-					<hr />
 					<slot />
 					<hr />
 					<div class="list">
@@ -89,7 +91,7 @@ console.log(slug, type, title)
 						{( console.log("IndexPage.astro: notes", notes) )}
 						<ol>
 							{notes.map((note) => ( 
-								<li><a href={getAbsolutePathForSlug(note.params.slug)}>{note.props.frontmatter.title}</a> ({note.params.pubDate})</li>
+								<li><a href={note.params.slug}>{note.props.frontmatter.title}</a> ({note.params.pubDate})</li>
 							))}
 						</ol>
 						<hr/>

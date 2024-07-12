@@ -6,7 +6,7 @@ export function getSlugForNote(note) {
   return (note.file || "")
       .replace(notesPath, "") // remove local path
       .replace(/\.md$/, "") // remove .md extension
-      .replace(/^\//, "") // remove leading /
+      //.replace(/^\//, "") // remove leading /
       .toLowerCase().replace(/\s/g, '-')  // replace spaces with -
       .split("").filter(c => "()".indexOf(c) == -1).join("") // remove some chars
       .replace(/_readme$/, "") // treat _readme.md like an index.html
@@ -14,7 +14,7 @@ export function getSlugForNote(note) {
 }
 export function getTypeForNote(note) {
   const slug = getSlugForNote(note);
-  return slug.substring(0, slug.indexOf("/"))
+  return slug.substring(1, slug.indexOf("/", 1))
 }
 export function getNameForNote(note) {
   const slug = getSlugForNote(note);
