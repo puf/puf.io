@@ -1,1 +1,1 @@
-I'm a voracious reader of books and articles. I track all my reading on [GoodReads](https://www.goodreads.com/user/show/24654655) and have been writing short reviews for a few years now, which I'll share here.
+I'm a voracious reader of books and articles, and write blurbs about that. I track all my reading on [GoodReads](https://www.goodreads.com/user/show/24654655) and have been writing short reviews for a few years now, which I'll share here.

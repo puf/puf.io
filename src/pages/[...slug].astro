@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../layouts/BlogPost.astro';
 import IndexPage from '../layouts/IndexPage.astro';
-import { getNotes, getPubDateForNote } from '../components/Notes.astro';
+import { getNotes, getPubDateForNote, getTypeForNote } from '../components/Notes.astro';
 import type { MarkdownInstance } from "astro";
 
 export async function getStaticPaths() {
@@ -15,18 +15,20 @@ const { Content } = post;
 
 const pubDate = getPubDateForNote(post)
 const isReadme = (/readme.md$/.test(post.file))
+const type = getTypeForNote(post)
 
 console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme ", isReadme, " to ", JSON.stringify(post))
 
 // TODO:
-// * [ ] Show all notes of type on index page for that type
-// * [ ] Link index page for type back to home page
-// * [ ] Show current index page (and detail page?) as a "breakcrumb" in the header
+// * [ ] Link note page for type back to type index page
+// * [ ] Show current index page as "breakcrumb" in the header for note-detail page
 // * [ ] Assign layout based on note type
 // * [ ] Determine pubDate based on note type, instead of hard-coding them (in Notes.astro)
-// * [ ] Show one-line readme on main index.html
+// * [ ] Show first sentence of readme on home page
 // * [ ] Limit number of notes on homepage
 // * [ ] group notes on category page on date (month) or whatever else makes sense
+// * [x] Link index page for type back to home page (that was always the case)
+// * [x] Show all notes of type on index page for that type (done: in Notes.astro and IndexPage.astro)
 // * [x] Generate additional nodes/paths for category pages
 // * [x] Show readme on pages
 // * [x] Skip notes whose pubDate is in the future

@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import path from "path";
-import { notesPath, getSlugForNote, getTypeForNote } from '../components/Notes.astro';
+import { notesPath, getSlugForNote, getTypeForNote, getNotes } from '../components/Notes.astro';
 
 console.log("IndexPage.astro: Astro.props=", Astro.props)
 
@@ -15,6 +15,8 @@ const slug = getSlugForNote(Astro.props);
 const type = slug.substring(0, slug.indexOf("/"))
 // const name = slug.substring(type.length+1)
 title = type
+
+const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/readme.md$/.test(note.props.file) });
 
 console.log(slug, type, title)
 ---
@@ -73,9 +75,19 @@ console.log(slug, type, title)
 				<div class="prose">
 					<div class="title">
 						<h1>{title}</h1>
-						<hr />
 					</div>
+					<hr />
 					<slot />
+					<hr />
+					<div class="list">
+						<div>There are {notes.length} {type}:</div>
+						<ol>
+							{notes.map((note) => (
+								<li><a href={note.params.slug}>{note.props.frontmatter.title}</a> ({note.params.pubDate})</li>
+							))}
+						</ol>
+						<hr/>
+					</div>
 					<div class="date">
 						{
 							<div class="last-updated-on">

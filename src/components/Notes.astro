@@ -27,7 +27,7 @@ export function getPubDateForNote(note) {
     return ""; // What should the default be here?
 }
 
-export async function getNotes(options?: { includeSkip?: boolean }) {
+export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
   // Get all notes recursively from the notes directory
   const notes = await Astro.glob("../../notes/**/*.md");
 
@@ -57,6 +57,11 @@ export async function getNotes(options?: { includeSkip?: boolean }) {
     const isDraft = item.props.frontmatter?.draft === true;
     return !isDraft;
   });
+
+  // Remove by custom filter
+  if (options?.keepIf) {
+    results = results.filter(options.keepIf);
+  }
 
   // console.log("getNotes", results)  
   return results;

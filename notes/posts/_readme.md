@@ -1,1 +1,3 @@
-I write a lot, and sometimes post it here.
+I write a lot, and sometimes post it here. 
+
+From February until August 2014 I wrote about many topics on [The Puf Principle](http://frank.vanpuffelen.net/). Most of my public writing can be found in Stack Overflow [questions](https://stackoverflow.com/users/209103/frank-van-puffelen?tab=questions) and [answers](https://stackoverflow.com/users/209103/frank-van-puffelen?tab=answers); really... **do** check them out as there's bound to be **something** useful in there.
