@@ -39,30 +39,17 @@ export async function getNotes(options?: { includeSkip?: boolean }) {
     const name = getNameForNote(note);
     const pubDate = getPubDateForNote(note);
 
-    const skipped = note.frontmatter?.skip === true;
-    const includeSkip = options?.includeSkip ?? false;
-    if (includeSkip || !skipped) {
-      results.push({ params: { slug, type, name, pubDate }, props: note });
-    }
+    results.push({ params: { slug, type, name, pubDate }, props: note });
   }
+
+  // Exclude (non index) posts with a future pubDate
+  const nowDate = new Date();
+  results = results.filter((note) => new Date(note.params.pubDate) < nowDate || /readme.md$/.test(note.props.file))
+
+
   // Sort by date
   results.sort((a, b) => {
-    const aDate = new Date(a.params.pubDate);
-    const bDate = new Date(b.params.pubDate);
-    return bDate.getTime() - aDate.getTime();
-  });
-
-  // Sort skip notes to the end
-  results.sort((a, b) => {
-    const aSkip = a.props.frontmatter?.skip === true;
-    const bSkip = b.props.frontmatter?.skip === true;
-    if (aSkip && !bSkip) {
-      return 1;
-    } else if (!aSkip && bSkip) {
-      return -1;
-    } else {
-      return 0;
-    }
+    return new Date(b.params.pubDate).getTime() - new Date(a.params.pubDate).getTime()
   });
 
   // Remove drafts

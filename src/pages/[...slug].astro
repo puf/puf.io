@@ -19,12 +19,17 @@ const isReadme = (/readme.md$/.test(post.file))
 console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme ", isReadme, " to ", JSON.stringify(post))
 
 // TODO:
+// * [ ] Show all notes of type on index page for that type
+// * [ ] Link index page for type back to home page
+// * [ ] Show current index page (and detail page?) as a "breakcrumb" in the header
 // * [ ] Assign layout based on note type
 // * [ ] Determine pubDate based on note type, instead of hard-coding them (in Notes.astro)
+// * [ ] Show one-line readme on main index.html
+// * [ ] Limit number of notes on homepage
+// * [ ] group notes on category page on date (month) or whatever else makes sense
 // * [x] Generate additional nodes/paths for category pages
 // * [x] Show readme on pages
-// * [ ] Show one-line readme on main index.html
-// * [ ] Skip notes whose pubDate is in the future
+// * [x] Skip notes whose pubDate is in the future
 
 ---
 
