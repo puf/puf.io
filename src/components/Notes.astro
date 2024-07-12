@@ -21,9 +21,11 @@ export function getNameForNote(note) {
   return slug.substring(getTypeForNote(note).length+1);
 }
 export function getPubDateForNote(note) {
+  if (note.params?.pubDate) return note.params.pubDate;
   if (note.frontmatter.pubDate) return note.frontmatter.pubDate;
   if (note.frontmatter.finishedDate) return note.frontmatter.finishedDate;
     // TODO: make extensible to other types too
+    // TODO: also consider params if those are set
     return ""; // What should the default be here?
 }
 

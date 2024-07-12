@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../layouts/BlogPost.astro';
+import NotePost from '../layouts/NotePost.astro';
 import IndexPage from '../layouts/IndexPage.astro';
 import { getNotes, getPubDateForNote, getTypeForNote } from '../components/Notes.astro';
 import type { MarkdownInstance } from "astro";
@@ -20,12 +20,11 @@ const type = getTypeForNote(post)
 console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme ", isReadme, " to ", JSON.stringify(post))
 
 // TODO:
-// * [ ] Link note page for type back to type index page
-// * [ ] Show current index page as "breakcrumb" in the header for note-detail page
+// * [ ] Limit number of notes per type on homepage (in progress in index.astro)
+// * [ ] Link note detail page back to type index page (with breakcrumb)
 // * [ ] Assign layout based on note type
 // * [ ] Determine pubDate based on note type, instead of hard-coding them (in Notes.astro)
 // * [ ] Show first sentence of readme on home page
-// * [ ] Limit number of notes on homepage
 // * [ ] group notes on category page on date (month) or whatever else makes sense
 // * [x] Link index page for type back to home page (that was always the case)
 // * [x] Show all notes of type on index page for that type (done: in Notes.astro and IndexPage.astro)
@@ -36,9 +35,9 @@ console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme "
 ---
 
 {(pubDate &&
-<BlogPost {...post} pubDate={pubDate} title={post.frontmatter.title}>
+<NotePost {...post} pubDate={pubDate} title={post.frontmatter.title}>
   <Content />
-</BlogPost>
+</NotePost>
 )}
 {( isReadme && 
   <meta charset="utf-8"/>

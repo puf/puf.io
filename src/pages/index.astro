@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import type { MarkdownInstance } from "astro";
 import path from "path";
 import { getNotes } from '../components/Notes.astro';
+import { getPubDateForNote } from '../components/Notes.astro';
 
 let readme: MarkdownInstance<Record<string, any>> | null = null;
 try {
@@ -29,7 +30,9 @@ notes.forEach((note) => {
 		if (readmes[type]) readmes[type] = note;
 		return; // don't further process readmes
 	}
-	if (typeof recents[type] !== 'undefined') {
+	console.log(note);
+	const cutoffDate = new Date(Date.now() - 30*24*60*60*1000)
+	if (typeof recents[type] !== 'undefined' && recents[type].length < 3 && getPubDateForNote(note)) {
 		notesCount++
 		recents[type].push(note);
 	}
