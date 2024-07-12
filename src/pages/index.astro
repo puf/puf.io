@@ -20,6 +20,7 @@ console.log(`CWD: ${process.cwd()}, Notes path: ${notesPath}`)
 const notes = await getNotes(); // Loads all notes from disk
 const readmes = { "posts": "Intro", "books": "Intro" }
 const recents = { "posts": [], "books": [] }
+const counts = { "posts": 0, "books": 0 }
 const CATEGORIES = ["posts", "books"]
 
 // TODO: load recent notes (per category: maxcount=3, maxage=6m)
@@ -30,11 +31,14 @@ notes.forEach((note) => {
 		if (readmes[type]) readmes[type] = note;
 		return; // don't further process readmes
 	}
-	console.log(note);
-	const cutoffDate = new Date(Date.now() - 30*24*60*60*1000)
-	if (typeof recents[type] !== 'undefined' && recents[type].length < 3 && getPubDateForNote(note)) {
+
+	const cutoffDate = new Date(Date.now() - 90*24*60*60*1000)
+	if (typeof recents[type] !== 'undefined') {
 		notesCount++
-		recents[type].push(note);
+		counts[type]++
+		if (recents[type].length < 3 && new Date(getPubDateForNote(note)) > cutoffDate) {
+			recents[type].push(note);
+		}
 	}
 })
 //console.log("READMES", readmes)
@@ -63,7 +67,7 @@ notes.forEach((note) => {
 						<li><a href={note.params.slug}>{note.props.frontmatter.title}</a> ({note.params.pubDate})</li>
 					))}
 				</ol>
-				<a href={category}>All {category} ({recents[category].length})</a>
+				<a href={category}>All {category} ({counts[category]})</a>
 				<hr/>
 			))}
 			<hr/>

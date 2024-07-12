@@ -20,12 +20,12 @@ const type = getTypeForNote(post)
 console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme ", isReadme, " to ", JSON.stringify(post))
 
 // TODO:
-// * [ ] Limit number of notes per type on homepage (in progress in index.astro)
 // * [ ] Link note detail page back to type index page (with breakcrumb)
 // * [ ] Assign layout based on note type
 // * [ ] Determine pubDate based on note type, instead of hard-coding them (in Notes.astro)
 // * [ ] Show first sentence of readme on home page
 // * [ ] group notes on category page on date (month) or whatever else makes sense
+// * [x] Limit number of notes per type on homepage (in progress in index.astro)
 // * [x] Link index page for type back to home page (that was always the case)
 // * [x] Show all notes of type on index page for that type (done: in Notes.astro and IndexPage.astro)
 // * [x] Generate additional nodes/paths for category pages
