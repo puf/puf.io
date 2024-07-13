@@ -16,20 +16,6 @@ const type = getTypeForNote(Astro.props)
 title = type
 
 const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/readme.md$/.test(note.props.file) });
-
-/// 
-const { href, class: className, ...props } = Astro.props;
-const { pathname } = Astro.url;
-const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + subpath?.[0];
-
-console.log("IndexPage.astro", 'href=', href, 'className=', className, 'pathname=',pathname, 'subpath=', subpath, isActive)
-
-
-// HeaderLink.astro / undefined / null true
-
-// IndexPage.astro undefined undefined /posts [ 'posts' ] false
-// HeaderLink.astro / undefined /posts [ 'posts' ] false
 ---
 
 <html lang="en">

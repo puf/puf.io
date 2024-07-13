@@ -6,7 +6,6 @@ export function getSlugForNote(note) {
   return (note.file || "")
       .replace(notesPath, "") // remove local path
       .replace(/\.md$/, "") // remove .md extension
-      //.replace(/^\//, "") // remove leading /
       .toLowerCase().replace(/\s/g, '-')  // replace spaces with -
       .split("").filter(c => "()".indexOf(c) == -1).join("") // remove some chars
       .replace(/_readme$/, "") // treat _readme.md like an index.html
