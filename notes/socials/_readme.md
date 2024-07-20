@@ -1,0 +1,1 @@
+I regularly post about tech on [Twitter/X](https://x.com/home), [Threads](https://www.threads.net/@frankpuf), [BlueSky](https://bsky.app/profile/puf.bsky.social), and [Mastodon](https://c.im/@puf), but also cross-post things here. The cross-coverage is not great yet, so it's best to follow me everywhere.

@@ -1,6 +1,13 @@
 ---
 import path from "path";
 
+// TODO: figure out why this doesn't work
+const mode = import.meta.env.MODE
+console.log("import.meta.env.MODE",mode)
+const isPreview = import.meta.env.MODE === 'development';
+const isDev = import.meta.env.DEV;
+const isProduction = import.meta.env.MODE === 'production';
+
 export const notesPath = path.join(process.cwd(), "notes");
 export function getSlugForNote(note) {
   return (note.file || "")
@@ -43,10 +50,11 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     results.push({ params: { slug, type, name, pubDate }, props: note });
   }
 
-  // Exclude (non index) posts with a future pubDate
-  const nowDate = new Date();
-  results = results.filter((note) => new Date(note.params.pubDate) < nowDate || /readme.md$/.test(note.props.file))
-
+  // if (!isDev) {
+    // Exclude (non index) posts with a future pubDate
+    const nowDate = new Date();
+    results = results.filter((note) => new Date(note.params.pubDate) < nowDate || /readme.md$/.test(note.props.file))
+  // }
 
   // Sort by date
   results.sort((a, b) => {

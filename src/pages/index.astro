@@ -18,12 +18,12 @@ const { Content } = readme || { Content: () => null };
 const notesPath = path.join(process.cwd(), "notes");
 console.log(`CWD: ${process.cwd()}, Notes path: ${notesPath}`)
 const notes = await getNotes(); // Loads all notes from disk
-const readmes = { "posts": "Intro", "books": "Intro" }
-const recents = { "posts": [], "books": [] }
-const counts = { "posts": 0, "books": 0 }
+const readmes = { posts: "Intro", books: "Intro" }
+const recents = { posts: [], socials: [], books: [] }
+const counts = { posts: 0, socials: 0, books: 0 }
 const CATEGORIES = ["posts", "books"]
 
-// TODO: load recent notes (per category: maxcount=3, maxage=6m)
+// load recent notes (per category: maxcount=3, maxage=6m)
 let notesCount = 0;
 notes.forEach((note) => {
 	const { name, type } = note.params;

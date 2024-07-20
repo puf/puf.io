@@ -5,11 +5,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { getTypeForNote } from '../components/Notes.astro';
-import { propsToFilename } from 'astro/assets/utils';
+import AlsoOn from '../components/AlsoOn.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 console.log("NotePost.astro", JSON.stringify(Astro.props), Astro.params)
+
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 const note = Astro.props
@@ -84,7 +85,7 @@ const typeurl = "/"+type
 						<hr />
 					</div>
 					<div class="frontmatter">
-						{ type === "books" ? 
+						{type === "books" ? (
 						  <ul class="props">
 							<li>Author: {note.frontmatter?.author}</li>
 							<li>Page count: {note.frontmatter.pageCount}</li>
@@ -93,9 +94,10 @@ const typeurl = "/"+type
 							<li>Rating: {note.frontmatter.rating} out of 5 stars</li> <!-- render star rating -->
 						  </ul>
 						  <hr/>
-						   : "" }
+						) : ( "" )}
+						<AlsoOn links={note.frontmatter?.alsoOn} />
 					</div>
-						<slot />
+					<slot />
 				</div>
 				<nav>Back to all <a href={typeurl}>{type}</a></nav>
 			</article>
