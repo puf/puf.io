@@ -1,7 +1,7 @@
 ---
 title: Reflecting on my time on Firebase and Google
 pubDate: "July 20, 2024"
-alsoOn: ["https://x.com/puf", "https://threads.net/frankpuf"]
+alsoOn: ["https://x.com/puf/status/1815037386520506456", "https://threads.net/@frankpuf/post/C9sGM-yvsDw", "https://c.im/@puf/112825102076922083", "https://www.linkedin.com/feed/update/urn:li:activity:7220807977174233088/"]
 ---
 
 I'm writing this on my flight back to San Francisco from Bengaluru where I met with devs at  I/O Connect. It was my first trip to India and I regret waiting this long to make it.
