@@ -60,6 +60,8 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
   results.sort((a, b) => {
     return new Date(b.params.pubDate).getTime() - new Date(a.params.pubDate).getTime()
   });
+  console.log(results.filter(note=>note.params.type=="books").slice(0,10).map((note) => note.params.pubDate+': '+note.params.name).join("\n"));
+  //console.log(results.filter(note=>note.params.type=="books").map((note) => note.params.pubDate).join("', \n'"));
 
   // Remove drafts
   results = results.filter((item) => {
