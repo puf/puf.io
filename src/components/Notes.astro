@@ -14,7 +14,7 @@ export function getSlugForNote(note) {
       .replace(notesPath, "") // remove local path
       .replace(/\.md$/, "") // remove .md extension
       .toLowerCase().replace(/\s/g, '-')  // replace spaces with -
-      .split("").filter(c => "()".indexOf(c) == -1).join("") // remove some chars
+      .split("").filter(c => "()%".indexOf(c) == -1).join("") // remove some chars
       .replace(/_readme$/, "") // treat _readme.md like an index.html
       ;
 }
