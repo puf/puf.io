@@ -9,4 +9,7 @@ link: "https://www.goodreads.com/book/show/18760140"
 pageCount: 
 ---
 
+*I listened to Stephen Briggs' narration of this on Libro.fm.*
+
+One of Pratchett's last books. A good end to the Moist von Lipwig Discworld trilogy, with another interesting tech topic: steam trains.
 

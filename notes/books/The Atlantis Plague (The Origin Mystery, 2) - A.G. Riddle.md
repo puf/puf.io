@@ -8,5 +8,6 @@ edition: "Paperback"
 link: "https://www.goodreads.com/book/show/25843439"
 pageCount: 432
 ---
+Book 2 in a series. Another easy read, that doesn't score any specific points - yet I will read the final book too. 🙂
 
 

@@ -8,5 +8,6 @@ edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/61232567"
 pageCount: 432
 ---
+Second book in this dragon-in-Napolean-era-england series, and another page turner. Not very memorable, but that won't stop me from reading the next book in the series at some point.
 
 
