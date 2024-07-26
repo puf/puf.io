@@ -1,0 +1,27 @@
+---
+interface Props {
+  rating: number;
+}
+
+const { rating } = Astro.props as Props;
+
+function renderStars(rating: number): string {
+  const fullStar = '★';
+  const emptyStar = '☆';
+  let stars = '';
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars += fullStar;
+    } else {
+      stars += emptyStar;
+    }
+  }
+
+  return stars;
+}
+---
+
+<div>
+  {renderStars(rating)}
+</div>
