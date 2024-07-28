@@ -1,5 +1,5 @@
 ---
-title: Patches onto Patagonia hoodies
+title: Patches on Patagonia hoodies
 pubDate: "July 28, 2024"
 alsoOn: ["https://x.com/puf", "https://bsky.app/profile/puf.bsky.social"]
 leadIn: My Patagonia hoodies have holes in them from "backpack friction". Instead of throwing them away, I sew on patches to cover the holes. Over time, it's becoming quite the collection of patches. The blue hoodie is where it all got started, and when I still tried to color coordinate. The grey hoodie is more of a free-for-all. 😂
