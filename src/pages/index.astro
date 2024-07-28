@@ -21,7 +21,7 @@ const notes = await getNotes(); // Loads all notes from disk
 const readmes = { posts: "Intro", books: "Intro" }
 const recents = { posts: [], socials: [], books: [] }
 const counts = { posts: 0, socials: 0, books: 0 }
-const CATEGORIES = ["posts", "books"]
+const CATEGORIES = ["posts", "socials", "books"]
 
 // load recent notes (per category: maxcount=3, maxage=6m)
 let notesCount = 0;
