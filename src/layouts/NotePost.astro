@@ -93,7 +93,8 @@ const typeurl = "/"+type
 							<li>Started on: {note.frontmatter.startedDate}</li>
 							<li>Finished on: {note.frontmatter.finishedDate}</li>
 							<li>Rating: {note.frontmatter.rating} out of 5 stars</li> <!-- render star rating -->
-							<StarRating rating={note.frontmatter.rating} />
+							<StarRating rating={note.frontmatter.rating} /><br/>
+							<li><AlsoOn links={[note.frontmatter.link]} /></li>
 						  </ul>
 						  <hr/>
 						) : ( "" )}

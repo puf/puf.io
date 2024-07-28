@@ -15,6 +15,10 @@ const slug = getSlugForNote(Astro.props)
 const type = getTypeForNote(Astro.props)
 title = type
 
+function hasReview(note) {
+	return note.props.rawContent().trim().length > 0;
+}
+
 const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/readme.md$/.test(note.props.file) });
 ---
 
@@ -75,11 +79,13 @@ const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/
 					<div class="list">
 						<div>There are {notes.length} {type}:</div>
 						<ol>
-							{notes.map((note) => ( 
+							{notes.map((note) => (
 								<li>
 								<a href={note.params.slug}>{note.props.frontmatter.title}</a>
+								{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
 								{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
 								Finished on: {note.params.pubDate}
+								{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
 								</li>
 							))}
 						</ol>
