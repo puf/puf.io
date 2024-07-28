@@ -5,7 +5,7 @@ const { links } = Astro.props;
 
 function getSocialLinkType(link) {
 	if (new RegExp("https\://x.com/").test(link)) return "twitter";
-	if (new RegExp("https\://threads.net/").test(link)) return "threads";
+	if (new RegExp("https\://(www\.)?threads.net/").test(link)) return "threads";
 	if (new RegExp("https\://c.im/").test(link)) return "mastodon";
 	if (new RegExp("https\://linkedin.com/").test(link)) return "linkedin";
 	if (new RegExp("https\://(www\.)?goodreads.com/").test(link)) return "goodreads";
@@ -14,7 +14,7 @@ function getSocialLinkType(link) {
 }
 ---
 { links?.length && (
-    <div class="social-links" style="margin-top: -2em"><span title="You may be able to comment there...">Also on: </span>
+    <div class="social-links" style="margin-top: -2em"><span title="Go to one of these if you want to respond...">Also on: </span>
         {links.map((link, index) => (
             <a href={link}>
                 {getSocialLinkType(link) === "twitter" && (
