@@ -1,8 +1,8 @@
 ---
 title: CalTrain from San Francisco to Mountain View
 pubDate: "July 31, 2024"
-alsoOn: [https://x.com/puf]
-leadIn: For my new commute, I am taking the train from San Francisco (22nd street station) to Mountain View. My initial impressions are mixed, but not bad. Most interesting was how payment with Clipper on Google Pay works.
+alsoOn: [https://x.com/puf/status/1818785460686385314, https://www.threads.net/@frankpuf/post/C-GuCfeyOqK, https://c.im/@puf/112883625448078125]
+leadIn: For my new commute, I am taking the train from San Francisco to Mountain View. My initial impressions are mixed, but not bad. Most interesting was how payment with Clipper on Google Pay works.
 ---
 
 One of the changes that comes with a new job, is a new commute. Twice-a-week I now make my way down from the Mission district in San Francisco to FlutterFlow HQ in Mountain View. I’ll miss my (60+ minute) walks to Firebase HQ, but enjoy the new travel experience… well… if I wasn’t so anxious about travel.
