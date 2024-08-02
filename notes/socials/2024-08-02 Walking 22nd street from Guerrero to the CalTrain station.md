@@ -1,8 +1,8 @@
 ---
 title: Walking 22nd street from Guerrero to the CalTrain station
 pubDate: "August 2, 2024"
-alsoOn: [https://x.com/puf]
-leadIn: "At first sight, the walk from 22nd street CalTrain station to my home in the Mission is a breeze. But then I realized: that's Potrero hill in the middle there - so what will the climb/descent be like?"
+alsoOn: [https://x.com/puf/status/1819388522270490821, https://www.threads.net/@frankpuf/post/C-LAQTYpR8K, https://c.im/@puf/112893061163306532, https://bsky.app/profile/puf.bsky.social/post/3kyqmw345n422]
+leadIn: "At first sight, the walk from 22nd street CalTrain station to my home in the Mission is a breeze. It's pretty much a straight line! But then I realized: that's Potrero hill in the middle there - so what will the climb/descent be like?"
 ---
 On my commute back from the office in Mountain View home (Mission district San Francisco), I decided to walk home from 22nd street station. The distance seemed is perfect and it’s such a nice straight line on the map:
 
