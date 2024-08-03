@@ -1,7 +1,7 @@
 ---
 title: Waiting for Firestore to create a document
 pubDate: August 3, 2024
-alsoOn: [https://stackoverflow.com/q/78827417]
+alsoOn: [https://stackoverflow.com/q/78827417, https://x.com/puf/status/1819738765465887002, https://www.threads.net/@frankpuf/post/C-NfevfpZPG, https://c.im/@puf/112898534531034359]
 ---
 
 I recently saw this in a (Flutter) code-base:
