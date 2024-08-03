@@ -85,3 +85,14 @@ final doc = await waitForDocument(FirebaseFirestore.instance.doc(user.uid));
 What's not yet handled here is the case where document creation has not completed after 15 seconds. To add that, we'd need to implement a timeout. Let me know (on the socials I linked above) if that's something you need.
 
 You can find a working copy of this code and a (much shorter) explanation on https://zapp.run/edit/firestore-wait-for-doc-creation-zx5k06w7x5l0.
+
+---
+
+**Update**: [Luke](https://x.com/luke_pighetti) [pointed out](https://x.com/luke_pighetti/status/1819740405979570389) that the `firstWhere` operation on `Stream` that does almost the same. Using that, we can reduce `waitForDocument` to just this:
+  ```dart
+  Future<DocumentSnapshot> waitForDocument(DocumentReference ref) {
+    return ref.snapshots().firstWhere((snapshot) => snapshot.exists);
+  }
+  ```
+
+The calling code remains the same, and gets the same benefits - so this is just a much shorter implementation of `waitForDocument`. 🎉
