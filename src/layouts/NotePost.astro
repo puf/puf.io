@@ -8,12 +8,22 @@ import StarRating from '../components/StarRating.astro';
 import { getTypeForNote } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {
+  frontmatter: {
+	author: string;
+	pageCount: number;
+	startedDate: Date;
+	finishedDate: Date;
+	rating: number;
+	link: string;
+	alsoOn: string[];
+  };
+};
 
 console.log("NotePost.astro", JSON.stringify(Astro.props), Astro.params)
 
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, description, pubDate, updatedDate, heroImage, frontmatter } = Astro.props
 const note = Astro.props
 const type = getTypeForNote(Astro.props)
 const typeurl = "/"+type
@@ -88,17 +98,19 @@ const typeurl = "/"+type
 					<div class="frontmatter">
 						{type === "books" ? (
 						  <ul class="props">
-							<li>Author: {note.frontmatter?.author}</li>
-							<li>Page count: {note.frontmatter.pageCount}</li>
-							<li>Started on: {note.frontmatter.startedDate}</li>
-							<li>Finished on: {note.frontmatter.finishedDate}</li>
-							<li>Rating: {note.frontmatter.rating} out of 5 stars</li> <!-- render star rating -->
-							<StarRating rating={note.frontmatter.rating} /><br/>
-							<li><AlsoOn links={[note.frontmatter.link]} /></li>
+							<!-- Get rid of the red squiggles on frontmatter -->
+							<li>Author: {frontmatter?.author}</li>
+							<li>Page count: {frontmatter.pageCount}</li>
+							<li>Started on: {frontmatter.startedDate}</li>
+							<li>Finished on: {frontmatter.finishedDate}</li>
+							<li>Rating: {frontmatter.rating} out of 5 stars</li> <!-- render star rating -->
+							<StarRating rating={frontmatter.rating} /><br/>
+							<li><AlsoOn links={[frontmatter.link]} /></li>
 						  </ul>
 						  <hr/>
 						) : ( "" )}
-						<AlsoOn links={note.frontmatter?.alsoOn} />
+						
+						<AlsoOn links={frontmatter?.alsoOn} />
 					</div>
 					<slot />
 				</div>
