@@ -1,7 +1,7 @@
 ---
 title: Regular Bay Wheels bike from the Mission to the 22nd street CalTrain station
 pubDate: "August 7, 2024"
-alsoOn: [https://x.com/puf]
+alsoOn: [https://x.com/puf/status/1821249520426217656, https://www.threads.net/@frankpuf/post/C-YOSquyPbi, https://c.im/@puf/112922123639082178]
 leadIn: After using a Bay Wheels e-bike to get from the Mission to the 22nd street CalTrain station earlier in the week, I took a regular Bay Wheels bike yesterday.
 ---
 
@@ -24,3 +24,10 @@ Surprisingly, it took me almost the same time as with an e-bike. That might have
 ![screenshot of price: $4.33 ($3.99 + taxes)](https://i.imgur.com/WLaZ3WN.png)
   
 I had some problems getting my bike locked, but it worked on the third try. And the price came down to a much more reasonable $4.33 (vs $10 for the e-bike ride). And as others commented, with a subscription this ride would’ve been free.
+
+Also see:
+
+ * [CalTrain from San Francisco to Mountain View](https://puf.io/socials/2024-07-31-caltrain-from-san-francisco-to-mountain-view) (July 31)
+ * [Taking the Muni bus from Guerrero street to the CalTrain station](https://puf.io/socials/2024-08-01-muni-bus-to-caltrain-station) (August 1)
+ * [Walking 22nd street from Guerrero to the CalTrain station](https://puf.io/socials/2024-08-02-walking-22nd-street-from-guerrero-to-the-caltrain-station) (August 2)
+ * [Bay Wheels e-bike from the Mission to the 22nd street CalTrain station](https://puf.io/socials/2024-08-06-bay-wheels-from-the-mission-to-the-22nd-street-caltrain-station) (August 5)
