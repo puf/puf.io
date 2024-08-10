@@ -23,3 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 notes/.obsidian/workspace.json
+
+# secrets
+lukehog-SPkg2l.json

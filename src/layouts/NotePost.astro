@@ -7,6 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro';
 import { getTypeForNote } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
+import { getSlugForNote } from '../components/Notes.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & {
   frontmatter: {
@@ -27,6 +28,7 @@ const { title, description, pubDate, updatedDate, heroImage, frontmatter } = Ast
 const note = Astro.props
 const type = getTypeForNote(Astro.props)
 const typeurl = "/"+type
+const slug = getSlugForNote(note);
 ---
 
 <html lang="en">
@@ -114,6 +116,7 @@ const typeurl = "/"+type
 					</div>
 					<slot />
 				</div>
+				<img src={`https://api.lukehog.com/pixel/SPkg2lfB1sOiE4z2/pageview?slug=${slug}&debug=false`} alt="Magic pixel" />
 				<nav>Back to all <a href={typeurl}>{type}</a></nav>
 			</article>
 		</main>
