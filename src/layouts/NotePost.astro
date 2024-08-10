@@ -117,6 +117,7 @@ const slug = getSlugForNote(note);
 					<slot />
 				</div>
 				<img src={`https://api.lukehog.com/pixel/SPkg2lfB1sOiE4z2/pageview?slug=${slug}&debug=false`} alt="Magic pixel" />
+				<img src={`https://api.lukehog.com/pixel/SPkg2lfB1sOiE4z2/${slug.substring(1).replaceAll('/','_')}?debug=false`} alt="Magic pixel" />
 				<nav>Back to all <a href={typeurl}>{type}</a></nav>
 			</article>
 		</main>
