@@ -1,7 +1,7 @@
 ---
 title: Walking from 22nd street station to the Mission over Cesar Chavez
 pubDate: August 14, 2024
-alsoOn: [https://x.com/puf, https://threads.net/frankpuf]
+alsoOn: [https://x.com/puf/status/1823753524586651715, https://www.threads.net/@frankpuf/post/C-qBlyev6Uh, https://c.im/@puf/112961271960686686]
 ---
 On my commute back yesterday, I walked from 22nd street station to the Mission (22nd and Guerrero) over Cesar Chavez. Last time I did this all over 22nd, but I wanted to avoid the steep climb with this detour.
 
@@ -9,16 +9,6 @@ On my commute back yesterday, I walked from 22nd street station to the Mission (
 Today's route 👆\
 Earlier route 👇
 ![First route](https://i.imgur.com/YgH1JME.png)
-
-<!--
-Read on for links, height comparisons﹠more…\
-1/🧵
-—
-
-Check the full post (with extra info) on my site: https://puf.io/socials/2024-08-14-walking-from-22nd-street-station-to-the-mission-over-cesar-chavez
-
-—
--->
 
 It definitely is a detour as this clocked in 1 mile (>50%) more than my original route. That said, since there was hardly any climb on this route, time-wise this only took me 50 minutes (11% more than the 45 minutes for the route over 22nd took me). Yup, I indeed walk pretty fast. 🚶💨
 
@@ -33,14 +23,8 @@ Earlier height profile 👇
 | Chavez   | 2.8m    | 50 min |
 |         |  +55%    | +11% |
 
-Wrap up and links in next/final post…
-
-2/🧵
-—
 
 Not a bad commute, but I might do 17th street next time. That one I’ve done a lot more frequently, so it won’t feel as much like “exploring” in my own city. :)
-
-3/3 End-of-thread 🧵
 
 Also see:
 
