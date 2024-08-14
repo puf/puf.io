@@ -1,28 +1,46 @@
+---
+title: Walking from 22nd street station to the Mission over Cesar Chavez
+pubDate: August 14, 2024
+alsoOn: [https://x.com/puf, https://threads.net/frankpuf]
+---
+On my commute back yesterday, I walked from 22nd street station to the Mission (22nd and Guerrero) over Cesar Chavez. Last time I did this all over 22nd, but I wanted to avoid the steep climb with this detour.
 
+![Today's route](https://i.imgur.com/J7WCmyS.png)
+Today's route 👆\
+Earlier route 👇
+![First route](https://i.imgur.com/YgH1JME.png)
 
-On my commute back today, I walked from 22nd street station to the Mission (22nd and Guerrero) over Cesar Chavez. Last time I did this all over 22nd, but I was looking to avoid the steep climb with this detour.
-
-<maps https://i.imgur.com/YgH1JME.png and new one>
-
+<!--
+Read on for links, height comparisons﹠more…\
 1/🧵
-
-Read on for links, height comparisons﹠more…
 —
-Check the full post (with extra info) on my site: https://puf.io/socials
+
+Check the full post (with extra info) on my site: https://puf.io/socials/2024-08-14-walking-from-22nd-street-station-to-the-mission-over-cesar-chavez
+
 —
-It definitely is a detour as this clocked in 1 mile (>50%) more than my original route. That said, there was indeed hardly any climb on this route, so time-wise this only took 60 minutes (33% more than the 45 minutes for the route over 22nd took me).
+-->
 
-<height maps https://i.imgur.com/Uy6M2d9.png and new one>
+It definitely is a detour as this clocked in 1 mile (>50%) more than my original route. That said, since there was hardly any climb on this route, time-wise this only took me 50 minutes (11% more than the 45 minutes for the route over 22nd took me). Yup, I indeed walk pretty fast. 🚶💨
 
-Check the next post for other data…
+![Today's height profile](https://i.imgur.com/ulCN71i.png)
+Today's height profile 👆\
+Earlier height profile 👇
+![First height profile](https://i.imgur.com/Uy6M2d9.png)
 
-The main issues is the weird pedestrian route where Chavez goes under the 101, and we have to take the stairs.
-
-Oh, and Cesar Chavez itself is of course pretty boring, so I switched over to 26th street as soon as I could (after Potrero del Sol park).
+| Route    | Distance | Time |
+| -------- | ------- | ---- |
+| 22nd st  | 1.8m    | 45 min |
+| Chavez   | 2.8m    | 50 min |
+|         |  +55%    | +11% |
 
 Wrap up and links in next/final post…
 
+2/🧵
+—
+
 Not a bad commute, but I might do 17th street next time. That one I’ve done a lot more frequently, so it won’t feel as much like “exploring” in my own city. :)
+
+3/3 End-of-thread 🧵
 
 Also see:
 
