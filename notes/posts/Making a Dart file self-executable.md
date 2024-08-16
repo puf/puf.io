@@ -1,7 +1,7 @@
 ---
 title: Making a Dart file self-executable
 pubDate: August 16, 2024
-alsoOn: [https://x.com/puf]
+alsoOn: [https://www.threads.net/@frankpuf/post/C-vFLJfvxwO, https://x.com/puf/status/1824466444941398378, https://bsky.app/profile/puf.bsky.social/post/3kztu3zgcfr23, https://c.im/@puf/112972379209478469]
 ---
 
 The normal way to run a Dart file without first compiling it is through the `dart run` command. For example, if we have a `bin/server.dart` file, we can run it with:
