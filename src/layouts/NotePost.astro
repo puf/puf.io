@@ -5,9 +5,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro';
-import { getTypeForNote } from '../components/Notes.astro';
+import { getTypeForNote, getSlugForNote } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
-import { getSlugForNote } from '../components/Notes.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & {
   frontmatter: {
@@ -21,8 +20,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
   };
 };
 
-console.log("NotePost.astro", JSON.stringify(Astro.props), Astro.params)
-
+//console.log("NotePost.astro", JSON.stringify(Astro.props), Astro.params)
 
 const { title, description, pubDate, updatedDate, heroImage, frontmatter } = Astro.props
 const note = Astro.props
@@ -116,12 +114,9 @@ const slug = getSlugForNote(note);
 					</div>
 					<slot />
 				</div>
-				{process.env.NODE_ENV === 'production' && (
-					<img src={`https://api.lukehog.com/pixel/SPkg2lfB1sOiE4z2/pageview?slug=${slug}&debug=false`} alt="Magic pixel" />
-				)}
 				<nav>Back to all <a href={typeurl}>{type}</a></nav>
 			</article>
 		</main>
-		<Footer />
+		<Footer {slug}/>
 	</body>
 </html>

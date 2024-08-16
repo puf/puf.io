@@ -1,0 +1,15 @@
+---
+import { getTypeForNote, getSlugForNote } from '../components/Notes.astro';
+
+const { slug } = Astro.props
+const debug = (process.env.NODE_ENV === 'production' ? false : true)
+---
+{!slug && (
+  <span>Tracker: No slug found</span>
+)}
+{(slug && !debug) && (
+  <img src={`https://api.lukehog.com/pixel/SPkg2lfB1sOiE4z2/pageview?slug=${slug}&debug=${debug}`} alt="Magic pixel" />
+)}
+{(slug && debug) && (
+  <span>Tracking for '{slug}' suppressed in {process.env.NODE_ENV} mode.</span>
+)}

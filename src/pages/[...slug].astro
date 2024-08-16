@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import NotePost from '../layouts/NotePost.astro';
 import IndexPage from '../layouts/IndexPage.astro';
-import { getNotes, getPubDateForNote, getTypeForNote } from '../components/Notes.astro';
+import { getNotes, getPubDateForNote, getSlugForNote, getTypeForNote } from '../components/Notes.astro';
 import type { MarkdownInstance } from "astro";
 
 export async function getStaticPaths() {
@@ -16,12 +16,13 @@ const { Content } = post;
 const pubDate = getPubDateForNote(post)
 const isReadme = (/readme.md$/.test(post.file))
 const type = getTypeForNote(post)
+const slug = getSlugForNote(post)
 
 console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme ", isReadme, " to ", JSON.stringify(post))
 ---
 
 {(pubDate &&
-<NotePost {...post} pubDate={pubDate} title={post.frontmatter.title}>
+<NotePost {...post} pubDate={pubDate} title={post.frontmatter.title} description={post.frontmatter.description}>
   <Content />
 </NotePost>
 )}

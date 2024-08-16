@@ -1,8 +1,11 @@
 ---
 import SocialLinks from './SocialLinks.astro';
+import Tracker from '../components/Tracker.astro';
 
 const today = new Date();
 ---
+
+<Tracker slug={Astro.props.slug} />
 
 <footer>
 	&copy; {today.getFullYear()} Frank van Puffelen. All rights reserved.
