@@ -2,6 +2,7 @@
 import path from "path";
 
 // TODO: figure out why this doesn't work
+// TODO: this works: process.env.NODE_ENV === 'production'
 const mode = import.meta.env.MODE
 console.log("import.meta.env.MODE",mode)
 const isPreview = import.meta.env.MODE === 'development';
@@ -90,7 +91,3 @@ const notes = await getNotes().then((notes) =>
     };
   })
 );
----
-<!--
-<NoteCards notes={notes} client:idle />
--->
