@@ -7,7 +7,7 @@ const debug = (process.env.NODE_ENV === 'production' ? false : true)
 )}
 {(slug && !debug) && (
   <img src={`https://api.lukehog.com/pixel/SPkg2lfB1sOiE4z2/pageview?slug=${slug}&debug=${debug}`} alt="Magic pixel" />
-  <img src={`https://counter.puf.io/puf.io${slug}/get.png`} />  
+  <span>View count: <img src={`https://counter.puf.io/puf.io${slug}/get.png`} /></span>
 )}
 {(slug && debug) && (
   <span>Tracking for '{slug}' suppressed in {process.env.NODE_ENV} mode.</span>
