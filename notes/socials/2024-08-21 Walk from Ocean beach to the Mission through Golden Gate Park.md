@@ -8,7 +8,7 @@ tags: [san-francisco, hike, golden-gate-park]
 ---
 Last Sunday we walked from the [Beach Chalet](https://www.beachchalet.com/) at Ocean beach back to our home in the Mission. It was a beautiful route through Golden Gate Park, Haight Ashbury, Lower Haight, and Laguna and Valencia street.
 
-The drive out by Waymo took 30 minutes, including the delay I mentioned in [Waymo stuck behind parked church cars](/socials/2024-08-19-waymo-stuck-behind-parked-church-cars).
+The drive out by Waymo took 30 minutes, including the delay I mentioned in [[2024-08-19 Waymo stuck behind parked church cars]].
 
 ![](https://i.imgur.com/B2yvJUV.png)
 

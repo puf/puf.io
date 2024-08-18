@@ -7,7 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro'
 import { getSlugForNote, getTypeForNote, getNotes } from '../components/Notes.astro';
 
-console.log("IndexPage.astro: Astro.props=", Astro.props)
+//console.log("IndexPage.astro: Astro.props=", Astro.props)
 
 let { title, description, heroImage } = Astro.props;
 // const filePath = Astro.props.file || "";
@@ -81,6 +81,7 @@ const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/
 						<ol>
 							{notes.map((note) => (
 								<li>
+								{note.params.isDraft === 'true' && <span title="This note is a draft">🚧</span>}
 								<a href={note.params.slug}>{note.props.frontmatter.title}</a>
 								{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
 								{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}

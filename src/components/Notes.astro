@@ -1,14 +1,6 @@
 ---
 import path from "path";
 
-// TODO: figure out why this doesn't work
-// TODO: this works: process.env.NODE_ENV === 'production'
-const mode = import.meta.env.MODE
-console.log("import.meta.env.MODE",mode)
-const isPreview = import.meta.env.MODE === 'development';
-const isDev = import.meta.env.DEV;
-const isProduction = import.meta.env.MODE === 'production';
-
 export const notesPath = path.join(process.cwd(), "notes");
 export function getSlugForNote(note) {
   return (note.file || "")
@@ -29,16 +21,16 @@ export function getNameForNote(note) {
 }
 export function getPubDateForNote(note) {
   if (note.params?.pubDate) return note.params.pubDate;
-  if (note.frontmatter.pubDate) return note.frontmatter.pubDate;
-  if (note.frontmatter.finishedDate) return note.frontmatter.finishedDate;
-    // TODO: make extensible to other types too
-    // TODO: also consider params if those are set
-    return ""; // What should the default be here?
+  if (note.frontmatter?.pubDate) return note.frontmatter.pubDate;
+  if (note.frontmatter?.finishedDate) return note.frontmatter.finishedDate;
+  // TODO: make extensible to other types too
+  return ""; // What should the default be here? Anything without a date is published?
 }
 
 export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
   // Get all notes recursively from the notes directory
   const notes = await Astro.glob("../../notes/**/*.md");
+  const nowDate = new Date();
 
   // Convert notes to more usable type, and sort them
   let results: any[] = []; // TODO: define type
@@ -47,28 +39,22 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     const type = getTypeForNote(note)
     const name = getNameForNote(note);
     const pubDate = getPubDateForNote(note);
+    const isDraft = ''+(new Date(pubDate) > nowDate);
 
-    results.push({ params: { slug, type, name, pubDate }, props: note });
+    results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
   }
 
-  // if (!isDev) {
-    // Exclude (non index) posts with a future pubDate
-    const nowDate = new Date();
-    results = results.filter((note) => new Date(note.params.pubDate) < nowDate || /readme.md$/.test(note.props.file))
-  // }
+  if (process.env.NODE_ENV === 'production') {
+    // Exclude (non index) draft posts
+    results = results.filter((note) => note.params.isDraft !== 'true' || /readme.md$/.test(note.props.file))
+  }
 
   // Sort by date
   results.sort((a, b) => {
     return new Date(b.params.pubDate).getTime() - new Date(a.params.pubDate).getTime()
   });
-  console.log(results.filter(note=>note.params.type=="books").slice(0,10).map((note) => note.params.pubDate+': '+note.params.name).join("\n"));
+  //console.log(results.filter(note=>note.params.type=="books").slice(0,10).map((note) => note.params.pubDate+': '+note.params.name).join("\n"));
   //console.log(results.filter(note=>note.params.type=="books").map((note) => note.params.pubDate).join("', \n'"));
-
-  // Remove drafts
-  results = results.filter((item) => {
-    const isDraft = item.props.frontmatter?.draft === true;
-    return !isDraft;
-  });
 
   // Remove by custom filter
   if (options?.keepIf) {
