@@ -39,22 +39,20 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     const type = getTypeForNote(note)
     const name = getNameForNote(note);
     const pubDate = getPubDateForNote(note);
-    const isDraft = ''+(new Date(pubDate) > nowDate);
+    const isDraft = ''+((pubDate==="" || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
 
     results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
   }
-
+  
   if (process.env.NODE_ENV === 'production') {
     // Exclude (non index) draft posts
-    results = results.filter((note) => note.params.isDraft !== 'true' || /readme.md$/.test(note.props.file))
+    results = results.filter((note) => note.params.isDraft !== 'true')
   }
 
   // Sort by date
   results.sort((a, b) => {
-    return new Date(b.params.pubDate).getTime() - new Date(a.params.pubDate).getTime()
+    return new Date(b.params.pubDate.length ? b.params.pubDate : "1970/1/1").getTime() - new Date(a.params.pubDate.length ? a.params.pubDate : "1970/1/1").getTime()
   });
-  //console.log(results.filter(note=>note.params.type=="books").slice(0,10).map((note) => note.params.pubDate+': '+note.params.name).join("\n"));
-  //console.log(results.filter(note=>note.params.type=="books").map((note) => note.params.pubDate).join("', \n'"));
 
   // Remove by custom filter
   if (options?.keepIf) {
