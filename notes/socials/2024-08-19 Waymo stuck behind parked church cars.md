@@ -1,8 +1,8 @@
 ---
 title: Waymo stuck behind parked church cars
 pubDate: August 19, 2024
-alsoOn: [https://x.com/puf, https://threads.net/frankpuf]
-tags: [waymo, san-francisco. mission]
+alsoOn: [https://x.com/puf/status/1825552186002272472, https://www.threads.net/@frankpuf/post/C-2yyTavWo2, https://bsky.app/profile/puf.bsky.social/post/3l23f4wm2zd2i, https://c.im/@puf/112989340768199713]
+tags: [waymo, san-francisco, mission]
 ---
 Waymo's robo-taxis are a very common sight in San Francisco these days, and I've gotten pretty used to riding them. In general they're really good drivers, but sometimes it still gets into a situation that would never happen to a human.
 
