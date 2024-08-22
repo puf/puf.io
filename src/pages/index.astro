@@ -26,7 +26,7 @@ const CATEGORIES = ["posts", "socials", "books"]
 // load recent notes (per category: maxcount=3, maxage=6m)
 let notesCount = 0;
 notes.forEach((note) => {
-	const { name, type } = note.params;
+	const { type } = note.params;
 	if (/readme.md$/.test(note.props.file)) {
 		if (readmes[type]) readmes[type] = note;
 		return; // don't further process readmes
