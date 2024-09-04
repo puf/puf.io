@@ -1,8 +1,8 @@
 ---
 title: "Evolution (Awaken Online, #3)"
 author: Travis Bagwell
-startedDate: "2024/09/03"
-finishedDate: "2024/08/17"
+startedDate: "2024/08/17"
+finishedDate: "2024/09/03"
 rating: 4
 edition: "Kindle Edition"
 link: https://www.goodreads.com/book/show/40206384
