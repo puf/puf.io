@@ -39,6 +39,12 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     const type = getTypeForNote(note)
     const name = getNameForNote(note);
     const pubDate = getPubDateForNote(note);
+    
+    if (typeof pubDate !== 'undefined' && typeof pubDate !== 'string' && typeof pubDate !== 'number') {
+      console.error("Invalid pubDate value:", pubDate, note.file);
+      // Skip this file
+      continue;
+    }
     const isDraft = ''+((pubDate==="" || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
 
     results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });

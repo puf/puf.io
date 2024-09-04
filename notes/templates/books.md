@@ -1,8 +1,8 @@
 ---
 title: 
 author: 
-startedAt: {{date}}
-finishedAt: {{date}}
+startedDate: {{date}}
+finishedDate: {{date}}
 rating: 3
 edition: 
 link: 
