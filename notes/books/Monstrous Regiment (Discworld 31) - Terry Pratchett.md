@@ -1,5 +1,5 @@
 ---
-title: Monstrous Regiment (Discworld, #31)
+title: "Monstrous Regiment (Discworld, #31)"
 author: Terry Pratchett
 startedDate: 2024/07/27
 finishedDate: 2024/09/05
