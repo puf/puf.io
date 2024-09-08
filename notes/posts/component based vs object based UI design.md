@@ -2,6 +2,7 @@
 title: "UI design: object oriented vs component based"
 pubDate: "September 20, 2024"
 alsoOn: [https://x.com/puf]
+description: "Building a UI in object-oriented code often leads to deeply nested object structures, where each object has a single responsibility. Building a UI in a visual component-based builder typically leads to shallower structures with fewer objects, whose behavior is controlled by properties."
 ---
 
 *Disclaimer: I first learned/came up with this classification 25+ years ago while working with Borland Delphi. I’ve recently been reapplying it while working with FlutterFlow, but it applies to other tools too. If you use a different classification, hit me up on the socials I linked.*

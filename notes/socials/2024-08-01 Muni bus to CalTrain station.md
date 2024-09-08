@@ -2,7 +2,7 @@
 title: Taking the Muni bus from Guerrero street to the CalTrain station
 pubDate: "August 1, 2024"
 alsoOn: [https://x.com/puf/status/1819005174108807590, https://www.threads.net/@frankpuf/post/C-IRqumJcNm, https://bsky.app/profile/puf.bsky.social/post/3kynxhfsuwk2z, https://c.im/@puf/112887047216489168]
-leadIn: "Sometimes when I check in to the Muni bus with the virtual Clipper card on my Android phone it refuses and says my card is blocked. This only happened on busses, but is really annoying and stressful when it happens."
+description: "Sometimes when I check in to the Muni bus with the virtual Clipper card on my Android phone it refuses and says my card is blocked. This only happened on busses, but is really annoying and stressful when it happens."
 ---
 
 On my first trip to my new work location I took the bus from home to the 22nd street CalTrain station. Nothing too fancy about it, except that my virtual Clipper card on Google Pay didn’t work on checking in - so I had to use my physical Clipper card.

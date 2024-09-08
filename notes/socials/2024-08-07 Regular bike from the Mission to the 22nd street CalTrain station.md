@@ -2,7 +2,7 @@
 title: Regular Bay Wheels bike from the Mission to the 22nd street CalTrain station
 pubDate: "August 7, 2024"
 alsoOn: [https://x.com/puf/status/1821249520426217656, https://www.threads.net/@frankpuf/post/C-YOSquyPbi, https://c.im/@puf/112922123639082178]
-leadIn: After using a Bay Wheels e-bike to get from the Mission to the 22nd street CalTrain station earlier in the week, I took a regular Bay Wheels bike yesterday.
+description: After using a Bay Wheels e-bike to get from the Mission to the 22nd street CalTrain station earlier in the week, I took a regular Bay Wheels bike yesterday.
 ---
 
 Yesterday I took a regular (non e-bike) Bay Wheels bicycle to get from my home in the Mission to the 22nd street CalTrain station. Last week [I took an e-bike](https://puf.io/socials/2024-08-06-bay-wheels-from-the-mission-to-the-22nd-street-caltrain-station/), so this was my comparison/calibration ride.  
