@@ -4,9 +4,10 @@ author: Terry Pratchett
 startedDate: 2024/07/27
 finishedDate: 2024/09/05
 rating: 5
-edition: "Audiobook"
+edition: "Audio CD"
 link: https://www.goodreads.com/review/show/6178568992
 pageCount: 496
+description: "A brilliantly funny story covering a (potentially sensitive) social topic: a group of women joining the army while pretending to be men. All (initially) without knowing that of each other."
 ---
 Another brilliantly funny story covering a (potentially sensitive to some people) social topic. In this case it's about a group of women joining the army while pretending to be men. All (initially) without knowing that of each other. Guaranteed slapstick level hilarity guaranteed.
 

@@ -5,7 +5,7 @@ interface Props {
 
 const { rating } = Astro.props as Props;
 
-function renderStars(rating: number): string {
+export function renderStars(rating: number): string {
   const fullStar = '★';
   const emptyStar = '☆';
   let stars = '';

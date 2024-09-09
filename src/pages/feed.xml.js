@@ -1,5 +1,7 @@
 import rss from '@astrojs/rss';
-import { getNotes } from '../components/Notes.astro';
+import { getNotes, getTypeForNote } from '../components/Notes.astro';
+import { renderStars } from '../components/StarRating.astro';
+
 // import sanitizeHtml from 'sanitize-html';
 // import MarkdownIt from 'markdown-it';
 // const parser = new MarkdownIt();
@@ -15,9 +17,13 @@ export async function GET(context) {
     description: 'All notes and thoughts by puf',
     site: context.site,
     items: notes.map((note) => {
+      const type = getTypeForNote(note.props);
+      let title = note.props.frontmatter.title;
+      if (type === 'books') {
+        title += ` - ${note.props.frontmatter.author} (Rating: ${renderStars(note.props.frontmatter?.rating)})`;
+      }
       return {
-        title: note.props.frontmatter.title,
-        //description: note.content, // TODO: there's nothing here yet
+        title: title,
         link: note.params.slug,
         pubDate: note.params.pubDate,
         description: note.props.frontmatter?.description,
