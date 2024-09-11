@@ -8,6 +8,7 @@ import path from "path";
 import { getNotes } from '../components/Notes.astro';
 import { getPubDateForNote } from '../components/Notes.astro';
 
+
 let readme: MarkdownInstance<Record<string, any>> | null = null;
 try {
   const items = await Astro.glob("../../notes/readme.md");
@@ -18,17 +19,20 @@ const { Content } = readme || { Content: () => null };
 const notesPath = path.join(process.cwd(), "notes");
 console.log(`CWD: ${process.cwd()}, Notes path: ${notesPath}`)
 const notes = await getNotes(); // Loads all notes from disk
-const readmes = { posts: "Intro", books: "Intro" }
+const readmes = {}, intros = {}
 const recents = { posts: [], socials: [], books: [] }
 const counts = { posts: 0, socials: 0, books: 0 }
-const CATEGORIES = ["posts", "socials", "books"]
+const CATEGORIES = ["posts", "socials", "books"] // TODO: should we derive this from readmes?
 
 // load recent notes (per category: maxcount=3, maxage=6m)
 let notesCount = 0;
 notes.forEach((note) => {
 	const { type } = note.params;
 	if (/readme.md$/.test(note.props.file)) {
-		if (readmes[type]) readmes[type] = note;
+		if (!readmes[type]) readmes[type] = note;
+		if (!intros[type]) {
+			intros[type] = note.props.rawContent().substring(0, note.props.rawContent().indexOf(".") + 1)
+		}
 		return; // don't further process readmes
 	}
 
@@ -56,9 +60,9 @@ notes.forEach((note) => {
 				readme != null && (<article><Content /></article>)
 			}
 			<hr/>
-			<p>There are {notesCount} notes across {CATEGORIES.length} categories.</p>
-			<hr/>
 			{CATEGORIES.map((category) => (
+				<h3>{category}</h3>
+				<p>{intros[category]}</p>
 				<label>Recent {category}</label>
 				<ul>
 					{recents[category].map((note) => (
@@ -68,7 +72,6 @@ notes.forEach((note) => {
 				<span>Or check out <a href={category}>all {counts[category]} {category}</a></span>
 				<hr/>
 			))}
-			<hr/>
 		</main>
 		<Footer slug="/" />
 	</body>
