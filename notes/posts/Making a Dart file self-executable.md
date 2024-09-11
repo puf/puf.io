@@ -30,7 +30,7 @@ With that, the `bin/server.dart` file becomes executable itself. So you can run 
 bin/server.dart
 ```
 
-And if you read my post on [Hot reload for Dart](/posts/hot-reload-for-dart), you can apply that here too:
+And if you read my post on [Hot reload for Dart](https://puf.io/posts/hot-reload-for-dart), you can apply that here too:
 ```bash
 nodemon -x bin/server.dart -e dart
 ```
