@@ -14,7 +14,7 @@ function getSocialLinkType(link) {
 	if (new RegExp("https\://stackoverflow.com/").test(link)) return "stackoverflow";
 }
 ---
-{ links?.length && (
+{ links?.length > 0 && (
     <div class="social-links" style="margin-top: -2em"><span title="Go to one of these if you want to respond...">Also on: </span>
         {links.map((link, index) => (
             <a href={link}>
