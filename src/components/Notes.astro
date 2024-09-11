@@ -24,7 +24,7 @@ export function getPubDateForNote(note) {
   if (note.frontmatter?.pubDate) return note.frontmatter.pubDate;
   if (note.frontmatter?.finishedDate) return note.frontmatter.finishedDate;
   // TODO: make extensible to other types too
-  return ""; // What should the default be here? Anything without a date is published?
+  // no pubDate -> return undefined
 }
 
 export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
@@ -38,14 +38,17 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     const slug = getSlugForNote(note);
     const type = getTypeForNote(note)
     const name = getNameForNote(note);
-    const pubDate = getPubDateForNote(note);
+    let pubDate = getPubDateForNote(note);
     
     if (typeof pubDate !== 'undefined' && typeof pubDate !== 'string' && typeof pubDate !== 'number') {
-      console.error("Invalid pubDate value:", pubDate, note.file);
+      //console.error("Invalid pubDate value:", pubDate, "skipping:", note.file);
       // Skip this file
-      continue;
+      continue
     }
-    const isDraft = ''+((pubDate==="" || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
+    if (typeof pubDate === 'string' && pubDate.length === 0) {
+      console.log("pubDate:", pubDate, "for:", note.file, "this will lead to complaints from the router later")
+    }
+    const isDraft = ''+((pubDate==="" || pubDate === undefined || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
 
     results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
   }
@@ -57,7 +60,9 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
 
   // Sort by date
   results.sort((a, b) => {
-    return new Date(b.params.pubDate.length ? b.params.pubDate : "1970/1/1").getTime() - new Date(a.params.pubDate.length ? a.params.pubDate : "1970/1/1").getTime()
+    const aDate = new Date(a.params.pubDate?.length ? a.params.pubDate : "1970/1/1").getTime();
+    const bDate = new Date(b.params.pubDate?.length ? b.params.pubDate : "1970/1/1").getTime();
+    return bDate - aDate;
   });
 
   // Remove by custom filter
