@@ -7,7 +7,7 @@ function getSocialLinkType(link) {
 	if (new RegExp("https\://x.com/").test(link)) return "twitter";
 	if (new RegExp("https\://(www\.)?threads.net/").test(link)) return "threads";
 	if (new RegExp("https\://c.im/").test(link)) return "mastodon";
-	if (new RegExp("https\://linkedin.com/").test(link)) return "linkedin";
+	if (new RegExp("https\://(www\.)?linkedin.com/").test(link)) return "linkedin";
 	if (new RegExp("https\://(www\.)?goodreads.com/").test(link)) return "goodreads";
 	if (new RegExp("https\://(www\.)?medium.com/").test(link)) return "medium";
 	if (new RegExp("https\://(www\.)?bsky.app/").test(link)) return "bluesky";
