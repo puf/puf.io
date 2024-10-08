@@ -1,6 +1,6 @@
 ---
 title: Electric CalTrain from San Francisco to Mountain View
-pubDate: October 9, 2024
+pubDate: October 8, 2024
 alsoOn:
   - https://x.com/puf
   - https://threads.net/frankpuf
