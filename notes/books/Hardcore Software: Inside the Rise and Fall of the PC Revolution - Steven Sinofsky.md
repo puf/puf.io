@@ -5,7 +5,7 @@ startedDate: "2024/07/02"
 finishedDate: "2024/10/07"
 rating: 3
 edition: "Kindle Edition"
-link: "https://www.goodreads.com/book/show/111060857"
+link: "https://www.goodreads.com/review/show/6636571636"
 pageCount: 1798
 ---
 
