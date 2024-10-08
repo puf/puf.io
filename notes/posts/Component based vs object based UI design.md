@@ -1,6 +1,6 @@
 ---
 title: "UI design: object oriented vs component based"
-pubDate: "September 28, 2024"
+pubDate: "October 10, 2024"
 alsoOn: [https://x.com/puf]
 description: "Building a UI in object-oriented code often leads to deeply nested object structures, where each object has a single responsibility. Building a UI in a visual component-based builder typically leads to shallower structures with fewer objects, whose behavior is controlled by properties."
 ---
