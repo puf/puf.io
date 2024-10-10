@@ -1,6 +1,6 @@
 ---
 title: "UI design: object oriented vs component based"
-pubDate: "October 10, 2024"
+pubDate: "October 20, 2024"
 alsoOn: [https://x.com/puf]
 description: "Building a UI in object-oriented code often leads to deeply nested object structures, where each object has a single responsibility. Building a UI in a visual component-based builder typically leads to shallower structures with fewer objects, whose behavior is controlled by properties."
 ---
@@ -52,7 +52,7 @@ Well, the FlutterFlow `ListView` component has a property Scrollable that we can
 
 <screenshot>
 
-Under the hood, this property translates 1:1 to the Flutter code we saw earlier: when the Scrollable toggle is off, you get just the ListView.  
+Under the hood, this property translates 1:1 to the Flutter code we saw earlier: when the Scrollable toggle is off, you get just the ListView. 
 ```
 Code sample
 ```
