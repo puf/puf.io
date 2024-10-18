@@ -2,8 +2,10 @@
 title: Walking from 22nd street station to Mission over 17th street
 pubDate: October 16, 2024
 alsoOn:
-  - https://x.com/puf
-  - https://threads.net/frankpuf
+  - https://x.com/puf/status/1846929325112676607
+  - https://www.threads.net/@frankpuf/post/DBOsYS1sTxX
+  - https://bsky.app/profile/did:plc:r5shvvsyaq3kfatc3novwud6/post/3l6ppu2qrn32h
+  - https://c.im/@puf/113323362046494746
 tags: [san-francisco, 22nd-street, 17th-street, caltrain, mission-creek]
 ---
 On my commute back this week, I walked from 22nd street station to the Mission (22nd and Guerrero) over 17th street. In the past I walked back [over 22nd street](/socials/2024-08-02-walking-22nd-street-from-guerrero-to-the-caltrain-station) (over 22nd street), [over Cesar Chavez](/socials/2024-08-14-walking-from-22nd-street-station-to-the-mission-over-cesar-chavez), but team mates said that 17th was nicer - so I tried it.
@@ -91,3 +93,5 @@ And further commuter stories:
 * [Bay Wheels e-bike from the Mission to the 22nd street CalTrain station](/socials/2024-08-06-bay-wheels-from-the-mission-to-the-22nd-street-caltrain-station) August 5, 2024
 * [Regular Bay Wheels bike from the Mission to the 22nd street CalTrain station](/socials/2024-08-07-regular-bike-from-the-mission-to-the-22nd-street-caltrain-station) August 7, 2024
 * [Electric CalTrain from San Francisco to Mountain View](/socials/2024-10-08-electric-caltrain-from-san-francisco-to-mountain-view) October 8, 2024
+
+And this article [New York Times Discovers 'Mission Creek' Neighborhood](https://sfist.com/2014/04/09/the_new_york_times_creates_mission/). Oops... it's been Mission Creek over a decade already apparently. 🙊
