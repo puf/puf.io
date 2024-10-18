@@ -9,7 +9,7 @@ description: "Building a UI in object-oriented code often leads to deeply nested
 
 #### My history with object oriented vs component based building of UI
 
-*Skip to the next paragraph if you don’t care, you won’t miss anything major.*
+*Skip to the next paragraph (Object oriented UI building with Flutter) if you don’t care, you won’t miss anything major.*
 
 When I got my computer science education (early ‘90s), we were schooled in pretty advanced structured programming, pretty classic OOP, and a dusting of functional programming.  The OOP was especially new to me at the time, and I applied it steadily (and maybe a bit dogmatically) early in my career.
 
@@ -30,11 +30,11 @@ I've always used this mental separation for object oriented UI building and comp
 
 So in this model object-based UI code consists of many classes or objects, each with a single, well-defined purpose. You then build your application by composing these objects into bigger wholes.
 
-If I look at plain Flutter code today, it reflects this object oriented model quite directly. An example of the composability is when you have a list view of dynamic items that takes up part of a screen. If there’s more content than fits the available space, you want that list view to scroll. In Flutter, you do this by wrapping the `ListView` object in a `SingleChildScrollView` object. A neat composition on the code level.
+If I look at plain Flutter code today, it reflects this object oriented model quite directly. An example of the composability is when you have a colum of UI elements that takes up part of a screen. If there’s more content than fits the available space, you want that column to scroll. In Flutter, you do this by wrapping the `Column` object in a `SingleChildScrollView` object. A neat composition on the code level.
 ```
 body: Center(
   child: SingleChildScrollView(
-    child: ListView(
+    child: Colum(
       children: <Widget>[
         ...
       ]
@@ -42,8 +42,9 @@ body: Center(
   ),
 ),
 ```
+Runnable example on Zapp.run: https://zapp.run/edit/flutter-zcda06t8cdb0 
 
-Note how simple this model is for each of the components. The `ListView` gets to work with an infinitely long canvas and it can “just” stack all its items in there. And then the `SingleChildScrollView` takes that large canvas and (if needed) makes it fit into the screen viewport by “just” adding scrollbars. A good separation of concerns.
+Note how simple this model is for each of the components. The `Column` gets to work with an infinitely long canvas and it can “just” stack all its items in there. And then the `SingleChildScrollView` takes that large canvas and (if needed) makes it fit into the screen viewport by “just” adding scrollbars. A good separation of concerns.
 
 Sure, you often end up with much more deeply nested structures than you initially expect (seriously: check it in the [Flutter widget inspector](https://docs.flutter.dev/tools/devtools/inspector), or count the number of `child` and `children` properties you have) - but that’s easily solved by building your own higher level, composable widgets.
 
@@ -59,29 +60,50 @@ Directly manipulating all those Flutter widgets in a UI builder may be feasible,
 
 A component-based UI tree consists of a lot fewer components, but each of them has many more properties to control their behavior. So we’re still building a tree of UI elements, but each element typically is a larger fraction of the total behavior.
 
-FlutterFlow is a visual UI builder that builds on top of Flutter. It works based on widgets and if we search in its list we find our familiar friend ListView.
+FlutterFlow is a visual UI builder that builds on top of Flutter. It works based on widgets and if we search in its list we find our familiar `Column` widget.
 
-![screenshot of FlutterFlow ListView in widget list]
+![screenshot of FlutterFlow Column in widget list](https://i.imgur.com/BvXdwzt.png)
 
-Assuming that once again we have a dynamic list of data that may not fit the device’s screen. How do we make it scrollable?
+Assuming that once again we have a dynamic list of data that may not fit the device’s screen, and we display it in a `Column`. How do we make it scrollable now?
 
-Well, the FlutterFlow `ListView` component has a property Scrollable that we can toggle on.
+Well, the FlutterFlow `Column` component has a property Scrollable that we can toggle on.
 
-![Screenshot of FlutterFlow ListView scrollable property]
+![Screenshot of FlutterFlow Column scrollable property](https://i.imgur.com/4nJjXO2.png)
 
-Under the hood, this property translates 1:1 to the Flutter code we saw earlier: when the Scrollable toggle is off, you get just the ListView. 
-```
-Code sample of non-scrollable ListView
-```
-And when you toggle Scrollable on, FlutterFlow generates a SingleChildScrollView around the Flutter ListView widget.
-```
-Code sample of scrollable ListView
-```
+The orange arrows point out the key elements here:
 
-So depending on how you set its properties, the single `ListView` in FlutterFlow may generate multiple Flutter widgets. In fact, our `ListView` higher-level component generates a `SingleChildScrollView` > `Column` > `Builder` > `ListView` branch in our Flutter widget tree. And if we change the padding and alignment, we’ll see even more Flutter widgets coming out of our single ListView component.
+1. I've selected a `Column` component/widget here
+2. This component has properties that are specific to a `Column` (I've hidden most other properties here)
+3. One of those properties determines whether the component is scrollable.
+
+Under the hood, this property translates 1:1 to the Flutter code we saw earlier: when the Scrollable toggle is off, you get just the Column:
 
 ```
-Code sample of ListView with padding and alignment
+body: Center(
+  child: Colum(
+    children: <Widget>[
+      ...
+    ]
+  ),
+),
+```
+And when you toggle Scrollable on, FlutterFlow generates a `SingleChildScrollView` around the Flutter `Colum` widget.
+```
+body: Center(
+  child: SingleChildScrollView(
+    child: Colum(
+      children: <Widget>[
+        ...
+      ]
+    )
+  ),
+),
+```
+
+So depending on how you set its properties, the single `Colum` in FlutterFlow may generate multiple Flutter widgets. In fact, our `Colum` higher-level component generates a `SingleChildScrollView` > `Column` branch in our Flutter widget tree. And if we change the padding and alignment, we’ll see even more Flutter widgets coming out of our single `Colum` component.
+
+```
+TODO: Code sample of Colum with padding and alignment
 ```
 
 This is the key distinction between code based UI building and visual UI building: **in a visual UI builder we work with fewer, higher-level objects**, which I’ve called components here. Having fewer, more configurable components to deal with makes them easier to manipulate in the UI builder tool.
