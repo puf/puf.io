@@ -50,6 +50,8 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     }
     const isDraft = ''+((pubDate==="" || pubDate === undefined || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
 
+    //if (note.file.match("^_") && !note.file.match("_readme.md")) console.error(`Hidden file: ${note.file}`);
+
     results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
   }
   
