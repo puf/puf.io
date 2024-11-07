@@ -9,6 +9,8 @@ link: "https://www.goodreads.com/book/show/30254110"
 pageCount: 1052
 ---
 
+![Cover of the book Battlefield Earth: A Saga of the Year 3000 by L. Ron Hubbard. The cover shows a futuristic scene where a muscular human fights against a tall, armored alien with a gas mask-like face, claws, and advanced weaponry.](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1463962644i/30254110.jpg)
+
 Before L. Ron Hubbard was known for "other things", he was mostly known as a prolific science fiction writer. Then when he had become more (in)famous for those other things, he revisited the well of sci-fi once more and write Battlefield Earth.
 
 This book is classic pulp sci-fi of the golden age of Hubbard's earlier writing. Despite that the book was only published in 1982, it oozes the morals, ethics, and expectations of the 50s and 60s sci-fi stories. Over-the-top characters and races, massive battles, fast paced plot development, and a heavy dose of in-context-plausible science - this story has it all.
