@@ -1,6 +1,6 @@
 ---
 title: Tracking document reads per user in Firestore
-pubDate: November 12, 2024
+pubDate: November 30, 2024
 alsoOn: []
 ---
 
