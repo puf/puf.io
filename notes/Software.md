@@ -1,7 +1,6 @@
 ### Text expander / snippets
 
 * Peter Friese: Expanso or Raycast
-* Luke Pighetti: built-in Text Replacements
 * Brian Dorsey: https://www.keyboardmaestro.com/main/
 
 ### Skin

@@ -7,4 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://puf.io',
 	integrations: [mdx(), sitemap()],
+	redirects: {
+		"/old-path": "/new-path",
+	}
 });
