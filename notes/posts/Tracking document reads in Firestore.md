@@ -1,6 +1,6 @@
 ---
 title: Tracking document reads per user in Firestore
-pubDate: November 30, 2024
+pubDate: November 12, 2024
 alsoOn: []
 ---
 
@@ -12,6 +12,8 @@ My use-case: FlutterFlow chat app, listener only and simple writes (so no get, n
 
 Admin logs automatic
 Read and write logs opt-in
+Method name is the other key, and this list is far from complete
+Note that the cound for DATA_* events will likely be much higher than for ADMIN_* events, hence those being opt-in
 
 ### Cloud Logging: Log Explorer
 
@@ -155,6 +157,8 @@ As said: it's a boatload of data, but here are some of the most interesting path
 ### Cloud Logging: Log Analytics
 
 SQL based
+
+![logging query samples](https://cloud.google.com/logging/docs/analyze/examples)
 
 ```sql
 SELECT
