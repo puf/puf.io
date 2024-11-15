@@ -19,13 +19,21 @@ In this article we'll see how to make a chat like this that shows the document r
 Let's briefly look at the use-case first. I built a tiny chat app in FlutterFlow. This app has a single collection (called `chat`) and in that collection each document represents a single chat message. My app allows the user to send a message (adding a new document to the collection), and it shows the (up to) 10 most recent messages from the collection.
 
 In Flutter code, adding a message looks like this:
-```
-
+```dart
+FirebaseFirestore.instance.collection("chat").add({
+    "message": text,
+    "timestamp": DateTime.now().millisecondsSinceEpoch,
+    "uid": FirebaseAuth.instance.currentUser!.uid,
+});
 ```
 
 And the reading of messages is done with this code:
-```
-
+```dart
+FirebaseFirestore.instance
+    .collection("chat")
+    .orderBy("timestamp", descending: true)
+    .limit(10)
+    .snapshots()
 ```
 
 So this really just uses a tiny sliver of the possible Firestore operations, no get-style reads, no transactions, no batches. That's both because I usually live-code this app, but it also helps to keep our logs focused.
@@ -214,13 +222,25 @@ Whether you're new to BigQuery or not, I recommend checking out the [logging que
 I'll finish this article off with the two queries I ended up with after a lot of experimentation. First off, here's how you can get the sum of all document read counts across all users
 
 ```sql
-TODO
+SELECT
+  TIMESTAMP_TRUNC(timestamp, DAY) as day,
+  SUM(proto_payload.audit_log.num_response_items) as read_count
+FROM `nanochat-20241022-mw8qu9.global._Default._AllLogs`
+WHERE proto_payload.audit_log.authorization_info[0].permission_type IN ('DATA_READ', 'DATA_WRITE')
+  AND proto_payload.audit_log.method_name LIKE 'google.firestore.v1.Firestore%'
+GROUP BY 
+  TIMESTAMP_TRUNC(timestamp, DAY)
 ```
 
-TODO: show output
-![]()
+I had a hard time figuring the the table name, so be aware of that. Aside from that, you can see filter on data reads and writes from Firestore, and group the number of document reads per day.
 
-TODO: show Firebase and GCP consoles at the same time
+![](https://i.imgur.com/DYsaq7o.png)
+
+While the shape looks a bit different (probably due a difference in timezone offset), the total count adds up to something in the same ballpark to what I see in the Firebase console for the same period:
+
+![](https://i.imgur.com/HqidNJl.png)
+
+My query results are off by about 10% or so, but I'll gladly take that and chalk it up to other usage. So the results look pretty trustworthy!
 
 And finally, here's the query that I used to create that chart at the top of the article:
 
