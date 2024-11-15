@@ -32,18 +32,11 @@ So this really just uses a tiny sliver of the possible Firestore operations, no 
 
 ### Audit logs
 
-<<<<<<< Updated upstream
-Admin logs automatic
-Read and write logs opt-in
-Method name is the other key, and this list is far from complete
-Note that the cound for DATA_* events will likely be much higher than for ADMIN_* events, hence those being opt-in
-=======
 As you can probably imagine, there's a boatload of information that Firestore can log. At the top level, the audit logs are split into these two most common [types][audit-log-types]:
->>>>>>> Stashed changes
 
-* **Admin Activity audit logs** contain log entries for API calls or other actions that modify the configuration or metadata of resources. For example, these logs record when users create VM instances or change Identity and Access Management permissions. Admin Activity audit logs are always written; you can't configure, exclude, or disable them.
+* **Admin Activity audit logs** contain log entries for API calls or other actions that modify the configuration or metadata of resources. For example, these logs record when users create VM instances or change Identity and Access Management permissions. *Admin Activity audit logs are always written*; you can't configure, exclude, or disable them.
 
-* **Data Access audit logs**  contain API calls that read the configuration or metadata of resources, as well as user-driven API calls that create, modify, or read user-provided resource data. Data Access audit logs are disabled by default, because audit logs can be quite large. If you want Data Access audit logs to be written for Google Cloud services other than BigQuery, you must explicitly enable them
+* **Data Access audit logs**  contain API calls that read the configuration or metadata of resources, as well as user-driven API calls that create, modify, or read user-provided resource data. Data Access audit logs are disabled by default, because audit logs can be quite large. *To get Data Access audit logs for Firestore, you must explicitly enable them*.
 
 So I went into the Google Cloud console and [enabled data logging][enable-data-logging]. 
 
@@ -51,7 +44,7 @@ After this I loaded up my Flutter app in both an iOS emulator and a web page, an
 
 ### Cloud Logging: Logs Explorer
 
-One of the first tools you'll want to look at is the Log Explorer. If you like reading first, check the documentation on [viewing logs by using the Logs Explorer][logs-explorer], but I prefer diving in. The log explorer lets you view recent log entries in this format:
+One of the first tools you'll want to look at is the Log Explorer. If you like reading first, check the documentation on [viewing logs by using the Logs Explorer][logs-explorer]. The log explorer lets you view recent log entries in this format:
 
 ![](https://i.imgur.com/mBxWcA4.png)
 
@@ -63,14 +56,14 @@ After testing for a few days, here's the count of the number of log entries by m
 
 ![](https://i.imgur.com/SdbRuAq.png)
 
-*Remember that earlier warning about there being lots of data access logs? They weren't kidding.*
+*Remember that earlier warning about there being lots of data access logs? I wasn't kidding, on a production Firestore database this audit log volume is **huge**.*
 
-We only care about the regular data access logs, and the only two methods we find for that are:
+For our use-case, of counting the number of document reads and writes per user, we only care about the regular data access logs, and the only two methods we find for that are:
 
 * `google.firestore.v1.Firestore.Listen`, which corresponds to our listener for the 10 most recent messages.
 * `google.firestore.v1.Firestore.Write`, which is not showing in the above screenshot, but it pops up when a user sends a message.
 
-As expected, it's mostly listen operations for us here, as I really haven't been sending a lot of messages during testing.
+As expected, it's mostly listen operations for us here, as I really haven't been sending a lot of messages during testing. So below, I'll mostly focus on the read/`Listen` operations.
 
 ---
 
@@ -201,22 +194,35 @@ As I said above, there is **a lot** of information on each of these messages and
 }
 ```
 
-As said: it's a boatload of data, but here are some of the most interesting paths in the JSON for our use-case:
+Here are some of the most interesting paths in the JSON for our use-case from this boatload of information:
 
 * `protoPayload/authenticationInfo` is the (Firebase) Authentication of the user who made the request.
-* `protoPayload/authenticationInfo/thirdPartyPrincipal/payload/sign_in_provider` shows that the client is signed in anonymously.
-* `protoPayload/authenticationInfo/thirdPartyPrincipal/payload/user_id`  is the UID of the (anonymous) user
+* `protoPayload/authenticationInfo/thirdPartyPrincipal/payload/sign_in_provider` shows that the client is signed in anonymously (`"sign_in_provider": "anonymous"`).
+* `protoPayload/authenticationInfo/thirdPartyPrincipal/payload/user_id`  is the UID of the (anonymous) user (`"user_id": "mzi2JtP9p1fxavXdVvuk2qMyIWB3"`)
 * `protoPayload/request/addTarget/query/structuredQuery` shows us that our query is something like `collection('chat').orderBy('timestamp', 'DESC').limit(10)`
-* `protoPayload/requestMetadata/callerSuppliedUserAgent` shows the user agent that made the request (so we could derive the client platform from that)
-* `protoPayload/numResponseItems` shows the number of items that were returns in this request
+* `protoPayload/requestMetadata/callerSuppliedUserAgent` shows the user agent that made the request (so we could derive the client platform from that) (`"callerSuppliedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36,gzip(gfe),gzip(gfe)"`)
+* `protoPayload/numResponseItems` shows the number of items that were returns in this request (`"numResponseItems": "10"`)
 
-
+The `user_id` and `numResponseItems` are the key for our use-case, as we can group over the former and sum the latter to get the document read count per user. To allow this, we're going to switch over to a different part of the Cloud Logging console, where we can run SQL queries against the audit log data.
 
 ### Cloud Logging: Log Analytics
 
-SQL based
+Cloud Logging's [Log Analytics][log-analytics] is powered by BigQuery, so if you've ever used that tool you'll have a head start. You can connect the audit log data directly yo the BigQuery console too, but I've stayed within the Log Analytics console.
 
-![logging query samples](https://cloud.google.com/logging/docs/analyze/examples)
+Whether you're new to BigQuery or not, I recommend checking out the [logging query samples][log-analytics-query-samples] in the documentation.
+
+I'll finish this article off with the two queries I ended up with after a lot of experimentation. First off, here's how you can get the sum of all document read counts across all users
+
+```sql
+TODO
+```
+
+TODO: show output
+![]()
+
+TODO: show Firebase and GCP consoles at the same time
+
+And finally, here's the query that I used to create that chart at the top of the article:
 
 ```sql
 SELECT
@@ -231,8 +237,16 @@ GROUP BY
   TIMESTAMP_TRUNC(timestamp, DAY)
 ```
 
+### Conclusion
+
+Thanks to Firestore's Audit Logging, you can now get a (pretty accurate) estimate of the document read count from within the Google Cloud console. In this article we've seen how to get the total document read count or how to split it out per user, but given the amount of information in the audit logs, you can slice and dice the data in many more ways.
+
+
+
 [audit-logging]: https://cloud.google.com/firestore/docs/audit-logging
 [audit-log-release]: https://github.com/firebase/extensions/blob/next/firestore-bigquery-export/guides/OBSERVABILITY.md
 [audit-log-types]: https://cloud.google.com/logging/docs/audit#types
 [enable-data-logging]: https://cloud.google.com/logging/docs/audit/configure-data-access
-[log-explorer]: https://cloud.google.com/logging/docs/view/logs-explorer-interface
+[logs-explorer]: https://cloud.google.com/logging/docs/view/logs-explorer-interface
+[log-analytics]: https://cloud.google.com/logging/docs/analyze/query-and-view
+[log-analytics-query-samples]: https://cloud.google.com/logging/docs/analyze/examples
