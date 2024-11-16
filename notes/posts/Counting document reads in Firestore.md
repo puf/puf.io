@@ -281,6 +281,12 @@ Thanks to Firestore's Audit Logging, you can now get a (pretty accurate) estimat
 Got feedback or questions? Sound off on socials with the links at the top of the article!
 
 
+Also see:
+
+* [How Firestore was used in the Arc code injection vulnerability](/posts/firestore-usage-in-arc-code-injection-vulnerability) (September 27, 2024)
+* [Waiting for Firestore to create a document](/posts/waiting-for-firestore-to-create-a-document) (August 3, 2024)
+* [How to perform geoqueries on Firestore (somewhat) efficiently](/posts/how-to-perform-geoqueries-on-firestore-somewhat-efficiently) (May 30, 2024)
+
 [firestore-billing-example]: https://firebase.google.com/docs/firestore/billing-example#overview_costs_by_usage_level
 [firestore-listener]: https://firebase.google.com/docs/firestore/query-data/listen
 [audit-logging]: https://cloud.google.com/firestore/docs/audit-logging
