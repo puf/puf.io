@@ -50,7 +50,9 @@ Firestore audit logs expose a treasure trove of information. At the top level, t
 
 * **Data Access audit logs**  contain API calls that read the configuration or metadata of resources, as well as user-driven API calls that create, modify, or read user-provided resource data. Data Access audit logs are disabled by default, because audit logs can be quite large. *To get Data Access audit logs for Firestore, you must explicitly enable them*.
 
-Since our use-case is focused on the actual data access, I went into the Google Cloud console and [enabled data logging][enable-data-logging]. 
+Since our use-case is focused on the actual data access, I went into the Google Cloud console and [enabled data logging][enable-data-logging].
+
+![](https://i.imgur.com/RaxB2A0.png)
 
 After this I loaded up my Flutter app in both an iOS emulator and a web page, and went looking for the data access audit logs.
 
