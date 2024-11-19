@@ -1,10 +1,9 @@
 ---
 title: Counting document reads per user in Firestore
 pubDate: November 18, 2024
-alsoOn: [https://x.com/puf, https://threads.net/frankpuf, https://bsky.app/profile/puf.bsky.social, https://c.im/@puf]
+alsoOn: [https://x.com/puf/status/1858888704862953787, https://www.threads.net/@frankpuf/post/DCjqrPOMt8h, https://bsky.app/profile/puf.bsky.social/post/3lbcpei5cfo2d, https://c.im/@puf/113510228133489917, https://www.linkedin.com/feed/update/urn:li:activity:7264654755434500096/]
 ---
 
-Introduction: use-case, not possible initially, possible since.
 
 Firestore is a serverless NoSQL database. For most projects, the largest part of their [Firestore cost][firestore-billing-example] comes from *document reads*. You pay this cost each time the Firestore database server reads a document from disk for your app.
 
