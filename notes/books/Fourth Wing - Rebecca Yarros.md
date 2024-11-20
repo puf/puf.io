@@ -15,7 +15,7 @@ pageCount: 663
 
 I love high fantasy and the story here is well thought out and told, with interesting world building, and a plot that develops at a decent pace. The characters are interesting, although they are (especially early on) incredibly flat. I don't mind it too much, as it makes this an easy read.
 
-What I did mind more was the overly present romance plot (somewhat expected in the genre) and the very explicit sex chapters. Not my cup of tea, and especially in the second half of the book I felt like yelling "Yes, yes, I get it: they can't live without each other!" at times.
+What I did mind more was the overly present romance plot (making it somewhat YA'ish) and the very explicit sex chapters. Not my cup of tea, and especially in the second half of the book I felt like yelling "Yes, yes, I get it: they can't live without each other!" at times.
 
 But then, there's that story again... which is intriguing with a killer cliffhanger. So, I got book 2 ready to go... after some other reading I need to catch up on.
 
