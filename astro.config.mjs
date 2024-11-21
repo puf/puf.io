@@ -9,5 +9,6 @@ export default defineConfig({
 	integrations: [mdx(), sitemap()],
 	redirects: {
 		"/old-path": "/new-path",
+		"/socials/patches-on-patagonia-hoodies": "/socials/2024-07-28-patches-on-patagonia-hoodies",
 	}
 });
