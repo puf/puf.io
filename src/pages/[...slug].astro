@@ -6,10 +6,14 @@ import { getNotes, getPubDateForNote, getSlugForNote, getTypeForNote } from '../
 import type { MarkdownInstance } from "astro";
 
 export async function getStaticPaths() {
-	return getNotes();
+  return await getNotes();
+  // const aliases = await getAliasPaths(notes);
+  // console.log(notes.slice(0,3).concat(aliases))
+	// return notes.concat(aliases);
 }
 
-type Props = MarkdownInstance<Record<string, any>>;
+type Props = MarkdownInstance<Record<string, any>> & { redirectTo?: string };
+console.log(`Rendering ${JSON.stringify(Astro)}`);
 const post = Astro.props;
 const { Content } = post;
 
@@ -17,8 +21,9 @@ const pubDate = getPubDateForNote(post)
 const isReadme = (/readme.md$/.test(post.file))
 const type = getTypeForNote(post)
 const slug = getSlugForNote(post)
+const isRedirect = typeof post.redirectTo != 'undefined' && post.redirectTo.length > 0;
 
-console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme ", isReadme, " to ", JSON.stringify(post))
+console.log(`Rendering ${post.file} with pubDate: ${pubDate}, isReadme: ${isReadme}, isRedirect: ${isRedirect} to ${JSON.stringify(post)}`);
 ---
 
 {(pubDate &&
@@ -31,4 +36,10 @@ console.log("Rendering ", post.file, " with pubDate ", pubDate, " and isReadme "
   <IndexPage {...post}>
     <article><Content /></article>
   </IndexPage>
+)}
+{(isRedirect && 
+  <>
+    <meta http-equiv="refresh" content={`1;url=${post.redirectTo}`} />
+    <p>Content was moved to <a href={`${post.redirectTo}`}>{post.redirectTo}</a></p>
+  </>
 )}
