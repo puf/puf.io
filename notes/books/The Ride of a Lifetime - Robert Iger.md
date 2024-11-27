@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/45310145"
 pageCount: 250
+aliases: ["/books/the-ride-of-a-lifetime---bob-iger/"]
 ---
 
 Initially I feared it was more a management book than a memoir, but that turned out to not be true. I especially liked reading Bob's side of the Pixar acquisition, which I'd read from Ed Catmull's perspective a while ago.
