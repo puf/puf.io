@@ -7,6 +7,7 @@ rating: 4
 edition: Kindle Edition
 link: https://www.goodreads.com/review/show/6919008503
 pageCount: 166
+aliases: ["/books/how-to-build-a-low-tech-internet---kris-de-decker/caes"]
 ---
 ![](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1692625429i/197455553.jpg)
 
