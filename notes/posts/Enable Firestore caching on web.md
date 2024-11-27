@@ -102,4 +102,4 @@ FlutterFlow is working on making this the default behavior btw.
 
 Also see:
 
-* [Counting document reads per user on Firestore](), which is how I discovered that caching was not enabled for web clients of my app.
+* [Counting document reads per user on Firestore](/posts/counting-document-reads-in-firestore/), which is how I discovered that caching was not enabled for web clients of my app.
