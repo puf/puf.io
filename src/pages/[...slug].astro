@@ -39,7 +39,7 @@ console.log(`Rendering ${post.file} with pubDate: ${pubDate}, isReadme: ${isRead
 )}
 {(isRedirect && 
   <>
-    <meta http-equiv="refresh" content={`1;url=${post.redirectTo}`} />
+    <meta http-equiv="refresh" content={`0;url=${post.redirectTo}`} />
     <p>Content was moved to <a href={`${post.redirectTo}`}>{post.redirectTo}</a></p>
   </>
 )}
