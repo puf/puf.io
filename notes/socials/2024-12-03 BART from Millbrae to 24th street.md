@@ -2,10 +2,10 @@
 title: Mountain View to Mission via Millbrae with CalTrain and BART
 pubDate: December 3, 2024
 alsoOn:
-  - https://x.com/puf/
-  - https://www.threads.net/@frankpuf
-  - https://bsky.app/puf.bsky.social
-  - https://c.im/@puf/
+  - https://x.com/puf/status/1864388475862045139
+  - https://www.threads.net/@frankpuf/post/DDKvoeNMx0d
+  - https://bsky.app/profile/puf.bsky.social/post/3lciukkhaau2r
+  - https://c.im/@puf/113596159830477096
 tags: [san-francisco, millbrae, mission, 22nd-street, guerrero-street, 24th-street, caltrain, bart]
 ---
 
