@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/30254110"
 pageCount: 1052
+aliases: ["/books/battlefield-earth:-a-saga-of-the-year-3000---l.-ron-hubbard/"]
 ---
 
 ![Cover of the book Battlefield Earth: A Saga of the Year 3000 by L. Ron Hubbard. The cover shows a futuristic scene where a muscular human fights against a tall, armored alien with a gas mask-like face, claws, and advanced weaponry.](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1463962644i/30254110.jpg)
