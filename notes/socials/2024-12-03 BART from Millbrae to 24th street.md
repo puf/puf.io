@@ -1,29 +1,37 @@
 ---
-title: Mountain View to Mission via Milbrae with CalTrain and BART
-pubDate: December 5, 2024
+title: Mountain View to Mission via Millbrae with CalTrain and BART
+pubDate: December 3, 2024
 alsoOn:
   - https://x.com/puf/
   - https://www.threads.net/@frankpuf
   - https://bsky.app/puf.bsky.social
   - https://c.im/@puf/
-tags: [san-francisco, milbrae, mission, 22nd-street, guerrero-street, 24th-street, caltrain, bart]
+tags: [san-francisco, millbrae, mission, 22nd-street, guerrero-street, 24th-street, caltrain, bart]
 ---
 
-On my commute back home from downtown Mountain View to the mission district in San Francisco, I did something new today! I took CalTrain from Mountain View as usual, but then transfered to the BART in Milbrae. I got off BART on 24th street, and then walked the last bit to 22nd and Guerrero.
+On my commute back home from downtown Mountain View to the mission district in San Francisco, I did something new today! I took CalTrain from Mountain View as usual, but then transfered to the BART in Millbrae. I got off BART on 24th street, and then walked the last bit to 22nd and Guerrero.
 
 ![Public transport routes from Mountain view to 22nd and Guerrero in San Francisco](https://i.imgur.com/s7fsFG7.png)
 
-It's a bit hard to see in the image above, but there's a transfer happening there at Milbrae from CalTrain to (the Red line of) BART. Here's what the planning for that transfer looks like:
+It's a bit hard to see in the image above, but there's a transfer happening there at Millbrae from CalTrain to (the Red line of) BART. Here's what the planning for that transfer looks like:
 
-![Transfer schedule](https://i.imgur.com/LdGfBHf.png)
+![Transfer schedule](https://i.imgur.com/h9HLZ3k.png)
 
-Right, you can probably see why I don't usually take BART home - the transfer in Milbrae takes 26 minutes while it's only a 4 minute walk from the CalTrain platform to the BART platform. I really wish they'd make these schedules match up better.
+Right, you can probably see why I don't usually take BART home - the transfer in Millbrae takes 29 minutes while it's only a 4 minute walk from the CalTrain platform to the BART platform.
 
-Also note that little wiggle right north of Milbrae, right there:
+Actually, it was even less of a walk than that - as this sign sent me right to the opposite track of where I got off the train.
+
+![BART signage on Millbrae CalTrain platform](https://i.imgur.com/37ZDsVe.jpeg)
+
+There I just had to wait for 20 minutes or so, and believe me: the Millbrae platforms don't have *that* much of an interesting view. 
+
+I really wish they'd make these schedules line up better.
+
+Also note that little wiggle just north of Millbrae, right there:
 
 ![SFO wiggle](https://i.imgur.com/p7y6iCU.png)
 
-This BART goes via SFO (San Francisco International Airport) where it turns around, which adds a few minutes to the trip. Oh, and it also does a big swerve to the left/west further up north to get around the San Bruno Mountain.
+This BART goes from Millbrae to SFO (San Francisco International Airport) where it turns around, which adds a few minutes to the trip. Oh, and it also does a big swerve to the left/west further up north to get around the San Bruno Mountain.
 
 Why this route *is* interesting then? Well, it drops me off at 24th street and Mission, which means it's a lot closer to home than the 22nd street CalTrain station.
 
