@@ -2,10 +2,10 @@
 title: Bay Wheels - no parking/drop off spot for e-bike
 pubDate: December 5, 2024
 alsoOn:
-  - https://x.com/puf/
-  - https://www.threads.net/@frankpuf
-  - https://bsky.app/profile/puf.bsky.social
-  - https://c.im/@puf/
+  - https://www.threads.net/@frankpuf/post/DDOErS5Mois
+  - https://x.com/puf/status/1864856967329513909
+  - https://bsky.app/profile/puf.bsky.social/post/3lcm4leyawj2i
+  - https://c.im/@puf/113603480483575889
 tags: [san-francisco, mission, 22nd-street, guerrero-street, 24th-street, caltrain, baywheels, bicycle, bike]
 ---
 
@@ -16,8 +16,7 @@ Before I leave my home in the San Francisco mission district to grab a Bay Wheel
 
 But on getting to the 22nd street Caltrain station today I for the first time couldn't find any open slots to park my bike. It was completely packed! 😬
 
-![pic of bikes](https://i.imgur.com/640tyVb.png)\
-*Not my actual BayWheels spot, as I forgot to take a pic 🙊.*
+![pic of bikes](https://i.imgur.com/YwqXYso.png)
 
 So I drove to the nearest other Bay Wheels location, which is on [23rd and Tennessee](https://maps.app.goo.gl/vS2qfkMs1ycdPeRp9), which you can see as an extra wiggle at the end of my ride here:
 
