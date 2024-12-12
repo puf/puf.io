@@ -16,7 +16,8 @@ Google’s Firestore is a NoSQL database in which values are stored in documents
 
 In the first 5+ years of its existence, Firestore only supported queries that contains at range and inequality operations on a single field. This is because the field on which you had a range/inequality condition had to be last in the index used for the query, and only one field can be the last. This is due to how Firestore processes queries: it finds the first index entry that meets the query conditions, and then returns all results from the index until it finds the first index entry that no longer meets the conditions — so it returns a single slice of data:
 
-![A slice of index results](https://cdn-images-1.medium.com/max/2000/1*iNGbkg3Ry3XgEiJmvgQzFw.png)*A slice of index results*
+![A slice of index results](https://cdn-images-1.medium.com/max/2000/1*iNGbkg3Ry3XgEiJmvgQzFw.png)\
+*A slice of index results*
 
 That made many types of queries impossible, including the geoqueries that we’re looking at in this article. However, it turns out that you **could** perform geoqueries on Firestore, by using a mechanism based on geohashes.
 
