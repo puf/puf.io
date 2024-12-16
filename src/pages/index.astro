@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import type { MarkdownInstance } from "astro";
 import path from "path";
 import { getNotes } from '../components/Notes.astro';
-import { getPubDateForNote } from '../components/Notes.astro';
+import { getPubDateForNote, getTypeForNote } from '../components/Notes.astro';
 
 
 let readme: MarkdownInstance<Record<string, any>> | null = null;
@@ -40,7 +40,7 @@ notes.forEach((note) => {
 	if (typeof recents[type] !== 'undefined') {
 		notesCount++
 		counts[type]++
-		if (recents[type].length < 3 && new Date(getPubDateForNote(note)) > cutoffDate) {
+		if (recents[type].length < 5 && new Date(getPubDateForNote(note)) > cutoffDate) {
 			recents[type].push(note);
 		}
 	}
@@ -68,7 +68,9 @@ notes.forEach((note) => {
 					{recents[category].map((note) => (
 						<li>
 							{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-							<a href={note.params.slug}>{note.props.frontmatter.title}</a> ({note.params.pubDate})
+							<a href={note.params.slug}>{note.props.frontmatter.title}
+								{getTypeForNote(note.props) === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+							</a> ({note.params.pubDate})
 						</li>
 					))}
 				</ul>
