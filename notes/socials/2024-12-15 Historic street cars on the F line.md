@@ -2,10 +2,10 @@
 title: Historic street cars in San Francisco on the F line
 pubDate: December 15, 2024
 alsoOn:
-  - https://www.threads.net/@frankpuf
-  - https://x.com/puf
-  - https://bsky.app/profile/puf.bsky.social
-  - https://c.im/@puf/
+  - https://www.threads.net/@frankpuf/post/DDm6wERM7iY
+  - https://x.com/puf/status/1868353408698114316
+  - https://bsky.app/profile/puf.bsky.social/post/3ldeexelzoa2y
+  - https://c.im/@puf/113658113239161687
 tags: [san-francisco, castro, embarcadero, ferry-building, fishermans-wharf, muni, streetcars]
 description: "San Francisco's F line operates with historic streetcards, classic trams collected from all over the world. It runs from Castro to Fisherman's Wharf (mostly) over Market street and the Embarcadero. The streetcards are all 50+ years old and beautifully restored. Read the entire story for more information."
 ---
