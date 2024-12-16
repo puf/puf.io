@@ -1,13 +1,13 @@
 ---
 title: The SkyStar ferris wheel on the San Francisco fisherman's wharf
-pubDate: December 16, 2024
+pubDate: December 17, 2024
 alsoOn:
   - https://www.threads.net/@frankpuf
   - https://x.com/puf
   - https://bsky.app/profile/puf.bsky.social
   - https://c.im/@puf/
 tags: [san-francisco, fishermans-wharf, ferris-wheel, skystar, skystar-wheel]
-description: "TODO"
+description: "The SkyStar is a 150' ferris wheel on San Francisco's fisherman's wharf. The $18, 10-15 minute ride gives you a nice view over the waterfront area, and of course over the bay from Golden Gate bridge to Bay bridge."
 ---
 
 As I was [riding a historical street car]() by the San Francisco fisherman's wharf recently, I suddenly noticed this view outside its window.
