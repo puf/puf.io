@@ -15,6 +15,6 @@ The [Laundry Files series](https://www.goodreads.com/series/50764-laundry-files)
 
 The initial books explore the intersection of bureaucracy and the bizarre as protagonist Bob navigates a world filled with occult dangers and bureaucratic absurdities. The New Management subseries jumps forward a few years to when an Elder God is Brittain's Prime Minister, and explores the civilian side of this new United Kingdom, controlled by magic and superpowers.
 
-Season of Skulls continues to follow Evelyn Starky as she navigates the potent dream world that her nemesis "fled" into at the end of book 2, and... finds love. I think... 
+Season of Skulls continues to follow Eve Starkey as she navigates the potent dream world that her nemesis "fled" into at the end of book 2, and... finds love. I think... 
 
 It's full of fascinating characters and plot twists as usual, and the (unusual) added romance angle works for me. I'm looking forward to the next book in the series, but also to the series wrapping up. Each individual book is good, but the series feels a bit wandering at times (sorry Charles!)
