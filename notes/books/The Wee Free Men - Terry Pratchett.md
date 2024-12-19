@@ -11,7 +11,7 @@ pageCount: 375
 
 ![Cover of the audiobook "The Wee Free Men" by Terry Pratchett, performed by Stephen Briggs. The illustration shows small blue-skinned, red-haired men in kilts and wielding weapons climbing over a giant sheep in a grassy landscape. The title and author are displayed prominently, with "Carnegie Medalist" noted above the author's name. The bottom of the cover says "Unabridged."](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1386924016i/64468.jpg)
 
-Terry Pratchett had an uncanny ability to cover both simple and complex topics, both the mundane and the absurd, with thoughtfulness and witt at the same time. This book deals with witches, or women who see things as they really are, rather than how we want them to be. 
+Terry Pratchett had an uncanny ability to cover both simple and complex topics, both the mundane and the absurd, with thoughtfulness and wit at the same time. This book deals with witches, or women who see things as they really are, rather than how we want them to be. 
 
 Tiffany Aching is a young witch to be, and she discovers both monsters and Nac Mac Feegle in her land, and she isn't always sure which of these is worse. She goes off on an adventure to rescue her little brother from the queen of the elves, and during that trip discovers her bond with the little blue men, and what it truly means to be a witch.
 
