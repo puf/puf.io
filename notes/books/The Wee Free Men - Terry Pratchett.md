@@ -5,7 +5,7 @@ startedDate: "2024/11/16"
 finishedDate: "2024/12/18"
 rating: 4
 edition: "Audio CD"
-link: "https://www.goodreads.com/book/show/1191527"
+link: "https://www.goodreads.com/book/show/64468"
 pageCount: 375
 ---
 
