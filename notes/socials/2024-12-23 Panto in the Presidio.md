@@ -8,6 +8,7 @@ alsoOn:
   - https://c.im/@puf/
 tags: [san-francisco, presidio, presidio-theatre, panto]
 description: "The Peter Pan panto in the Presidio is a family-friendly musical comedy in which audience participation is encouraged - if not required. With over the top characters in outrageous costumes, the 120 minute show tells the Peter Pan story updated for this day, age, and location. Fun for everyone, if you can still get a ticket."
+aliases: ["/socials/2024-12-24-panto-in-the-presidio"]
 ---
 
 ![Peter Pan panto sign](https://i.imgur.com/ifLhjLz.png)
