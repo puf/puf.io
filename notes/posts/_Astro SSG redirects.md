@@ -9,7 +9,7 @@ This site is currently generated with Astro and hosted on GitHub pages,  and dep
 
 If I make a mistake in my code or markdown, the build fails and the update is not deployed. If the build succeeds, it deploys the static site to GitHub Pages. I *love* being able to test everything locally and knowing that "nothing" I can do, can break the site once it's been deployed.
 
-One of the things I struggled with for a while was how to handle redirects. [Astro has support for redirects](https://docs.astro.build/en/guides/routing/#redirects), but you configure that through a [`redirects` node in the global `astro.config.js` file](https://docs.astro.build/en/reference/configuration-reference/#redirects) [^1]:
+One of the things I struggled with for a while was how to handle redirects. [Astro has support for redirects](https://docs.astro.build/en/guides/routing/#redirects), but you configure that through a [`redirects` node](https://docs.astro.build/en/reference/configuration-reference/#redirects) in the global `astro.config.js` file [^1]:
 ```js
 export default defineConfig({
   ...
@@ -18,10 +18,15 @@ export default defineConfig({
   }
 });
 ```
+Global redirect configuration is fine for some use-cases, but for most of my cases I want to configure the redirects in the [frontmatter](https://dev.to/dailydevtips1/what-exactly-is-frontmatter-123g) of my Markdown content pages. Let's have a look at why, and how.
 
 ## Storing redirects in the frontmatter of the markdown
 
-Global redirect configuration is fine for some use-cases, but for most of my cases I want to configure the redirects in the [frontmatter](https://dev.to/dailydevtips1/what-exactly-is-frontmatter-123g) of my Markdown content pages. For example, I started adding a date-prefix to pages in `/socials`, but hadn't done that for the initial post there. So the initial post was live on slug `/socials/patches-on-patagonia-hoodies`, while for consistency it should be `/socials/2024-07-28 Patches on Patagonia hoodies`. To accomplish this, I added the following to the frontmatter of the page:
+I started adding a date-prefix to pages in `/socials`, but hadn't done that for the initial post there. So the initial post was live on slug `/socials/patches-on-patagonia-hoodies`, while for consistency it should be `/socials/2024-07-28 Patches on Patagonia hoodies`. 
+
+I *could* configure a redirect for this in the global config that I showed above, but somehow this type of redirect feels like it belongs closer to the contnet than that.
+
+I write my content in Markdown files, and added the following to the frontmatter of the page for the redirect:
 
 ```yaml
 ---
@@ -34,6 +39,8 @@ aliases: ["/socials/patagonia-patches", "/socials/patches-on-patagonia-hoodies"]
 I've been wearing Patagonia hoodies for about a decade now...
 ...
 ```
+
+So I call these aliases here, as they're aliases for the Markdown page where the content exists. We'll need to generate a redirect from each alias to the URL where this content lives.
 
 ## How to handle redirects on GitHub Pages
 
