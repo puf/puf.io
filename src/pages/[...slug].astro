@@ -38,9 +38,14 @@ console.log(`Rendering ${post.file} with pubDate: ${pubDate}, isReadme: ${isRead
   </IndexPage>
 )}
 {(isRedirect && 
-  <!-- TODO: generate all/more of https://github.com/withastro/astro/blob/ebe2aa95c7f4a6559cec8b82d155da34a57bdd53/packages/astro/src/core/routing/3xx.ts#L11-L19 -->
   <>
-    <meta http-equiv="refresh" content={`0;url=${post.redirectTo}`} />
-    <p>Content was moved to <a href={`${post.redirectTo}`}>{post.redirectTo}</a></p>
+    <!doctype html>
+    <title>Redirecting to: ${post.redirectTo}</title>
+    <meta http-equiv="refresh" content={`2;url=${post.redirectTo}`} />
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href={`${post.redirectTo}`}>
+    <body>
+      <p>Content was moved to <a href={`${post.redirectTo}`}>{post.redirectTo}</a></p>
+    </body>
   </>
 )}
