@@ -139,6 +139,10 @@ hr {
 	}
 }
 
+.footnotes {
+	font-size: 80%;
+}
+
 .sr-only {
 	border: 0;
 	padding: 0;

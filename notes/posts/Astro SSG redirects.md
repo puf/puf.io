@@ -1,6 +1,6 @@
 ---
-title: "Astro SSG: handling redirects on GitHub pages"
-pubDate: "Jan 20, 2025"
+title: "Astro SSG: handling redirects on GitHub Pages"
+pubDate: "Jan 7, 2025"
 alsoOn: [https://x.com/puf]
 description: ""
 ---
@@ -11,7 +11,7 @@ If I make a mistake in my code or markdown, the build fails (<svg style="fill: r
 
 One of the things I struggled with for a while though was how to handle redirects in this setup. Redirects are a mechanism that allows you to keep existing URLs working if (when?) you move content to a new location; instead of serving 404 Page Not Found for the old URL they send/redirect the user to the new location.
 
-## Astro support for global 301/302 style redirects
+## Astro support for global redirects
 
 [Astro has support for redirects](https://docs.astro.build/en/guides/routing/#redirects) that you configure that through a [`redirects` node](https://docs.astro.build/en/reference/configuration-reference/#redirects) in the global `astro.config.js` file [^1]:
 ```js
@@ -26,7 +26,7 @@ Based on this information, Astro will then generate a static file for `old-path`
 
 Global redirect configuration like this is fine for some use-cases, but for most of my cases I want to configure the redirects as part of my content - in the [frontmatter](https://dev.to/dailydevtips1/what-exactly-is-frontmatter-123g) of my Markdown content pages. Let's have a look at why, and how.
 
-## Storing redirects in the frontmatter of the markdown
+## Storing incoming redirects in each content file
 
 My initial post in the `/socials` category was on July 28, 2024 to the path `/socials/patches-on-patagonia-hoodies`. Soon after publishing that I decided to give social posts a date prefix, so I moved the content to `/socials/2024-07-28 Patches on Patagonia hoodies`. But since the URL without the date prefix was already live, we need to redirect from the old URL to the new one.
 
@@ -48,7 +48,7 @@ I've been wearing Patagonia hoodies for about a decade now...
 
 So the `aliases` array [^4] contains the alternative paths on this site through which you can reach the content in this Markdown page. We'll need to generate a redirect from each alias to the URL where this content lives.
 
-## How to handle redirects on GitHub Pages
+## Handling redirects on GitHub Pages (in HTML)
 
 GitHub Pages is a wonderful platform to host static sites, as long as you can work within what it supports. And one of the things is does *not* support is generating a specific HTTP response status code for a request - such as the [HTTP Status Code 301](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) that indicates a permanent redirect.
 
@@ -76,7 +76,7 @@ The HTML `body` is there in case a browser doesn't support this `refresh` behavi
 
 The Markdown content for this site lives in a [`/notes` folder](https://github.com/puf/puf.io/tree/main/notes) *next* to the [Astro `/src` folder](https://github.com/puf/puf.io/tree/main/src) in the Git repo, so I don't depend on Astro's default [static routes handling](https://docs.astro.build/en/guides/routing/#static-routes). 
 
-Instead I have a [single dynamic route](https://docs.astro.build/en/guides/routing/#static-ssg-mode) `/src/pages/[...slug].astro` that exports a `getStaticPaths` function that returns all of the paths for content in the `/notes` folder:
+Instead I have a single [dynamic route](https://docs.astro.build/en/guides/routing/#static-ssg-mode) `/src/pages/[...slug].astro` that exports a `getStaticPaths` function that returns all of the paths for content in the `/notes` folder:
 ```js
 export async function getStaticPaths() {
   return await getNotes();
@@ -100,7 +100,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
 }
 ```
 
-Key in this is the `slug` in the `params` array, as that matches up with the name of the dynamic page: `/src/pages/[...slug].astro`. So the above code generates one static path for each `.md` file in my `/notes` folder.
+The `slug` in the `params` array matches up with the name of the dynamic page: `/src/pages/[...slug].astro` [^5]. So the above code generates one static path for each `.md` file in my `/notes` folder.
 
 To add handling for aliases, I added the following after the existing `result.push(...)` line:
 ```js
@@ -112,11 +112,11 @@ if (note.frontmatter?.aliases) {
 }
 ```
 
-So for each value in the `aliases` array, we add another entry to the `results` list that we return from `getStaticPaths`. The string value from the frontmatter is used as the `slug` for that alias, and we then set `redirectTo` to the slug of where the content actually lives.
+So for each value in the `aliases` array of the note, we add another entry to the `results` list that we return from `getStaticPaths`. The string value from the frontmatter is used as the `slug` for that alias, and we then set `redirectTo` to the slug of where the content actually lives.
 
 ➡️ This gives us the right number of pages/routes, so "all" that's left to do is generate the HTML that tells the browser to redirect to the content page.
 
-## Routing the aliases to the correct page
+## Routing each alias to the correct page
 
 My `/src/pages/[...slug].astro` handles most content types already. To handle redirects, I added this to the end of the file:
 
@@ -129,17 +129,19 @@ My `/src/pages/[...slug].astro` handles most content types already. To handle re
 )}
 ```
 
-So: if the post is a redirect (based on the props we set earlier) this renders the `refresh` meta-header that we saw before [^5].
+So: if the slug is a redirect (based on the props we set earlier) this renders the `refresh` meta-header that we saw before [^6].
 
 ---
+
+This post has shown how I handle incoming redirects inside the frontmatter of my Markdown content files here on [puf.io](/). Feedback? Questions? Reach me through the social links at the top of the page.
 
 There is an open feature request to add [Manageable redirects in front-matter (#627)](https://github.com/withastro/roadmap/discussions/627) to Astro directly too, but I didn't feel like waiting.
 
 ---
 
-
 [^1]: There is also documentation on [dynamic redirects](https://docs.astro.build/en/guides/routing/#dynamic-redirects), but I didn't try those.
 [^2]: If you have a dynamic web server, it'd do this by returning HTTP status code 301. This won't work for GitHub Pages though, as the site is completely static there, but we'll have a look at an alternative solution below.
 [^3]: Look at that - I never realized that frontmatter like this is actually YAML. 🤯
 [^4]: Now that I know this is YAML, I finally understand why I can use both inline arrays (like here) and the one-item-per-line format. See [How to represent arrays in YAML](https://www.educative.io/answers/how-to-represent-arrays-in-yaml) if this is new to you (too).
-[^5]: Oops, I actually don't return all of the information that Astro itself does. The redirects work, but maybe that's why Google Search Console is still yelling at me. 🤔
+[^5]: In fact, the other values should probably be in `props` instead of `params` 😬.
+[^6]: Oops, I actually don't return all of the information that Astro itself does. The redirects work, but maybe that's why Google Search Console is still yelling at me. 🤔
