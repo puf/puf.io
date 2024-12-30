@@ -1,11 +1,11 @@
 ---
-title: "Astro SSG: rendering redirects on GitHub pages"
+title: "Astro SSG: handling redirects on GitHub pages"
 pubDate: "Jan 20, 2025"
 alsoOn: [https://x.com/puf]
 description: ""
 ---
 
-This site is currently generated with Astro and hosted on GitHub pages,  and deployed through GitHub Actions on each commit. So whenever I push a change to [my repo](), Astro generates a completely static site that it then deploys to GitHub pages.
+This site is currently generated with Astro and hosted on GitHub pages,  and deployed through GitHub Actions on each commit. So whenever I push a change to [my repo](https://github.com/puf/puf.io), Astro generates a completely static site that it then deploys to GitHub pages.
 
 If I make a mistake in my code or markdown, the build fails and the update is not deployed. If the build succeeds, it deploys the static site to GitHub Pages. I *love* being able to test everything locally and knowing that "nothing" I can do, can break the site once it's been deployed.
 
@@ -69,6 +69,8 @@ So now we know what aliases we want to generate for a content page, and we know 
 
 ## Routing the aliases to the correct page
 
+
+https://docs.astro.build/en/guides/routing/#static-ssg-mode
 
 
 ---
