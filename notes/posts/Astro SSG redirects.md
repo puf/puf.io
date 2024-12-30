@@ -1,6 +1,6 @@
 ---
 title: "Astro SSG: handling redirects on GitHub Pages"
-pubDate: "Jan 7, 2025"
+pubDate: "Jan 6, 2025"
 alsoOn: [https://x.com/puf]
 description: ""
 ---
