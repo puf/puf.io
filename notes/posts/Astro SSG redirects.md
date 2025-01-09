@@ -1,8 +1,8 @@
 ---
 title: "Astro SSG: handling redirects on GitHub Pages"
 pubDate: "Jan 6, 2025"
-alsoOn: [https://x.com/puf]
-description: ""
+alsoOn: [https://bsky.app/profile/puf.io/post/3lfagk6gbos22, https://www.threads.net/@frankpuf/post/DEkaEs7scKA, https://x.com/puf/status/1877007534780764411, https://c.im/@puf/113793331718758891]
+description: "I use Astro to generate a fully static site from content in Markdown files, that I then host on GitHub Pages. I want to provide incoming links/aliases inside my Markdown files, but GitHub Pages doesn't support custom 301 redirect responses. Read the full article to learn how I work around this limitation."
 ---
 
 This site is currently generated with [Astro](https://astro.build/), hosted on [GitHub Pages](https://pages.github.com/), and [deployed](https://github.com/withastro/action) through [GitHub Actions](https://docs.github.com/en/actions). So whenever I push a change to the [puf.io GitHub repo](https://github.com/puf/puf.io), I end up with a completely static site on GitHub pages.
