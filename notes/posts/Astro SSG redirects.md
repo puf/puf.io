@@ -139,7 +139,7 @@ There is an open feature request to add [Manageable redirects in front-matter (#
 
 ---
 
-[^1]: There is also documentation on [dynamic redirects](https://docs.astro.build/en/guides/routing/#dynamic-redirects), but I didn't try those.
+[^1]: Astro *does* support [dynamic redirects](https://docs.astro.build/en/guides/routing/#dynamic-redirects), but [only on dynamically rendered sites (SSR)](https://docs.astro.build/en/reference/errors/static-redirect-not-available/), not statically rendered sites (SSG).
 [^2]: If you have a dynamic web server, it'd do this by returning HTTP status code 301. This won't work for GitHub Pages though, as the site is completely static there, but we'll have a look at an alternative solution below.
 [^3]: Look at that - I never realized that frontmatter like this is actually YAML. 🤯
 [^4]: Now that I know this is YAML, I finally understand why I can use both inline arrays (like here) and the one-item-per-line format. See [How to represent arrays in YAML](https://www.educative.io/answers/how-to-represent-arrays-in-yaml) if this is new to you (too).
