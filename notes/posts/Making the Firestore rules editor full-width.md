@@ -51,7 +51,7 @@ After saving this userscript to Tampermonkey and reloading the Firebase console,
 
 ![screenshot](https://i.imgur.com/PXinlEW.png)
 
-Having the editor fit the full size of my window allows me to use my own preferred window layout management technique rather than having the Firestore rules editor dictate its own.
+OK, the window is indeed still much bigger than needed. But now I can use my own preferred window layout management technique rather than having the Firestore rules editor dictate its own.
 
 Love it? Hate it? Sound of with the social links at the top of this page!
 
