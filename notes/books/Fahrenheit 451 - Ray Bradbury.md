@@ -13,7 +13,7 @@ pageCount: 194
 
 I recall having this book on my potential reading list for English class (I was born and raised in the Netherlands), but only got to reading it now - decades later (triggered by a friend shelving it on GoodReads).
 
-First published in 1953, Fahrenheit 451 describes an alternate, dystopian world where mass consumerism has exploded and mass media consumption has driven out free thinking. Protagonist Guy Montag is a fireman, which means that he burns (illegal) books and the houses that hide them, but trigger by a chance encounter he has a change of heart.
+First published in 1953, Fahrenheit 451 describes an alternate, dystopian world where mass consumerism has exploded and mass media consumption has driven out free thinking. Protagonist Guy Montag is a fireman, which means that he burns (illegal) books and the houses that hide them, but triggered by a chance encounter he has a change of heart.
 
 I found it an interesting read for it's 70+ year old view on mass market consumption, extrapolating from TVs (new at the time) into a setup that seems a bit like cyberspace/metaverse. 
 
