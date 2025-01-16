@@ -15,4 +15,6 @@ I recall having this book on my potential reading list for English class (I was 
 
 First published in 1953, Fahrenheit 451 describes an alternate, dystopian world where mass consumerism has exploded and mass media consumption has driven out free thinking. Protagonist Guy Montag is a fireman, which means that he burns (illegal) books and the houses that hide them, but trigger by a chance encounter he has a change of heart.
 
-I found it an interesting read for it's 70+ year old view on mass market consumption, extrapolating from TVs (new at the time) into a setup that seems a bit like cyberspace/metaverse. The book is a bit overly pedantic at times and goes off in some pseudo-psychedelic word soups (which made me consider giving it 3 stars), but I found the ending, with a group of men (because: 1953) who "save" books by remembering them, interesting enough to round up to 4 stars.
+I found it an interesting read for it's 70+ year old view on mass market consumption, extrapolating from TVs (new at the time) into a setup that seems a bit like cyberspace/metaverse. 
+
+The book is a bit overly pedantic at times and goes off in some pseudo-psychedelic word soups (which made me consider giving it 3 stars), but I found the ending, with a group of men (because: 1953) who "save" books by remembering them, interesting enough to round up to 4 stars.
