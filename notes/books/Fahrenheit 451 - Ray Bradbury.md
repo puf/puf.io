@@ -11,7 +11,7 @@ pageCount: 194
 
 ![Cover of the 60th Anniversary Edition of "Fahrenheit 451" by Ray Bradbury. The design features a black book with pages resembling a matchbook, with one match lit. The background is red with bold white and black text. The title "Fahrenheit 451" is prominently displayed in the center, with the author's name, Ray Bradbury, at the bottom.](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1383718290i/13079982.jpg)
 
-I recall having this book on my potential reading list for English class (I was born and raised in the Netherlands), but only got to reading it now - decades later.
+I recall having this book on my potential reading list for English class (I was born and raised in the Netherlands), but only got to reading it now - decades later (triggered by a friend shelving it on GoodReads).
 
 First published in 1953, Fahrenheit 451 describes an alternate, dystopian world where mass consumerism has exploded and mass media consumption has driven out free thinking. Protagonist Guy Montag is a fireman, which means that he burns (illegal) books and the houses that hide them, but trigger by a chance encounter he has a change of heart.
 
