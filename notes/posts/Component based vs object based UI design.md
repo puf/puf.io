@@ -31,10 +31,10 @@ I've always used this mental separation for object oriented UI building and comp
 
 When building an object-based UI the code consists of many objects, each with a single, well-defined purpose. You then build your application by composing these objects into bigger wholes.
 
-If I look at plain Flutter code today, it reflects this object oriented model quite directly. An example of the composability is when you have a colum of UI elements that takes up part of a screen. In Flutter this'd be a `Column` object.
+If I look at plain Flutter code today, it reflects this object oriented model quite directly. An example of the composability is when you have a column of UI elements that takes up part of a screen. In Flutter this'd be a `Column` object.
 
 ```dart
-Colum(
+Column(
   children: <Widget>[
     ...
   ]
