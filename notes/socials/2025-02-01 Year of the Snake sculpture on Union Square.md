@@ -14,7 +14,7 @@ If you've been to Union Square in the past few years, you probably noticed the b
 
 ![pic](https://i.imgur.com/V2bSy7h.png)
 
-But this week I noticed a completely differently shaped statue on the [NE corner of Union Square](https://maps.app.goo.gl/oC7uKAnBHX9NJ4qt6):
+But this week I noticed a completely differently shaped statue on the [NW corner of Union Square](https://maps.app.goo.gl/oC7uKAnBHX9NJ4qt6):
 
 ![pic](https://i.imgur.com/0nYdO5s.png)
 
