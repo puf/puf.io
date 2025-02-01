@@ -7,6 +7,9 @@ alsoOn:
   - https://bsky.app/profile/puf.bsky.social/post/3lcm4leyawj2i
   - https://c.im/@puf/113603480483575889
 tags: [san-francisco, mission, 22nd-street, guerrero-street, 24th-street, caltrain, baywheels, bicycle, bike]
+locations: 
+ - [37.7575716,-122.3921634]
+ - [37.7554186,-122.3892222]
 ---
 
 *This is a post in the series on my commute from the Mission district in San Francisco to downtown Mountain View. See links to more posts in this series at the end of the post.*

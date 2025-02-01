@@ -8,6 +8,10 @@ alsoOn:
   - https://c.im/@puf/113658113239161687
 tags: [san-francisco, castro, embarcadero, ferry-building, fishermans-wharf, muni, streetcars]
 description: "San Francisco's F line operates with historic streetcards, classic trams collected from all over the world. It runs from Castro to Fisherman's Wharf (mostly) over Market street and the Embarcadero. The streetcards are all 50+ years old and beautifully restored. Read the entire story for more information."
+locations:
+  - [37.7625625,-122.4373874]
+  - [37.795471, -122.393723]
+  - [37.8071891,-122.4243766]
 ---
 
 The most famous forms of public transport in San Francisco are its cable cars: historic, manually-operated trolleys that run on a underground cable-driven system, offering scenic rides through the city's steep streets. 

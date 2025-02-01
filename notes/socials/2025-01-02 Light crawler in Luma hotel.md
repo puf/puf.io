@@ -2,12 +2,12 @@
 title: "Light crawler in LUMA hotel"
 pubDate: January 2, 2025
 alsoOn:
-  - https://www.threads.net/@frankpuf
-  - https://x.com/puf
-  - https://bsky.app/profile/puf.bsky.social
-  - https://c.im/@puf/
+  - https://bsky.app/profile/puf.io/post/3leweovgsa42l
+  - https://www.threads.net/@frankpuf/post/DEaG7wIM1Wh
+  - https://x.com/puf/status/1875557903639155029
+  - https://c.im/@puf/113770683657394039
 tags: [san-francisco, mission-bay, art, lights]
-description: ""
+location: [37.77500, -122.39022]
 aliases: []
 ---
 
