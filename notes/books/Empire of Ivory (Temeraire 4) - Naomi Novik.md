@@ -1,5 +1,5 @@
 ---
-title: Empire of Ivory (Temeraire, #4)
+title: Empire of Ivory (Temeraire 4)
 author: Naomi Novik
 startedDate: 2024/09/28
 finishedDate: 2024/10/05
