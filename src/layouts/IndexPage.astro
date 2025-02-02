@@ -20,6 +20,37 @@ function hasReview(note) {
 }
 
 const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/readme.md$/.test(note.props.file) });
+
+// TODO: Create separate maps for [san-francisco, new-york], use that to also generate the filenames
+let locationString = '';
+notes.slice(0, 9).forEach((note, index) => {
+	if (note.props.frontmatter?.location) {
+		locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.location.join(',')}`;
+	}
+	if (note.props.frontmatter?.locations) {
+		locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
+	}
+});
+if (locationString.length > 0) {
+	import path from 'path';
+	import fs from "fs/promises";
+
+	const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
+
+	const response = await fetch(url);
+	const blob = await response.blob();
+
+	const data = new Uint8Array(await blob.arrayBuffer());
+
+	const filename = `map-${type}-san-francisco.png`;
+
+	// TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
+	["dist", "public"].forEach(async (dir) => {
+		await fs.mkdir(dir, { recursive: true });
+		await fs.writeFile(path.join(process.cwd(), dir, filename), data);
+	});
+	console.log(`Image from ${url} downloaded and saved to ${filename} in (dist and public)`);
+}
 ---
 
 <html lang="en">
@@ -78,19 +109,53 @@ const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/
 					<hr />
 					<div class="list">
 						<div>There are {notes.length} {type}:</div>
-						<ol>
-							{notes.map((note) => (
-								<li>
-								{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-								<a href={note.params.slug}>{note.props.frontmatter.title}</a>
-								{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
-								{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-								{type === 'books' && "Finished on: "}{note.params.pubDate}
-								{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
-								</li>
-							))}
-						</ol>
-						<hr/>
+						{locationString.length === 0 && (
+							// If there's no map, show one long list
+							<ol>
+								{notes.map((note) => (
+									<li>
+										{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+										<a href={note.params.slug}>{note.props.frontmatter.title}</a>
+										{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+										{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+										{type === 'books' && "Finished on: "}{note.params.pubDate}
+										{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+									</li>
+								))}
+							</ol>
+						)}
+						{locationString.length > 0 && (
+							// If there are locations, show recent posts, a map of them, and then the rest
+							<ol>
+								{notes.slice(0, 9).map((note) => (
+									<li>
+										{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+										<a href={note.params.slug}>{note.props.frontmatter.title}</a>
+										{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+										{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+										{type === 'books' && "Finished on: "}{note.params.pubDate}
+										{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+									</li>
+								))}
+							</ol>
+							<div class="map">
+  							<img src={`/map-${type}-san-francisco.png`} />
+							</div>
+							<ul>
+								{notes.slice(9).map((note) => (
+									<li>
+										{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+										<a href={note.params.slug}>{note.props.frontmatter.title}</a>
+										{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+										{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+										{type === 'books' && "Finished on: "}{note.params.pubDate}
+										{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+									</li>
+								))}
+							</ul>
+							<hr/>
+						)}
+					<hr/>
 					</div>
 					<div class="date">
 						{
@@ -99,7 +164,7 @@ const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/
 							</div>
 						}
 					</div>
-			</div>
+				</div>
 			</article>
 		</main>
 		<Footer {slug} />
