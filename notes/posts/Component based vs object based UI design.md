@@ -1,7 +1,7 @@
 ---
 title: "UI design: object oriented vs component based"
 pubDate: "January 22, 2025"
-alsoOn: [https://bsky.app/profile/puf.io/post/3lggji5dp4t23, https://www.threads.net/@frankpuf/post/DFLaefmM_Yh, https://x.com/puf/status/1882497117840630044, https://c.im/@puf/113879107093629005, https://www.linkedin.com/posts/puf_httpspufiopostscomponent-based-vs-object-based-ui-design-activity-7288262961742168065-kObq/]
+alsoOn: [https://bsky.app/profile/puf.io/post/3lggji5dp4t23, https://www.threads.net/@frankpuf/post/DFLaefmM_Yh, https://x.com/puf/status/1882497117840630044, https://c.im/@puf/113879107093629005, https://www.linkedin.com/posts/puf_httpspufiopostscomponent-based-vs-object-based-ui-design-activity-7288262961742168065-kObq/, https://bsky.app/profile/did:plc:r5shvvsyaq3kfatc3novwud6/post/3lhcqrlpfvs2o, https://www.linkedin.com/posts/puf_we-have-to-be-honest-flutter-is-a-verbose-activity-7292330961357152256-2XWg?utm_source=share&utm_medium=member_desktop]
 description: "Building a UI in object-oriented code often leads to deeply nested object structures, where each object has a single responsibility. Building a UI in a visual component-based builder typically leads to shallower structures with fewer objects, whose behavior is controlled by properties."
 ---
 
