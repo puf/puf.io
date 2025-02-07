@@ -1,7 +1,7 @@
 ---
 title: "Adding a static map to a statically rendered Astro site"
 pubDate: "Feb 5, 2025"
-alsoOn: []
+alsoOn: [https://www.threads.net/@frankpuf/post/DFvZiPIsUNf, https://x.com/puf/status/1887561649021727093, https://bsky.app/profile/puf.io/post/3lhjnzoq55c2j, https://c.im/@puf/113958239924789047, https://www.linkedin.com/feed/update/urn:li:activity:7293327410945564676/]
 description: "Posts on puf.io/socials are often linked to a specific location. This article describes how we include this geo-information in the (frontmatter of the) markdown of each post, how we then generate a static map for recent posts (with the Google Maps Static API), and how this process is integrated into Astro's static site generation (SSG) with GitHub Actions and deployed to GitHub Pages. Read the full article to learn more..."
 ---
 
