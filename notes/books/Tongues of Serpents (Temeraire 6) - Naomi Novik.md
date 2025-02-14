@@ -2,7 +2,7 @@
 title: "Tongues of Serpents (Temeraire 6)"
 author: "Naomi Novik"
 startedDate: "2025/02/07"
-finishedDate: "2025/07/12"
+finishedDate: "2025/02/12"
 rating: 4
 edition: "Kindle Edition"
 link: https://www.goodreads.com/book/show/7818666
@@ -15,4 +15,4 @@ Temeraire by Naomi Novik is a series of historical fantasy books that reimagine 
 
 Tongues of Serpents is the sixth book in the nine book series, and plays out in Australia - where Laurence and Temeraire are exiled. They face the by now usual political intrigue, a trek across the continent, a rebellion for control of the colony, and a potential war with China. So yes, there's plenty going on in these pages.
 
-New dragons pop up in this books, but I missed some of the dragons of the previous few books in the series. I hope the author manages to tie all of these separate characters and subplots together in the remaining 3 books in the series - that I look forward to reading.
+New dragons pop up in this book, but I missed some of the dragons of the previous few books in the series. I hope the author manages to tie all of these separate characters and subplots together in the remaining 3 books in the series - that I look forward to reading.
