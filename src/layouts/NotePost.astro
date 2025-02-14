@@ -115,7 +115,7 @@ const location = frontmatter?.location || frontmatter?.locations?.[0]
 					</div>
 					<slot />
 					{location && (
-						<p>Location on  
+						<p>Location of this post on  
 							<a href={`https://www.google.com/maps/@${location[0]},${location[1]},17z`} target="_blank">
 								Google Maps
 								<svg width="12px" height="12px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">

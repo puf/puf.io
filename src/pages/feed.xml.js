@@ -29,7 +29,7 @@ export async function GET(context) {
         const content = sanitizeHtml(note.props.compiledContent(), {
           allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
         });
-        if (content.length < 5_000) item.description = content + "\n\n";
+        if (content.length < 20_000) item.description = content + "\n\n";
       }
       return item;
     }),
