@@ -7,7 +7,9 @@ alsoOn:
   - https://bsky.app/profile/puf.bsky.social
   - https://c.im/@puf/
 tags: [san-francisco, muni, public-transport, trolley-bus]
-location: [37.7557284,-122.4190914]
+locations:
+  - [37.754776,-122.4234855]
+  - [37.74791,-122.431589]
 ---
 
 Reading this article recently about trolley busses: [Get Wired (Again): Trolleybuses and Trolleytrucks][ltm-trolley], I found myself somewhat surprised that San Francisco was in there as a city with trolley busses. And then I found myself surprised that I was surprised, because it's not hard to spot trolley busses in San Francisco. I clearly need to pay better attention as I walk around the city. 🤯
