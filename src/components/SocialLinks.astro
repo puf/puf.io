@@ -68,9 +68,12 @@ const { align } = Astro.props;
 		text-decoration: none;
 		display: flex;
 	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+    
+    @media (max-width: 720px) {
+        /* Hide social links on small screens */
+        /* TODO: but always show them in footer, so just hide them in header */
+        .social-links {
+            display: none;
+        }
+    }
 </style>
