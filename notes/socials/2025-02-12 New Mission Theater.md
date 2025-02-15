@@ -10,7 +10,7 @@ tags: [san-francisco, mission-district, alamo-drafthouse]
 location: [37.756222,-122.4216974]
 ---
 
-![pic](https://i.imgur.com/V2bSy7h.png)
+![pic](https://i.imgur.com/AwRAzQL.png)
 
 The [New Mission Theater](https://en.wikipedia.org/wiki/New_Mission_Theater,_San_Francisco) on Mission street in San Francisco has had many different uses since it was constructed in 1916. It's been in use as an [Alamo Drafthouse](https://maps.app.goo.gl/jYktcSjmWhQ5HDfq8) movie theater since its renovation 2015, but it's been a children's theater and a furniture store too.
 
