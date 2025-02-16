@@ -2,10 +2,10 @@
 title: "🌁 New Mission Theater"
 pubDate: February 13, 2025
 alsoOn:
-  - https://www.threads.net/@frankpuf
-  - https://x.com/puf
-  - https://bsky.app/profile/puf.bsky.social
-  - https://c.im/@puf/
+  - https://www.threads.net/@frankpuf/post/DGG_DotM3jw
+  - https://x.com/puf/status/1890881043814568272
+  - https://bsky.app/profile/puf.io/post/3liap3juaia2v
+  - https://c.im/@puf/114010106383480558
 tags: [san-francisco, mission-district, alamo-drafthouse]
 location: [37.756222,-122.4216974]
 ---
