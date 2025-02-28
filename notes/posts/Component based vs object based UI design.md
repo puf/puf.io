@@ -45,7 +45,7 @@ If there’s more content than fits the available space, you want that column to
 ```dart
 body: Center(
   child: SingleChildScrollView(
-    child: Colum(
+    child: Column(
       children: <Widget>[
         ...
       ]
@@ -96,18 +96,18 @@ Under the hood, this property translates 1:1 to the Flutter code we saw earlier:
 
 ```dart
 body: Center(
-  child: Colum(
+  child: Column(
     children: <Widget>[
       ...
     ]
   ),
 ),
 ```
-And when you toggle Scrollable on, FlutterFlow generates a `SingleChildScrollView` around the Flutter `Colum` widget.
+And when you toggle Scrollable on, FlutterFlow generates a `SingleChildScrollView` around the Flutter `Column` widget.
 ```dart
 body: Center(
   child: SingleChildScrollView(
-    child: Colum(
+    child: Column(
       children: <Widget>[
         ...
       ]
@@ -116,7 +116,7 @@ body: Center(
 ),
 ```
 
-So depending on how you set its properties, the single `Colum` in FlutterFlow may generate multiple Flutter widgets. In fact, our `Colum` higher-level component generates a `SingleChildScrollView` > `Column` branch in our Flutter widget tree. And if we change the padding and alignment, we’ll see even more Flutter widgets coming out of our single `Colum` component.
+So depending on how you set its properties, the single `n` in FlutterFlow may generate multiple Flutter widgets. In fact, our `Column` higher-level component generates a `SingleChildScrollView` > `Column` branch in our Flutter widget tree. And if we change the padding and alignment, we’ll see even more Flutter widgets coming out of our single `Column` component.
 
 I find this a useful distinction between code based UI building and visual UI building: **in a visual UI builder we work with fewer, higher-level objects**, which I’ve called components here. 
 
