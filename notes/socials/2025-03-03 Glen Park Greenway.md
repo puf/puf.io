@@ -16,7 +16,7 @@ San Francisco is a wonderful city for those who like to walk and explore - not j
 
 ![map of Glen Park Greenway](https://i.imgur.com/hPrnOwa.png)
 
-One of the new-to-us greenways we discovered when we first did the crosstown trail in 2019 was the [Glen Park Greenway][gpg], a 3-block strip right below Bossworth street from Brompton avenue to Burnside Avenue. If you take the Bart to Glen Park station, you can get to the greenway in a minute and then walk to Glen Canyon Park mostly without any traffic.
+One of the new-to-us greenways we discovered when we first did the crosstown trail in 2019 was the [Glen Park Greenway][gpg], a 3-block strip right below Bossworth street from Brompton avenue to Burnside Avenue. If you take the BART to Glen Park station, you can get to the greenway in a minute and then walk to Glen Canyon Park mostly without any traffic.
 
 ![pic from entrance of greenway](https://i.imgur.com/3H9eG0e.png)
 After 3 blocks on the greenway you encounter this impossible-to-miss Burnside Avenue mural and the mosaic stairs above it.
