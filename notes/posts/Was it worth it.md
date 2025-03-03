@@ -1,0 +1,43 @@
+---
+title: "Was it worth it? Or: giving feedback that helps people grow"
+pubDate: "Mar 4, 2025"
+alsoOn: []
+---
+
+Back in 2015 I had just started at Firebase, and we were still ironing out what my role should be. 
+
+One of the options would be to be a public speaker at conferences, but (while I had spoken at tech events before) I always felt out of place when I attended a larger tech conference. So we decided that I'd go to [AnDevCon in Boston][adc] (a large Android conference series that has folded since then) as an attendee, and would speak at a local meetup.
+
+The conference itself was quite big and well organized, but as an attendee I still found myself a bit lost in it. But when it was my turn to speak, it turns out the Boston GDG had booked me on the main stage of the conference (just after the conference hours, so folks could get in without a ticket) - and I really had a blast live coding an Android chat app in 40 minutes.
+
+![](https://i.imgur.com/va65I6y.png)
+*I really wish I could fine a video of this talk in July 2015.*
+
+When I got back into the office after the conference, my manager came up: 
+
+* James: "So puf, was it worth it?"
+* puf: "Well, the ticket was $700 and the flight..."
+* James: "That's not what I mean, was it worth your time?"
+
+Wow... rude much?
+
+* puf: "Uhm... well, there were 80 people in the room and they seemed to like it. Oh, and I might not be too bad at it, so..."
+* James: "Good. It sounds like you spent your time wisely then."
+
+And he walked away without waiting for me to answer further.
+
+With this simple interactions, James taught me *how* to think about my job, rather than *what* to think about my task.
+
+### Teach people *how* to think, not *what* to think
+
+Also note how my manager didn't even let me finish the justification of *what* I'd done. Once he was satisfied that I was thinking about the right things and heard my (still hessitant) "yes, this was a good use of my time", he made it clear he trusted my judgement. I have no doubt he would have given me the same trust if I'd leaned towards a "no" answer. He wanted me to own my choices and think about my work above the level of an individual task.
+
+This was pivotal in my early DevRel carreer, as it taught me to think of my time as my most limiting factor and to trust my own judgement on what to spend that time on. In on a role where you usually have an almost infinite set of useful things you can do, picking the most impactful task is hard but crucial.
+
+### Do what matters most and the rest will follow
+
+But the interaction also told me a lot about how to be most helpful to the people around me. Rather than telling them how I think about the task/project they're working on, I try to help them put that task/project in a broader perspective.
+
+I find myself regularly coaching and guiding people in similar choices since then, and often think back of this interaction. Thanks James!
+
+[adc]: https://www.meetup.com/boston-android/events/223364440/?eventOrigin=group_events_list
