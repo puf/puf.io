@@ -1,5 +1,5 @@
 ---
-title: "Glen Canyon Park - a canyon in the San Francisco"
+title: "Glen Canyon Park - a canyon in San Francisco"
 pubDate: March 7, 2025
 alsoOn:
   - https://www.threads.net/@frankpuf
