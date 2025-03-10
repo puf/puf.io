@@ -124,7 +124,7 @@ blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 0px;
-	font-size: 1.15em;
+	font-size: 1em;
 }
 hr {
 	border: none;
