@@ -29,7 +29,7 @@ export function getPubDateForNote(note) {
 
 export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
   // Get all notes recursively from the notes directory
-  const notes = await Astro.glob("../../notes/**/*.md");
+  const notes = await Astro.glob("../../notes/**/*.{md,mdx}");
   const nowDate = new Date();
 
   // Convert notes to more usable type, and sort them

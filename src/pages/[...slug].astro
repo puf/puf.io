@@ -4,6 +4,7 @@ import NotePost from '../layouts/NotePost.astro';
 import IndexPage from '../layouts/IndexPage.astro';
 import { getNotes, getPubDateForNote, getSlugForNote, getTypeForNote } from '../components/Notes.astro';
 import type { MarkdownInstance } from "astro";
+import PullQuote from '../components/PullQuote.astro';
 
 export async function getStaticPaths() {
   return await getNotes();
@@ -27,8 +28,8 @@ console.log(`Rendering ${post.file} with pubDate: ${pubDate}, isReadme: ${isRead
 ---
 
 {(pubDate &&
-<NotePost {...post} pubDate={pubDate} title={post.frontmatter.title} description={post.frontmatter.description}>
-  <Content />
+<NotePost {...post} pubDate={pubDate} title={post.frontmatter.title} description={post.frontmatter.description} >
+  <Content  components={{ PullQuote }}/>
 </NotePost>
 )}
 {( isReadme && 

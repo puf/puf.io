@@ -1,0 +1,54 @@
+---
+const { align, author } = Astro.props;
+---
+<aside class="pquote">
+  <blockquote>
+    <slot/>
+  </blockquote>
+  <figcaption>— <cite>{author}</cite></figcaption>
+</aside>
+<style define:vars={{ align }} is:global>
+  .pquote {
+    float: var(--align);
+    width: 40%;
+    font-size: 150%;
+    line-height: 0.9;
+    font-style: italic;
+    padding: 13px;
+  }
+  .pquote[style*="--align: left"] blockquote, .pquote[style*="--align: left"] figcaption {
+    padding-right: 20px;
+    border-left: 0px;
+    border-right: 4px solid var(--accent);
+  }
+  .pquote figcaption {
+    border-left: 4px solid var(--accent);
+    position: relative;
+    top: -3rem;
+    text-align: right;    
+  }
+  .pquote blockquote:after, blockquote:before {
+    font-size: 8.0rem;                                 
+    color: silver;
+  }
+  .pquote blockquote:before {
+    content: open-quote;
+    position: relative;
+    top: 3.5rem;
+  }
+
+  .pquote blockquote:after {
+    content: close-quote;
+    display: block;
+    text-align: right;
+  }
+
+  .pquote blockquote p {
+    margin: 0;
+  }
+
+  .pquote blockquote p:first-letter {
+      font-size: 3em;
+      font-weight: bold;
+  }
+</style>
