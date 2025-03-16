@@ -5,7 +5,7 @@ export const notesPath = path.join(process.cwd(), "notes");
 export function getSlugForNote(note) {
   return (note.file || "")
       .replace(notesPath, "") // remove local path
-      .replace(/\.md$/, "") // remove .md extension
+      .replace(/\.(md|mdx)$/, "") // remove .md or .mdx extension
       .toLowerCase().replace(/\s/g, '-')  // replace spaces with -
       .split("").filter(c => "()%".indexOf(c) == -1).join("") // remove some chars
       .replace(/_readme$/, "") // treat _readme.md like an index.html
