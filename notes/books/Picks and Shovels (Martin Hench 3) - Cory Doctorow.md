@@ -16,3 +16,8 @@ This is the third book in Cory Doctorow's [series about forensic accountant Mart
 Martin flunks out of MIT, discovers that computers (and particularly: spreadsheets!) are his passion, then moves to California to get involved with a woman-founded tech startup that's taking on their former employer - a computer pyramid scheme company run by... hold on... wait for it... a priest, a rabbi, and a bishop. 😂
 
 As usual, Doctorow covers a lot of the tech of the era, and explains the malicious schemes in great detail. Think printers that will only take the vendor's paper, floppy drives that reject someone else's disks, etc. It's not completely Ready Player One with its pop culture references, but it's close enough for my taste.
+
+My reviews of the previous books in this series:
+
+* [The Bezzle (Martin Hench #2)](/books/the-bezzle-martin-hench-2---cory-doctorow)
+* [Red Team Blues (Martin Hench #1)](/books/red-team-blues-martin-hench-1---cory-doctorow)
