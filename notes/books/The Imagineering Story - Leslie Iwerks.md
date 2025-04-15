@@ -9,6 +9,8 @@ link: "https://www.goodreads.com/book/show/62380271"
 pageCount: 832
 ---
 
+![Book cover of The Imagineering Story: The Official Biography of Walt Disney Imagineering by Leslie Iwerks. The title is overlaid on a cloud shaped like Mickey Mouse’s head against a blue sky. Below, a Disney castle is shown at sunset with warm and purple tones in the sky.](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1662978544i/62380271.jpg)
+
 This long book about Disney's imagineering covers the famous department from its inception in 1952. It tells the story of starting Disneyland through interviews with the original team members and from other source materials, then goes pretty much year-by-year, project-by-project all the way through to the book's publishing in 2022.
 
 There is an amazing wealth of information in this book, about all the inventions of the team and it was fascinating to read about their work on immersive story telling, [projection mapping][1] (started with the Haunted Mansion in the 60s and then hugely improved in the 90s), and trackless ride systems (Tower of Terror).
