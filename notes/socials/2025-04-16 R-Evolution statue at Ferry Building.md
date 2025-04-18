@@ -7,7 +7,8 @@ alsoOn:
   - https://bsky.app/profile/puf.bsky.social
   - https://c.im/@puf/
 tags: [san-francisco, ferry-building, r-evolution]
-location: [37.7949375,-122.3970271]
+aliases: ["/socials/2024-04-16-r-evolution-statue-at-ferry-building"]
+location: [37.7644139,-122.4054773]
 ---
 
 Last week I was in Las Vegas en happened to notice this statue in [The Park][the-park] right off of The Strip:
