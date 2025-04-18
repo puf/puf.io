@@ -26,10 +26,23 @@ export async function GET(context) {
         description: note.props.frontmatter?.description,
       };
       if (!item.description || item.description.length === 0) {
-        const content = sanitizeHtml(note.props.compiledContent(), {
-          allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
-        });
-        if (content.length < 20_000) item.description = content + "\n\n";
+        try {
+          let content;
+          if (note.props.file.endsWith('.mdx')) {
+            // TODO: get the renderable (or maybe unrendered) content
+            content = sanitizeHtml(note.props.compiledContent(), {
+              allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
+            });
+          } else {
+            content = sanitizeHtml(parser.render(note.props.compiledContent()), {
+              allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
+            });
+          }
+          if (content.length < 20_000) item.description = content + "\n\n";
+        } catch (e) {
+          // Note: by catching the error, we still include the item but without its main content
+          console.error(`Failed to sanitize content for ${note.params.slug}`, e);
+        }
       }
       return item;
     }),
