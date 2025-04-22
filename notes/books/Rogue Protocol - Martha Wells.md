@@ -14,7 +14,7 @@ pageCount: 158
 
 The Murderbot Diaries series by Martha Wells follows a rogue security robot with a hacked governor module, navigating human relationships and corporate intrigue while grappling with identity, autonomy, and its desire to just watch TV.
 
-I started reading this because of a team mates recommendation, but found the first book hard to get into. It got easier on the second book and by now I am fully intrigued with the over-arching plot of the series. 
+I started reading this because of a team mate's recommendation, but found the first book hard to get into. It got easier on the second book and by now I am fully intrigued with the over-arching plot of the series. 
 
-I think what may have put me off initially is the writing style, as it takes the "diary" part of the title quite literally. I'm still not a fan of the writing style, but like the plot enough to want to know how things develop. Plus: murderbot's commentary on both humans and other bots is at times hilarious.
+I think what may have put me off initially is the writing style, as it takes the "diary" part of the title quite literally. I'm still not a fan of the writing style, but like the plot enough to want to know how things develop. Plus: murderbot's commentary on both humans and on other bots is at times hilarious.
 
