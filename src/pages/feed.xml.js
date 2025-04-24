@@ -13,7 +13,7 @@ export async function GET(context) {
       note.params.pubDate?.length > 0 && 
       !/readme.md$/.test(note.props.file) && 
       !/^_/.test(note.props.file.split('/').pop()) &&
-      new Date(note.params.pubDate) > new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
+      new Date(note.params.pubDate) > new Date(Date.now() - 90 * 24 * 60 * 60 * 1000)
     })
   );
 
@@ -23,7 +23,6 @@ export async function GET(context) {
     site: context.site,
     items: notes.map((note) => {
       const type = getTypeForNote(note.props);
-      console.log(note.props.file);
       let title = note.props.frontmatter.title;
       if (type === 'books') {
         title += ` - ${note.props.frontmatter.author} (Rating: ${renderStars(note.props.frontmatter?.rating)})`;
