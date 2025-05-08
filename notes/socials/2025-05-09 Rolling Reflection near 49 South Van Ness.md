@@ -8,7 +8,7 @@ alsoOn:
   - https://c.im/@puf/
 tags: [san-francisco, soma, market-street, mission-street, van-ness, sculptures]
 location: [37.774208, -122.4211439]
-aliases: []
+aliases: [/socials/2025-05-09-rolling-reflection-on-near-49-south-van-ness]
 ---
 
 As I was walking home from Pacific Height to the Mission in San Francisco recently, I grabbed coffee at the [Blue Bottle on 55 S Van Ness](https://maps.app.goo.gl/XySXxLPE26s4srXV7) and as I exited the shop I noticed these fascinating art works:
