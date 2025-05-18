@@ -2,10 +2,11 @@
 title: "Colorful seal/sea lion statues on Fisherman's Wharf"
 pubDate: May 16, 2025
 alsoOn:
-  - https://www.threads.net/@frankpuf
-  - https://x.com/puf
-  - https://bsky.app/profile/puf.bsky.social
-  - https://c.im/@puf/
+  - https://www.threads.com/@frankpuf/post/DJzhUfksg2k
+  - https://x.com/puf/status/1924169390531977720
+  - https://bsky.app/profile/puf.io/post/3lphoplzrx32k
+  - https://c.im/@puf/114530296407665868
+  - https://www.linkedin.com/posts/puf_walking-on-san-franciscos-fishermans-wharf-activity-7329937229072474112-bh20
 tags: [san-francisco, fishermans-wharf, pier-39, sculptures, statues, seals]
 location: [37.808701,-122.4158329]
 aliases: []
