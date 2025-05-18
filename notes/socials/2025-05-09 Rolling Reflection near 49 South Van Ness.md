@@ -2,9 +2,9 @@
 title: "Rolling Reflection near 49 South Van Ness"
 pubDate: May 9, 2025
 alsoOn:
-  - https://www.threads.net/@frankpuf
-  - https://x.com/puf
-  - https://bsky.app/profile/puf.bsky.social
+  - https://www.threads.com/@frankpuf/post/DJqCfiPs9Ey
+  - https://x.com/puf/status/1922835394745254103
+  - https://bsky.app/profile/puf.io/post/3lp6gevq7jv2f
   - https://c.im/@puf/
 tags: [san-francisco, soma, market-street, mission-street, van-ness, sculptures]
 location: [37.774208, -122.4211439]
