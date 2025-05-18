@@ -30,6 +30,14 @@ For more details about these statues, read the SFGate article on [why 30 sea lio
 
 I was mostly drawn to the circle if colorful, numbered icons that this specific statue has on its chest. I couldn't quickly find any more info on this though, so if anyone knows what they mean - hit me up on the links at the top of this page 🔝.
 
+---
+
+*Update*: It turns out those numbered icons are [Sustainable Development Goals (SDGs)][unicef-goals] that were adopted by the United Nations back in 2015 to end poverty, reduce inequality and build more peaceful, prosperous societies by 2030. You can find more about these goals and the progress on the UNICEF site: [Using data to achieve the Sustainable Development Goals (SDGs) for children][unicef-sdgs].
+
+
+
  [fishermans-wharf]: https://www.fishermanswharf.org/
  [skystar]: /socials/2024-12-17-skystar---san-francisco-ferris-wheel
  [sfgate-article]: https://www.sfgate.com/places/article/thirty-sea-lions-San-Francisco-Pier-39-Embarcadero-14995999.php
+ [unicef-goals]: https://www.unicef.org/sustainable-development-goals
+ [unicef-sdgs]: https://data.unicef.org/sdgs/
