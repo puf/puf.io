@@ -17,7 +17,7 @@ Local shops and restaurants get into it too, because the murals combine advertis
 
 ---
 
-When Peruvian restaurant Limon closed its Van Ness location in early January, it didn't take long for the windows to start showing "Brasa Boys - coming soon".
+When Peruvian restaurant [Limon closed its Van Ness location](https://missionlocal.org/2025/01/limon-on-south-van-ness-is-closed-at-least-temporarily/) in early January, it didn't take long for the windows to start showing "Brasa Boys - coming soon".
 
 ![pic1](https://i.imgur.com/tw29yt7.png)
 
