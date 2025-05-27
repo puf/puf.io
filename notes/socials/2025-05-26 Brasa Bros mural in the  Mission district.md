@@ -8,7 +8,7 @@ alsoOn:
   - https://c.im/
 tags: [san-francisco, mission, mission-district, mural, mural-art, mission-murals]
 location: [37.757111,-122.4193229]
-aliases: []
+aliases: [/socials/2025-05-26-brasa-bros-mural-in-the--mission-district-copy/]
 ---
 
 San Francisco in general is known for its many murals, but the Mission District especially has turned this art form into its greeting card. Every week new murals get unveiled, often replacing previous ones.
