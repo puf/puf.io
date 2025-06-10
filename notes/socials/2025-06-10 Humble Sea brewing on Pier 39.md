@@ -2,10 +2,10 @@
 title: "Humble Sea brewing on Pier 39 in San Francisco"
 pubDate: June 10, 2025
 alsoOn:
-  - https://www.threads.com/@frankpuf
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io/
-  - https://c.im/
+  - https://www.threads.com/@frankpuf/post/DKVD-mDMPWq
+  - https://x.com/puf/status/1928890904594559478
+  - https://bsky.app/profile/puf.io/post/3lqigy36lyi2n
+  - https://c.im/@puf/114604011212044334
 tags: [san-francisco, pier-39, fishermans-wharf, humble-sea]
 location: [37.8100337,-122.4109474]
 aliases: []
