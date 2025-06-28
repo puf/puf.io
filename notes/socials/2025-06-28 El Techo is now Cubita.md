@@ -13,9 +13,9 @@ aliases: []
 
 ![El techo](https://i.imgur.com/Qo7ACiZ.png)
 
-Having a drink and/or bite on the rooftop of El Techo has long been a staple of many a must-do-in-sf list. The Mission District rooftop was a great way to combine scenic views of the San Francisco skyline with some hipster staring/sharing, and good drinks.
+Having a drink and/or bite on the rooftop of [El Techo][eltecho] has long been a staple of many a must-do-in-sf list. The Mission District rooftop was a great way to combine scenic views of the San Francisco skyline with some hipster staring/sharing, and good drinks.
 
-Well... not anymore! El Techo closed in May and was transformed into a new rooftop spot: Cubita.
+Well... not anymore! [El Techo closed][eltecho-closed] in May and was transformed into a new rooftop spot: Cubita.
 
 ![Cubita mural](https://i.imgur.com/c9p5rcF.png)
 
@@ -23,4 +23,8 @@ Well... not anymore! El Techo closed in May and was transformed into a new rooft
 
 ![Fedora's](https://i.imgur.com/BBRJ0k7.png)
 
-So go check out the new Cubita bar/restaurant on 2516 Mission Street in San Francisco’s Mission District. New name, new food menu, but same vibe and gorgeous views!
+So go check out the new [Cubita bar/restaurant on 2516 Mission Street][cubita] in San Francisco’s Mission District. New name, new food menu, but same vibe and gorgeous views!
+
+[eltecho]: https://maps.app.goo.gl/HtJBMh7pEWDKJjXbA
+[eltecho-closed]: https://sfstandard.com/2025/04/14/el-techo-closing/
+[cubita]: https://www.cubitasf.com/
