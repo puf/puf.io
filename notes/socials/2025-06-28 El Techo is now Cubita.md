@@ -2,10 +2,10 @@
 title: "El Techo is now Cubita"
 pubDate: June 28, 2025
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io/
-  - https://c.im/@puf
+  - https://www.threads.com/@frankpuf/post/DLcyA7-M0FW
+  - https://x.com/puf/status/1938984632180945217
+  - https://bsky.app/profile/puf.io/post/3lsoi7x5seb2e
+  - https://c.im/@puf/114761724048362309
 tags: [san-francisco, mission, cubita, el-techo]
 location: [37.7564857,-122.4194367]
 aliases: []
