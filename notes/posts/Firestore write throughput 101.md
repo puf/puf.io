@@ -34,3 +34,5 @@ Some great additional articles in the Firestore documentation to read if you rea
 
 * [Understand reads and writes at scale](https://firebase.google.com/docs/firestore/understand-reads-writes-scale)
 * [Understand real-time queries at scale](https://firebase.google.com/docs/firestore/real-time_queries_at_scale)
+
+There's much more to say about Firestore of course, so I expect I'll do more of these  "facts about <topic>" lists.
