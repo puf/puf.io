@@ -31,7 +31,7 @@ The entire hotel gave me Disney vibes, despite not being about any cartoon chara
 
 ![](https://i.imgur.com/iLGNPQs.png)
 
-There are old car experiments, lots of vintage posters, and a rooftop pool with a view of the planes. Combine that with a constant barrage of 60s tunes and I had a blast: so go explore!
+There are old car experiments, lots of vintage posters, and a rooftop pool with a view of the planes. Combine that with a constant barrage of 60s tunes and I had a blast: so go explore! Just keep an eye out on your boarding time, as the hotel is before security.
 
 ![Oval-shaped split-flap display at an airport showing "I ❤️ NY" using flight-style lettering under "Departs" and "Arrives" header](https://i.imgur.com/3kqLDGl.png)
 
