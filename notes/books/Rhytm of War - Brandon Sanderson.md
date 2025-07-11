@@ -17,8 +17,10 @@ I'm not sure where to start on this review of book 4 though. On the one hand, I'
 
 I love it when characters get added depth, something that's hard to do in a 300-page book. But when we're still delving deeper into the same characters after well over 4,000 pages, it is just not my cup of tea anymore. I'd like to see some more plot advancement at this point please!
 
-That said, the plot advancement that is there is wonderful and the characters remain interesting - although at times now their development is somewhat predictable. It's all heading to a series climax, which the sanderlanche[1] of the last 100 or so pages serves as a strong prelude.
+That said, the plot advancement that is there is wonderful and the characters remain interesting - although at times now their development is somewhat predictable. It's all heading to a series climax, which the sanderlanche[^1] of the last 100 or so pages serves as a strong prelude.
 
 I rounded up in my rating, because I still really like the series. I'm eager to finish the story, but also daunted by the prospect of getting through the final 1000+ pages.
 
-[1]: A sanderlanche is the affectionate nickname for the high-speed ending that apparently is common in Sanderson's books. See https://www.reddit.com/r/brandonsanderson/comments/hdb8iq/can_someone_please_explain_what_sanderlanche_is/
+[^1]: A [sanderlanche][sanderlink] is the affectionate nickname for the high-speed ending that apparently is common in Sanderson's books.
+
+[sanderlink]: https://www.reddit.com/r/brandonsanderson/comments/hdb8iq/can_someone_please_explain_what_sanderlanche_is/
