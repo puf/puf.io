@@ -1,6 +1,6 @@
 ---
 title: "Hearts in San Francisco - 100+ large statues"
-pubDate: July 13, 2025
+pubDate: July 12, 2025
 alsoOn:
   - https://www.threads.com/@frankpuf/
   - https://x.com/puf/
@@ -10,7 +10,8 @@ tags: [san-francisco, hearts-in-san-francisco, public-art, union-square, francis
 locations: 
  - [37.7977236,-122.4305839] 
  - [37.785997,-122.422302]
-   - [37.788185, -122.408212]
+ - [37.788185, -122.408212]
+aliases: [/socials/2025-07-13-hearts-in-san-francisco-statues]
 ---
 
 If you've ever spent some time in San Francisco you've probably seen some of these large heart statues, like this one on Union Square:
