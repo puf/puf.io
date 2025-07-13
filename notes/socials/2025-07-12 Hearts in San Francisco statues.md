@@ -2,10 +2,11 @@
 title: "Hearts in San Francisco - 100+ large statues"
 pubDate: July 12, 2025
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io/
-  - https://c.im/@puf/
+  - https://www.threads.com/@frankpuf/post/DMBxibwM2Jd
+  - https://x.com/puf/status/1944190687097799054
+  - https://bsky.app/profile/puf.io/post/3ltsm7hymlh26
+  - https://c.im/@puf@c.im/114843069695635852
+  - https://www.linkedin.com/posts/puf_if-youve-ever-walked-around-san-francisco-activity-7349956670581587970-mmjJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAA6E1MBzbF9oPv2cJb9vbv4cyPR-rhR1Zs
 tags: [san-francisco, hearts-in-san-francisco, public-art, union-square, francisco-park, sutter-health, van-ness]
 locations: 
  - [37.7977236,-122.4305839] 

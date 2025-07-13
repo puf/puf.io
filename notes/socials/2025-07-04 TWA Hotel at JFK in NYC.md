@@ -3,9 +3,9 @@ title: "Back to the 60s: TWA Hotel on JFK airport terminal 5"
 pubDate: July 4, 2025
 alsoOn:
   - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io/
-  - https://c.im/@puf/
+  - https://x.com/puf/status/1941841171703107980
+  - https://bsky.app/profile/puf.io/post/3ltcciwbrin2e
+  - https://c.im/@puf@c.im/114806357594205213
 tags: [new-york]
 aliases: []
 ---
