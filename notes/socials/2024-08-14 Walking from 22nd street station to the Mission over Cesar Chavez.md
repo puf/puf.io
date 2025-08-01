@@ -2,6 +2,7 @@
 title: Walking from 22nd street station to the Mission over Cesar Chavez
 pubDate: August 14, 2024
 alsoOn: [https://x.com/puf/status/1823753524586651715, https://www.threads.net/@frankpuf/post/C-qBlyev6Uh, https://c.im/@puf/112961271960686686]
+tags: [san-francisco, caltrain, mission, 22nd-street, cesar-chavez]
 ---
 On my commute back yesterday, I walked from 22nd street station to the Mission (22nd and Guerrero) over Cesar Chavez. Last time I did this all over 22nd, but I wanted to avoid the steep climb with this detour.
 

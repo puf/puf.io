@@ -3,6 +3,7 @@ title: "Do you need to unregister Firestore listeners when a web page is closed?
 pubDate: "December 12, 2024"
 alsoOn: [https://bsky.app/profile/puf.bsky.social/post/3ld4yc3wv3n2a, https://x.com/puf/status/1867287624878068063, https://stackoverflow.com/q/79263392, https://www.threads.net/@frankpuf/post/DDfV-a7M8Ve, https://c.im/@puf/113641458278712428]
 description: "TL;DR: when you close a browser tab that has active listeners on Firestore, the Firestore server will automatically stop listening for updates for those listeners too (after a delay). So you don't need to try and handle such unexpected disconnects yourself with (for example) a beforeunload handler.Read the full article for a longer explanation and how this was verified."
+tags: [firestore, firebase]
 ---
 
 Somebody posted a question on Stack Overflow this week where they were [trying to unregister their Firestore listeners](https://stackoverflow.com/q/79263392) in the browser's `beforeunload` event. I explained why this won't work, but it's essentially this from the [MDN docs on the `beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)

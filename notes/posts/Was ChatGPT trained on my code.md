@@ -2,6 +2,7 @@
 title: "Was ChatGPT trained on my code samples and Stack Overflow answers?"
 pubDate: "Apr 24, 2025"
 alsoOn: [https://www.threads.com/@frankpuf/post/DKDFPlAy7LD, https://bsky.app/profile/puf.io/, https://x.com/puf, https://c.im/@puf, https://www.linkedin.com/in/puf/]
+tags: [stackoverflow, chatgpt, llm, vibe-coding]
 ---
 
 LLMs have gotten quite good in the past years at generating code. Largely this is because the models are trained on code that people posted in public places. One such place where the training data is taken from is Stack Overflow, and since I've answer about 18,000 questions on Stack Overflow, I was curious if I could find my own footprints in the code that ChatGPT outputs.

@@ -4,6 +4,7 @@ description: 'Searching for documents in a gerographical range on Firestore alwa
 pubDate: 'May 30, 2024'
 heroImage: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*teIrX51jyNYyyCajHGYthA.png'
 alsoOn: ['https://medium.com/p/6c2f10fd285f']
+tags: [firestore, firebase, geoquery, maps, geohash]
 ---
 
 A geoquery allows you to find points-of-interest that are within a certain range of a specific location. For example, say you have a list of all restaurants and their location: how do you find the ones that are within 5km of the user’s current location?

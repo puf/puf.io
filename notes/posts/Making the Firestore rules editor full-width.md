@@ -2,6 +2,7 @@
 title: "Making the Firestore rules editor full width"
 pubDate: "Jan 15, 2025"
 alsoOn: [https://bsky.app/profile/puf.io/post/3lfsly6mo5f23, https://www.linkedin.com/feed/update/urn:li:activity:7285391858715762688/, https://c.im/@puf/113834246866835726, https://www.threads.net/@frankpuf/post/DE3A3MZu6Z5, https://x.com/puf/status/1879626093214220557]
+tags: [firestore, firebase]
 ---
 
 The Firestore console artificially constrains the maximum width of its rules editor. This means that on my 27" 4K external monitor, I end up with this [^1]:

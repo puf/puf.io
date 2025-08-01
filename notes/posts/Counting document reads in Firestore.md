@@ -4,6 +4,7 @@ pubDate: November 18, 2024
 description: "Firestore is a serverless NoSQL database. For most projects, the largest part of their Firestore cost comes from *document reads*. You pay this cost each time the Firestore database server reads a document from disk for your app.  their users are causing. Initially this was not possible in Firestore, since no metrics were exposed for this. But [since late 2021](audit-log-release) Firestore supports writing [audit logs][audit-logging], and with that it *is* possible to see the document read operations per user - and many more metrics across many more axes.In this article we'll see how to track the document read count per use per day over a period of time."
 alsoOn: [https://x.com/puf/status/1858888704862953787, https://www.threads.net/@frankpuf/post/DCjqrPOMt8h, https://bsky.app/profile/puf.bsky.social/post/3lbcpei5cfo2d, https://c.im/@puf/113510228133489917, https://www.linkedin.com/feed/update/urn:li:activity:7264654755434500096/]
 aliases: [/posts/tracking-document-reads-in-firestore/, /posts/counting-document-reads-in-firestore/audit-log-release]
+tags: [firestore, firebase]
 ---
 
 

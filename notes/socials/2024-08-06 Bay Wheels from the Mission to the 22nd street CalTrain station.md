@@ -3,6 +3,7 @@ title: Bay Wheels e-bike from the Mission to the 22nd street CalTrain station
 pubDate: "August 5, 2024"
 alsoOn: [https://x.com/puf/status/1820532324989321495, https://www.threads.net/@frankpuf/post/C-TIQ3KS1WH, https://c.im/@puf/112910919176916865]
 description: To get to 22nd street station in San Francisco I've so far taken a bus (which was OK), and walked (which was beautiful, but very steep). Today I took the Bay Wheels e-bike, which you can find all over the city.
+tags: [san-francisco, caltrain, mission, 22nd-street, baywheels, bicycle, 17th-street]
 ---
 
 Today I did something new: I took a Bay Wheels e-bike from my home to the 22nd street CalTrain station. I did a very quick test with Bay Wheels last night, but this was my first actual ride.

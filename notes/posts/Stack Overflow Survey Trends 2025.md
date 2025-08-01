@@ -2,6 +2,7 @@
 title: "Trends in the Stack Overflow Developer Survey of 2025"
 pubDate: "Jul 29, 2025"
 alsoOn: [https://x.com/puf/status/1950252476566798568, https://bsky.app/profile/puf.io/post/3lv4o75krfv2b, https://c.im/@puf@c.im/114937785611680308, https://www.threads.com/@frankpuf/post/DMs2G0fMkb9, https://www.linkedin.com/posts/puf_the-2025-stack-overflow-developer-survey-activity-7356018528145068033-pcwp]
+tags: [stackoverflow]
 ---
 
 The annual Stack Overflow developer survey is a treasure trove of information for the data-curious geeks amongst us, and this year's edition is no different. It just came out, so if you didn't have a chance to check it out yourself yet, go do so now: [2025 Developer Survey][sods2025].
