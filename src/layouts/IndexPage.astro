@@ -5,51 +5,58 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro'
-import { getSlugForNote, getTypeForNote, getNotes } from '../components/Notes.astro';
+import { getSlugForNote, getNotes } from '../components/Notes.astro';
 
-// console.log("IndexPage.astro: Astro.props=", Astro.props)
+console.log("IndexPage.astro: Astro.props=", Astro.props)
 
 let { title, description, heroImage } = Astro.props;
-// const filePath = Astro.props.file || "";
-const slug = getSlugForNote(Astro.props)
-const type = getTypeForNote(Astro.props)
-title = type
+const slug = Astro.props.slug || getSlugForNote(Astro.props);
+let type = slug.substring(0, slug.indexOf("/", 1)); // "socials", "books", "posts" or "tags"
+if (type.charAt(0) === '/') type = type.substring(1); // remove leading slash
+const tag = type === "tags" ? slug.substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
+title = tag
+console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}`);
+
+const notes = await getNotes({ keepIf: (note) => {
+	return type === 'tags' 
+	  ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
+		: note.params.type === type && !/readme.md$/.test(note.props.file)
+	}});
 
 function hasReview(note) {
 	return note.props.rawContent().trim().length > 0;
 }
-
-const notes = await getNotes({ keepIf: (note) => note.params.type === type && !/readme.md$/.test(note.props.file) });
-
-// TODO: Create separate maps for [san-francisco, new-york], use that to also generate the filenames
-let locationString = '';
-notes.slice(0, 9).forEach((note, index) => {
-	if (note.props.frontmatter?.location) {
-		locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.location.join(',')}`;
-	}
-	if (note.props.frontmatter?.locations) {
-		locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
-	}
-});
-if (locationString.length > 0) {
-	import path from 'path';
-	import fs from "fs/promises";
-
-	const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
-
-	const response = await fetch(url);
-	const blob = await response.blob();
-
-	const data = new Uint8Array(await blob.arrayBuffer());
-
-	const filename = `map-${type}-san-francisco.png`;
-
-	// TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
-	["dist", "public"].forEach(async (dir) => {
-		await fs.mkdir(dir, { recursive: true });
-		await fs.writeFile(path.join(process.cwd(), dir, filename), data);
+let locationString = '', mapFilename = '';
+if (true) {
+	// TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
+	notes.slice(0, 9).forEach((note, index) => {
+		if (note.props?.frontmatter?.location) {
+			locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.location.join(',')}`;
+		}
+		if (note.props?.frontmatter?.locations) {
+			locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
+		}
 	});
-	console.log(`Image from ${url} downloaded and saved to ${filename} in (dist and public)`);
+	if (locationString.length > 0) {
+		import path from 'path';
+		import fs from "fs/promises";
+
+		const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
+
+		const response = await fetch(url);
+		const blob = await response.blob();
+
+		const data = new Uint8Array(await blob.arrayBuffer());
+
+		mapFilename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
+
+		// TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
+		["dist", "public"].forEach(async (dir) => {
+			await fs.mkdir(dir, { recursive: true });
+			await fs.writeFile(path.join(process.cwd(), dir, mapFilename), data);
+		});
+		console.log(`Image from ${url} downloaded and saved to ${mapFilename} in (dist and public)`);
+	}
 }
 ---
 
@@ -108,14 +115,14 @@ if (locationString.length > 0) {
 					<slot />
 					<hr />
 					<div class="list">
-						<div>There are {notes.length} {type}:</div>
+						<div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
 						{locationString.length === 0 && (
 							// If there's no map, show one long list
 							<ol>
 								{notes.map((note) => (
 									<li>
-										{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-										<a href={note.params.slug}>{note.props.frontmatter.title}</a>
+										{note.params?.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+										<a href={note.params?.slug}>{note.props?.frontmatter.title}</a>
 										{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
 										{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
 										{type === 'books' && "Finished on: "}{note.params.pubDate}
@@ -139,7 +146,7 @@ if (locationString.length > 0) {
 								))}
 							</ol>
 							<div class="map">
-  							<img src={`/map-${type}-san-francisco.png`} />
+  							<img src={'/'+mapFilename} />
 							</div>
 							<ul>
 								{notes.slice(9).map((note) => (

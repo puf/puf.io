@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import NotePost from '../layouts/NotePost.astro';
 import IndexPage from '../layouts/IndexPage.astro';
+import TagPage from '../layouts/TagPage.astro';
 import { getNotes, getPubDateForNote, getSlugForNote, getTypeForNote } from '../components/Notes.astro';
 import type { MarkdownInstance } from "astro";
 import PullQuote from '../components/PullQuote.astro';
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
   // console.log(notes.slice(0,3).concat(aliases))
 	// return notes.concat(aliases);
 }
+console.log(`Requested URL: ${Astro.request.url}, slug: ${Astro.params.slug}  , `);
 
 type Props = MarkdownInstance<Record<string, any>> & { redirectTo?: string };
 console.log(`Rendering ${JSON.stringify(Astro)}`);
@@ -20,11 +22,12 @@ const { Content } = post;
 
 const pubDate = getPubDateForNote(post)
 const isReadme = (/readme.md$/.test(post.file))
-const type = getTypeForNote(post)
-const slug = getSlugForNote(post)
+const slug = Astro.params.slug || getSlugForNote(post);
+const type = slug.substring(0, slug.indexOf("/", 1));
 const isRedirect = typeof post.redirectTo != 'undefined' && post.redirectTo.length > 0;
+const isTag = 'tags' === type || 'tag' === type;
 
-console.log(`Rendering ${post.file} with pubDate: ${pubDate}, isReadme: ${isReadme}, isRedirect: ${isRedirect} to ${JSON.stringify(post)}`);
+console.log(`Rendering ${slug} (${post.file}) with pubDate: ${pubDate}, type: ${type} isReadme: ${isReadme}, isRedirect: ${isRedirect}, isTag: ${isTag} to ${JSON.stringify(post)}`);
 ---
 
 {(pubDate &&
@@ -32,12 +35,13 @@ console.log(`Rendering ${post.file} with pubDate: ${pubDate}, isReadme: ${isRead
   <Content  components={{ PullQuote }}/>
 </NotePost>
 )}
-{( isReadme && 
+{( (isReadme || isTag) && 
   <meta charset="utf-8"/>
-  <IndexPage {...post}>
-    <article><Content /></article>
+  <IndexPage {...post} >
+    {(isReadme && <article><Content /></article>)}
   </IndexPage>
 )}
+
 {(isRedirect && 
   <>
     <!doctype html>

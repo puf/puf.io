@@ -22,14 +22,23 @@ type Props = CollectionEntry<'blog'>['data'] & {
   };
 };
 
-//console.log("NotePost.astro", JSON.stringify(Astro.props), Astro.params)
+// Add defensive checks for undefined variables
+if (!Astro.props) {
+	throw new Error("Astro.props is undefined. Ensure props are passed correctly.");
+}
 
-const { title, description, pubDate, updatedDate, heroImage, frontmatter } = Astro.props
-const note = Astro.props
-const type = getTypeForNote(Astro.props)
-const typeurl = "/"+type
-const slug = getSlugForNote(note);
-const location = frontmatter?.location || frontmatter?.locations?.[0]
+const { title, description, pubDate, updatedDate, heroImage, frontmatter } = Astro.props || {};
+const type = getTypeForNote(Astro.props);
+if (!type) {
+	throw new Error("Type is undefined. Ensure getTypeForNote function is working correctly.");
+}
+const slug = getSlugForNote(Astro.props);
+if (!slug) {
+	throw new Error("Slug is undefined. Ensure getSlugForNote function is working correctly.");
+}
+const note = Astro.props;
+const typeurl = "/" + type;
+const location = frontmatter?.location || frontmatter?.locations?.[0];
 ---
 
 <html lang="en">

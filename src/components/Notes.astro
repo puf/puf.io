@@ -31,6 +31,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
   // Get all notes recursively from the notes directory
   const notes = await Astro.glob("../../notes/**/*.{md,mdx}");
   const nowDate = new Date();
+  const tags = {};
 
   // Convert notes to more usable type, and sort them
   let results: any[] = []; // TODO: define type
@@ -52,6 +53,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
 
     //if (note.file.match("^_") && !note.file.match("_readme.md")) console.error(`Hidden file: ${note.file}`);
 
+    // console.log(`getNotes: ${note.file} -> ${slug} with props.frontmatter.tags=${JSON.stringify(note.frontmatter.tags)}`)
     results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
 
     // add any aliases from the note doc's frontmatter
@@ -60,6 +62,21 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
         results.push({ params: { slug: alias }, props: { type: "redirect", redirectTo: slug} });
       }
     }
+    if (note.frontmatter?.tags) {
+      for (const tag of note.frontmatter.tags) {
+        if (tags.hasOwnProperty(tag)) {
+          tags[tag].push({ slug, type, name, pubDate, isDraft });
+        } else {
+          tags[tag] = [{ slug, type, name, pubDate, isDraft }];
+        }
+      }
+    }
+  }
+
+  for (const tag of Object.keys(tags)) {
+    // Create a tag page for each tag
+    const tagSlug = 'tags/'+tag.replace(/\s/g, '-').toLowerCase(); // normalize tag slug
+    results.push({ params: { slug: tagSlug }, props: { type: "tag", tag, slug: tagSlug, notes: tags[tag] } });
   }
 
   if (process.env.NODE_ENV === 'production') {
@@ -79,7 +96,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     results = results.filter(options.keepIf);
   }
 
-  // console.log("getNotes", results.slice(-3))  
+  // console.log("getNotes", results.filter(n => n.props.type === "tag" && n.props.tag === "22nd-street").slice(-3))  
   return results;
 }
 
