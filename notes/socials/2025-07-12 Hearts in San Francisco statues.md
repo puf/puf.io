@@ -42,6 +42,17 @@ Or do as I've been doing, and admire them when you randomly bump into them on a 
 
 Hmmm... I've definitely seen more than just these, so I need to get better at taking pictures of them. Do you have a favorite (or just a first) Hearts in San Francisco statue? Share it in the links above 👆
 
+---
+
+Update (August 3, 2025): today we saw two more heart statues on Union Square.
+
+![](https://i.imgur.com/Yai5WWJ.png)
+*[Double Delight](https://sfghf.org/michael-osborne-double-delight/) by Michael Osborne*
+
+![](https://i.imgur.com/XqSLrVi.png)
+*[There is no try](https://sfghf.org/lawrence-noble-there-is-no-try/) by Lawrence Noble*
+
+
 
 [heartsinsf]: https://sfghf.org/hearts-in-san-francisco/
 [heartssale]: https://sfghf.org/have-a-heart/
