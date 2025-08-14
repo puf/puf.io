@@ -10,7 +10,7 @@ Follow these steps to got an "order of magnitude" estimation of the number of do
 
 1. We need to get the first 100-200[^3] document IDs in the collection.
 1. Go to the <a href="https://console.firebase.google.com/project/_/firestore/databases/-default-/data/?view=query-view&query=1%7CLIM%7C3%2F200&scopeType=collection&scopeName=%2Flogs">Firestore query builder</a>
-2. Hide all fields from the results, which leads just the document ID
+2. Hide all fields from the results, which leads just the document ID[^4]
 3. Drag while holding the mouse button to select all document IDs, and copy them
 4. Paste the document IDs below
 5. Tab out of or click outside the text area
@@ -24,7 +24,9 @@ Based on the <span id="count"></span> values above there are an estimated <span 
 
 [^2]: To learn more about this approach, see <a href="https://jfhr.me/estimate-firestore-collection-count/">Estimate Firestore collection count from a small sample of documents</a> where I also got most of the code that this page uses. Thanks jfhr! 🙏
 
-[^3]: For a collection with 22,833 the estimate based on the first 100 IDs was 19,155 documents (so off by 17%). With 200 IDs the estimate became 20,326 document (so off by 11%). Both are well within a reasonable range for my needs, but YMMV of course
+[^3]: For a collection with 22,833 the estimate based on the first 100 IDs was 19,155 documents (so off by 17%). With 200 IDs the estimate became 20,326 document (so off by 11%). Both are a bit further off than I recalled, but well within range for my needs - YMMV of course
+
+[^4]: On Datastore (and Firestore and Datastore more) this sort of [keys-only query](https://cloud.google.com/datastore/pricing#small_operations) can be performed for the cost of one entity read, but Firestore in native mode unfortunately doesn't have such an option (yet).
 
 <script>
 const D0 = '0'.charCodeAt(0);
