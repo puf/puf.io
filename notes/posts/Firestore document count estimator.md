@@ -4,7 +4,7 @@ pubDate: "Aug 14, 2025"
 alsoOn: []
 tags: [firestore, firebase]
 ---
-If you use Firestore's built-in `add` method, you can get a rough estimate of the number of documents in a collection by providing a relatively small number of consecutive document IDs.[^1]
+If you use Firestore's built-in `add` method, you can get a rough estimate of the number of documents in a collection[^5] by providing a relatively small number of consecutive document IDs.[^1]
 
 Follow these steps to got an "order of magnitude" estimation of the number of documents in a large collection[^2]:
 
@@ -27,6 +27,8 @@ Based on the <span id="count"></span> values above there are an estimated <span 
 [^3]: For a collection with 22,833 the estimate based on the first 100 IDs was 19,155 documents (so off by 17%). With 200 IDs the estimate became 20,326 document (so off by 11%). Both are a bit further off than I recalled, but well within range for my needs - YMMV of course
 
 [^4]: On Datastore (and Firestore and Datastore more) this sort of [keys-only query](https://cloud.google.com/datastore/pricing#small_operations) can be performed for the cost of one entity read, but Firestore in native mode unfortunately doesn't have such an option (yet).
+
+[^5]: While Firestore nowadays has a dedicated API for counting results, this can [in my testing](https://stackoverflow.com/q/75317067/) only handle results into the 10s of millions, and also become expensive (counting 10 million documents costs 10 thousand document reads). While the approach used in this page only gives an estimate of the document count, it as a fixed cost (of 100-200 document reads). For what counter approach to use in what scenarios, see [How to handle aggregated values in Firestore](https://stackoverflow.com/questions/77461961/how-should-i-handle-aggregated-values-in-firestore)
 
 <script>
 const D0 = '0'.charCodeAt(0);
