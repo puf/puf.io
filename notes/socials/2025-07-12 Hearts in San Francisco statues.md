@@ -52,7 +52,12 @@ Update (August 3, 2025): today we saw two more heart statues on Union Square.
 ![](https://i.imgur.com/XqSLrVi.png)
 *[There is no try](https://sfghf.org/lawrence-noble-there-is-no-try/) by Lawrence Noble*
 
+---
 
+Update (August 19, 2025): we found another one today, this time near the Bank of America on Castro:
+
+![ColorFall of Hope](https://i.imgur.com/8sSd1aK.jpeg)
+*[ColorFall of Hope](https://sfghf.org/deirdre-weinberg-colorfall-of-hope/) by Deirdre Weinberg*
 
 
 [heartsinsf]: https://sfghf.org/hearts-in-san-francisco/
