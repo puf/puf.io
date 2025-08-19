@@ -17,13 +17,16 @@ aliases: []
 
 Street Whale is a large public artwork by artist [Reuben Rude][rr] on JFK Drive (now JFK Promenade) in Golden Gate Park near Doughboy Meadow. It's 49 feet long from head to tail, with the tail and the hump of the whale being above ground level and the rest of it is painted onto the street. 
 
-![](https://i.imgur.com/zoh8jH9.png)
+![](https://i.imgur.com/QcOiuL1.png)
 
 The whale is part of the [Golden Mile Project][gmp], which is a stretch of one-and-a-half mile of the JFK drive that is filled with large sculptures such as this one, seating areas, a beer and wine garden, and much more.
 
-![](https://i.imgur.com/cWOMaMB.png)
+![](https://i.imgur.com/M65xOEx.jpeg)
 
 Check the Street Whale out yourself when you're around, or read more about it on the [site of the Golden Mile Project][gmp-whale].
+
+![](https://i.imgur.com/cWOMaMB.png)
+
 
 [rr]: https://reubenrude.bigcartel.com/
 [gmp]: https://goldenmileproject.org/
