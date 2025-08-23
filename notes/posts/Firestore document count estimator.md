@@ -298,6 +298,8 @@ function paster() {
     0ZMuEggOrDHYOICwX934
     0ZgXtFjkrwEgwBVndW9l
     0Zy1SaJjoHuMMyic049u`;
+
+  input.dispatchEvent(new Event('change', { bubbles: true }));
   return false;
 }
 </script>
