@@ -13,7 +13,7 @@ pageCount: 630
 
 Inferno is the 11th book I've read about the Awaken Online universe and the final book in the [Tarot trilogy](https://www.goodreads.com/series/274174-tarot) subseries. The trilogy covers the adventures of Finn, a disgruntled widower who is pushed into the VR game by his daughter in hope of helping him find an escape. In the series he finds a cause for his (virtual) life, as the in-game gods promise him a chance to revive his wife in the game world.
 
-I loved the build-up of the trilogy and found myself caught in this final book of Finn's story arc as much as in the first two instalments. Fin and his cohort defeat the demon king, Finn becomes the new ruler, and... well ok, maybe things don't end happily ever after, because there's still a game to be played.
+I loved the build-up of the trilogy and found myself caught in this final book of Finn's story arc as much as in the first two installments. Fin and his cohort defeat the demon king, Finn becomes the new ruler, and... well ok, maybe things don't end happily ever after, because there's still a game to be played.
 
 I had hoped for a better conclusion - either something either where Finn discovered he didn't need to 'revive' his late wife as he'd discovered his purpose in helping and collaborating with others around him, or maybe how (since his wife had been the initial model for what became the game's AI) he found enough of her in the game to bring closure to his longing. The simpler, more direct ending is satisfactory, but doesn't bring it to 5 star territory.
 
