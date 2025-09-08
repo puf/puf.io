@@ -32,7 +32,10 @@ Right near the entrance it explains where the name comes from: the bribes allowe
 The rest of the museum is a large room with lots of photos with captions, and plaques explaining the history of the neighborhood. The earlier ones of these explain how the Tenderloin became the bustling center of single-room occupancy hotels, and how it's been fighting since the 80s to keep the high-rent high-rises at bay:
 
 ![](https://i.imgur.com/pk1ZD8X.png)
-*Seriously: this really old pinball machine made me soooo happy*
+
+
+![](https://i.imgur.com/BYdDCb3.png)
+*Seriously: this really old pinball machine (without flippers) made me soooo happy*
 
 There's no better way to show love for the Tenderloin than this quote from Herb Caen:
 
