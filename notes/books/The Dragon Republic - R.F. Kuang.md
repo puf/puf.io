@@ -1,5 +1,5 @@
 ---
-title: "The Dragon Republic"
+title: "The Dragon Republic (The Poppy War Trilogy #2)"
 author: "R.F. Kuang"
 startedDate: "2025/06/29"
 finishedDate: "2025/07/29"
