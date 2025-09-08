@@ -15,4 +15,4 @@ The Poppy War trilogy follows Rin, a war orphan who rises through a brutal milit
 
 I listened to the HarperAudio production of the trilogy narrated by Emily Woo Zeller. As in the first two books, the story in this final installment progresses quickly, with the author blending fast-paced plot development and ongoing world-building.
 
-While the first two books establish the world, the war, and Rin’s rise in power and rank, this final book delivers closure, major character deaths, and a finish that’s decent but not great. The final scenes evoked a 'Frodo and Sam at Mount Doom with the Ring' kind of moment, but without the same emotional payoff."
+While the first two books establish the world, the war, and Rin’s rise in power and rank, this final book delivers closure, major character deaths, and a finish that’s decent but not great. The final scenes evoked a 'Frodo and Sam at Mount Doom with the Ring' kind of moment, but without the same emotional payoff.
