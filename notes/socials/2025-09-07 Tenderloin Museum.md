@@ -41,7 +41,7 @@ There's no better way to show love for the Tenderloin than this quote from Herb 
 
 ![](https://i.imgur.com/11idSqK.png)
 
-> * "Any city that doesn't have a Tenderloin isn't a city at all."*
+> *"Any city that doesn't have a Tenderloin isn't a city at all."*
 > 
 > HERB CAEN SAN FRANCISCO CHRONICLE JOURNALIST
 
