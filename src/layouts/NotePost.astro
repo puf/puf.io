@@ -5,8 +5,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro';
-import { getTypeForNote, getSlugForNote } from '../components/Notes.astro';
+import { getTypeForNote, getSlugForNote, getNotes } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
+import { Picture } from 'astro:assets';
 
 type Props = CollectionEntry<'blog'>['data'] & {
   frontmatter: {
@@ -19,13 +20,14 @@ type Props = CollectionEntry<'blog'>['data'] & {
 		alsoOn: string[];
 		location?: [number, number];
 		locations?: [number, number][];
+		tags?: string[];
   };
 };
 
 // Add defensive checks for undefined variables
 if (!Astro.props) {
 	throw new Error("Astro.props is undefined. Ensure props are passed correctly.");
-}
+} else console.log("NotePost.astro: Astro.props=", Astro.props);
 
 const { title, description, pubDate, updatedDate, heroImage, frontmatter } = Astro.props || {};
 const type = getTypeForNote(Astro.props);
@@ -39,6 +41,39 @@ if (!slug) {
 const note = Astro.props;
 const typeurl = "/" + type;
 const location = frontmatter?.location || frontmatter?.locations?.[0];
+
+const otherNotesForTags = {};
+const otherNoteCountForTags = {};
+await getNotes({ keepIf: (other) => {
+	return other.params?.type === type && 
+		other.props.file !== note.file &&
+		!/readme.md$/.test(other.props.file) &&
+		(note.frontmatter.tags || []).reduce((c,a) => { return (other.props.frontmatter.tags || []).includes(a) || c }, false)		
+}}).then(notes => {
+	if (notes.length === 0) {
+		console.warn(`No notes found for type: ${type} with any of the tags ${JSON.stringify(note.frontmatter.tags)}`);	
+	}
+	else {
+		console.log(`Found ${notes.length} ${type} with some overlapping tags`);
+	}
+	notes.forEach((other) => {
+		(other.props.frontmatter.tags || []).forEach((tag) => {
+			if ((note.frontmatter.tags || []).includes(tag)) {
+				otherNoteCountForTags[tag] = (otherNoteCountForTags[tag] || 0) + 1;
+			}
+		})
+	})
+	return notes.map((other) => {
+		const matchCount = (note.frontmatter.tags || []).filter(tag => (other.props.frontmatter.tags || []).includes(tag)).length;
+		return { ...other, matchCount };
+	}).sort((a, b) => b.matchCount - a.matchCount);
+}).then((notes) => {
+	notes.slice(0, 5).forEach((note) => {
+		otherNotesForTags[note.params.slug] = note; // Use slug as key to avoid duplicates across tags
+	});
+}).catch((e) => {
+	console.error(`Error fetching notes for type: ${type}`, e);
+});
 ---
 
 <html lang="en">
@@ -136,9 +171,61 @@ const location = frontmatter?.location || frontmatter?.locations?.[0];
 							</a>
 						</p>
 					)}
-				  <nav>Back to all <a href={typeurl}>{type}</a></nav>
 				</div>
 			</article>
+		{Object.keys(otherNotesForTags).length > 0 && (
+			<nav class="related-posts prose" aria-label="Other posts with similar tags">
+				<h3>Similar {type}:</h3>
+				<ul>
+					{Object.values(otherNotesForTags).map((otherNote) => (
+						<li>
+							<a href={otherNote.params.slug}>{otherNote.props.frontmatter.title}</a>
+							{otherNote.props.frontmatter.tags && otherNote.props.frontmatter.tags.length > 0 && (
+								<!--
+								<span style="margin-left: 0.5em;">
+									{otherNote.props.frontmatter.tags.map(tag => (
+										<a href={`/tags/${encodeURIComponent(tag)}`}>
+											<span
+												style="
+													display: inline-block;
+													background: #eee;
+													color: #333;
+													border-radius: 999px;
+													padding: 0.1em 0.7em;
+													font-size: 0.5em;
+													margin-right: 0.3em;
+												"
+											>{tag}</span>
+										</a>
+									))}
+								</span>
+								-->
+							)}
+						</li>
+					))}
+				</ul>
+				<h3>Or see all {type} about:</h3>
+				<ul>
+					{(note.frontmatter.tags || []).map((tag) => {
+						const count = otherNoteCountForTags[tag];
+						if (count === 0 || typeof count === 'undefined') {
+							// Don't show tags with no other notes
+							return null;
+						}
+						return (
+							<li key={tag}>
+								<a href={`/tags/${encodeURIComponent(tag)}`}>{tag}</a>
+								{count > 0 && (
+									<span style="margin-left: 0.5em; color: #888; font-size: 0.9em;">
+										({count} other {type})
+									</span>
+								)}
+							</li>
+						);
+					})}
+				</ul>
+			</nav>
+		)}
 		</main>
 		<Footer {slug}/>
 	</body>
