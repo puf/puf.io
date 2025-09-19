@@ -17,7 +17,7 @@ As you walk southward on Market street you inevitably get to the 'sketchier' par
 
 ![Glass sculpture composed of stacked horizontal layers forming a three-dimensional image of a classical-style woman with crossed arms, encased in a transparent turquoise column, situated in a modern urban plaza with geometric black-and-white tile patterns and high-rise buildings in the background.](https://i.imgur.com/gt6NJr3.png)
 
-At 1177 Market Street near 8th street is [Trinity Place][trinity-apt], which has a treasure trove of art on its piazza including 7 gorgeous bollards called the [Glass Godesses][glass-godesses], by Lawrence Argent.
+At 1177 Market Street near 8th street is [Trinity Place][trinity-sf], a [huge housing complex][trinity-apt] with a treasure trove of art on its piazza including 7 gorgeous bollards called the [Glass Godesses][glass-godesses], by Lawrence Argent.
 
 ![](https://i.imgur.com/g5jLuDE.png)
 
@@ -31,3 +31,4 @@ As you head southwest on the plaza, also take a look at the Escher-like marble f
 [trinity-apt]: https://1177marketapts.com/p/art/
 [glass-godesses]: https://artandarchitecture-sf.com/glass-goddesses.html
 [maps-mosaic]: https://maps.app.goo.gl/o91gJhzXqUnyZ64s7
+[trinity-sf]: https://www.trinitysf.com/public-art-at-trinity-place/
