@@ -8,12 +8,6 @@ npm create astro@latest -- --template blog
 
 Most of this README comes from the Astro blog template.
 
-## Tasks
-
-* [ ] Consider https://github.com/chrismwilliams/astro-theme-cactus/
-* [ ] Add posts/articles (`/p`), events (`/e`), videos (`/v`), tweets/socials (`/t`), and links (`/l`) sections
-* [ ] Add recent posts, socials, videos and events to the home page
-
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
