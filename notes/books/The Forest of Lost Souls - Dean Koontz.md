@@ -13,4 +13,4 @@ pageCount: 396
 
 While I rated none of Koontz's books I've read so far very highly, somehow he still shows up regularly on my reading list. So I guess he must be doing *something* right after all. :-)
 
-This is a story about a woman in her late 20s who lives alone on a mountain and uncovers the plot that got her fiancee killed, and now endangers her life and that of many residents of a nearby town. It's a fairly typical underdog-hero-stands-up-to-the-big-bad-bully story, but enjoyable nonetheless. I liked the straightforward plot, but felt that mixing in supernatural powers and ESP was unnecessary.
+This is a story about a woman in her late 20s who lives alone on a mountain and uncovers the plot that got her fiancé killed, and now endangers her life and that of many residents of a nearby town. It's a fairly typical underdog-hero-stands-up-to-the-big-bad-bully story, but enjoyable nonetheless. I liked the straightforward plot, but felt that mixing in ESP and other supernatural elements was unnecessary.
