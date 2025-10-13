@@ -1,5 +1,5 @@
 ---
-title: "Awaken Online: Ember (Tarot #1)"
+title: "Awaken Online: Ember (Awaken Online, Tarot #1)"
 author: "Travis Bagwell"
 startedDate: "2025/07/21"
 finishedDate: "2025/07/26"
