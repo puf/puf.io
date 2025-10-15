@@ -13,7 +13,7 @@ pageCount: 353
 
 To say that Cory Doctorow writes a lot is an understatement. The man writes a daily blog on [https://pluralistic.net/](https://pluralistic.net/), then writes posts on every site you can imagine, and also cranks out fiction and non-fiction books at a rapid pace. While I personally prefer Cory's fiction writing (as it is *so* much fun to read fictional stories about the geeky topics he picks), his non-fiction is also well worth reading.
 
-Enshitification is the fourth book that continues to delve into a similar topic (starting with [How to Destroy Surveillance Capitalism], [Chokepoint Capitalism], and [The Internet Con]), but it's the first one where Cory fully leans in to the word-of-the-year 2023 that he came up with: Enshitification!
+Enshittification is the fourth book that continues to delve into a similar topic (starting with [How to Destroy Surveillance Capitalism], [Chokepoint Capitalism], and [The Internet Con]), but it's the first one where Cory fully leans in to the word-of-the-year 2023 that he came up with: Enshittification!
 
 The book explains how four decades of ignoring monopolies resulted in a few horribly broken two-sided marketplaces, and how the incredibly broken copyright law (DMCA section 1201) that has been rolled out across most of the world had made it really hard for us to fix it. Yeah... all pretty depressing, although Cory gives plenty of concrete examples to allow you to channel your anger at the situation at specific players. I guess there's a reason the poop emoji on the cover is swearing. 💩🤬
 
