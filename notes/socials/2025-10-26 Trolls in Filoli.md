@@ -2,11 +2,10 @@
 title: "Giant Trolls in Filoli"
 pubDate: Oct 26, 2025
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io
-  - https://c.im/@puf@c.im/
-  - https://www.linkedin.com/
+  - https://www.threads.com/@frankpuf/post/DQSc6uTiTdQ
+  - https://x.com/puf/status/1982566671114998184
+  - https://bsky.app/profile/puf.io/post/3m44vfhk5e42h
+  - https://c.im/@puf/115442695264509453
 tags: [san-francisco, filoli, statue, sculptures]
 locations: 
  - [37.4697361,-122.3131996]
