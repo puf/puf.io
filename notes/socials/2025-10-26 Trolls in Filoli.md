@@ -29,7 +29,7 @@ This next troll was my favorite, as it's on a mission to spread birdhouses in th
 
 ![](https://i.imgur.com/HmtkwWK.png)
 
-The final one I caught on "film" was putting plans into a car when we saw her:
+The final one I caught on "film" was putting plants into a car when we saw her:
 
 ![](https://i.imgur.com/X53msqJ.png)
 
