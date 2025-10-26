@@ -15,9 +15,9 @@ aliases: []
 
 ![](https://i.imgur.com/ZrLXIbm.png)
 
-Filoli is a historic estate 45 minutes soutch of San Francisco, featuring a 54,000-square-foot Georgian-style mansion and 16 acres of formal gardens. It’s part of the National Trust for Historic Preservation and serves as a public garden, museum, and event venue.
+[Filoli][filoli] is a historic estate 45 minutes soutch of San Francisco, featuring a 54,000-square-foot Georgian-style mansion and 16 acres of formal gardens. It’s part of the National Trust for Historic Preservation and serves as a public garden, museum, and event venue.
 
-Six giant wooden [trolls moved into Filoli][ssf] in June to liven up the already gorgeous park. They apparently will move out by November 10, yet somehow we only made it down to greet them this weekend.
+Six giant wooden [trolls moved into Filoli][ssf] in June to liven up the already gorgeous park, yet somehow we only made it down to greet them this weekend.
 
 ![](https://i.imgur.com/DQNUs1v.png)
 
@@ -43,6 +43,6 @@ When you've head enough of the trolls, there is still much more to see, such as 
 
 You have until November 10 to catch the trolls, but even after that: Filoli is always worth a visit if you're in the area.
 
-
+[filoli]: https://filoli.org/
 [ssf]: https://secretsanfrancisco.com/dambo-troll-sculptures-filoli
 [trolls]: https://filoli.org/trolls/
