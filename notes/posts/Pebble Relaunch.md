@@ -1,7 +1,7 @@
 ---
 title: "The Pebble Relaunch of 2025"
 pubDate: "Nov 3, 2025"
-alsoOn: [https://www.threads.com/@frankpuf/, https://bsky.app/profile/puf.io/, https://x.com/puf, https://c.im/@puf, https://www.linkedin.com/in/puf/]
+alsoOn: [https://www.threads.com/@frankpuf/post/DQsMxbWiVAb, https://bsky.app/profile/puf.io/post/3m4w227ht2n2m, https://x.com/puf/status/1986190552426074449, https://c.im/@puf/115499316661081000, https://www.linkedin.com/feed/update/urn:li:activity:7391956340576800769/]
 tags: [pebble, e-ink, watch, smartwatch]
 ---
 
