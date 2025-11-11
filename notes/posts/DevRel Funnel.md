@@ -1,7 +1,7 @@
 ---
 title: DevRel Adoption Funnel
 description: "How you can (and Firebase did) apply a marketing adoption funnel to Developer Relations work at events (and more broadly)."
-pubDate: 2025/11/11
+pubDate: November 11, 2025
 ---
 
 I often use a marketing funnel when deciding on DevRel activities. If you're not familiar with it, this is what a simple, pretty traditional marketing funnel looks like:
