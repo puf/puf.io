@@ -41,9 +41,9 @@ I often use a marketing funnel when deciding on DevRel activities. If you're not
 
 The concept of this funnel is that you want people to take action (buy your product), but in order to do that they must first want your product. And they can't desire the product without first having an interest in it. And to gain an interest in something they must first be aware of it.
 
-The theory goes that you help people progress towards the desired action, one step at a time. Some fraction of the people will drop off at every step (typically called a conversion), but the value of each person increases at every step.
+The theory goes that you help people progress towards the desired action, one step at a time. At each step you’ll see both conversions (people who advance) and drop-off (people who don’t) - and the value of a user increases at every step.
 
-The funnel is a great tool as it visualizes the progress, and helps you to think of what specific action you can take at each step.
+The funnel is a great tool because it visualizes the progress, and helps you to think of what specific action you can take at each step.
 
 --- 
 
@@ -72,19 +72,6 @@ When I ran the Firebase events program at Google, we added some additional phase
     .box { stroke:#111; stroke-width:3; }
     .grid { stroke:#111; stroke-width:3; fill:none; }
   </style>
-
-  <!-- Border -->
-  <norect x="8" y="8" width="1340" height="624" fill="#fff" class="grid"/>
-
-  <!-- Vertical grid lines (7 inner dividers to mimic the screenshot rhythm) -->
-  <!-- Adjust xs to change column widths -->
-  <g class="grid">
-    <noline x1="270" y1="8" x2="270" y2="632"/>
-    <noline x1="485" y1="8" x2="485" y2="632"/>
-    <noline x1="700" y1="8" x2="700" y2="632"/>
-    <noline x1="915" y1="8" x2="915" y2="632"/>
-    <noline x1="1130" y1="8" x2="1130" y2="632"/>
-  </g>
 
   <!-- Colors approximated from the screenshot -->
   <defs>
@@ -141,15 +128,15 @@ When I ran the Firebase events program at Google, we added some additional phase
 
 The exact number of steps in the funnel and their labels don't matter all that much in my experience. What *does* matter is that you understand the journey your (potential) users take, and how you can best help them at each step (and get them to convert to the next step in the funnel).
 
-For example, when considering having a presence at a specific event, what do you want to accomplish there? When I started working on Firebase it was pretty well-known already in the Angular community, thanks to some successful demos at ng-conf. But Firebase was hardly known in the Android and iOS communities at the time. So with the funnel in mind, we set ourselves different goals for these events:
+For example, when considering having a presence at a specific event, what do you want to accomplish there? When I started working on Firebase it was pretty well-known already in the Angular community, thanks to some successful demos at ng-conf. But Firebase was hardly known in the Android and iOS communities at the time. So with the funnel in mind, we set  different goals for these events:
 
 * ng-conf: primarily reconnect with existing users (Support) and fans (Love), while also trying to convince more non-users to become active (Desire→Activate)
 * AnDevCon[^1]: primarily raise awareness of Firebase among Android developers (Awareness), hopefully also growing excitement (Interest), and maybe get some to try it out (Desire→Activate).
 
-These different goals led us to look for different activities at these events. 
+These different goals led us to choose different activities at each event. 
 
 * To raise awareness it really helped to have our name on the signage of the event.
-* To create interested, we'd try to make make quick connection with folks, e.g. a booth with simple, joyful swag (or unusual swag: like [Firebase hot sauce]) or a coffee machine.
+* To create interest, we'd try to make quick connections with folks, e.g. a booth with simple, joyful swag (or unusual swag: like [Firebase hot sauce](https://firebase.blog/posts/2014/01/firebase-at-ng-conf-2014/)) or a coffee machine.
 * To raise people's interest further, it was great to have a (non-sponsored) talk on the schedule, where someone from our team would show a demo of building something with Firebase.
 * Activating folks can be done at the conference in a workshop. That was always somewhat limited in capacity though (and very expensive), so we'd also bring discount coupons for folks as a reminder to take home and try it out there.
 * To support our existing users, we'd want a booth where we'd have enough space to open a few laptops and troubleshoot things.
@@ -175,7 +162,7 @@ Over time this process turned into our so-called events activity map:
 | **Table/Booth** |  |<div class="green">&nbsp;</div>|  |  |<div class="green">&nbsp;</div>|<div class="green">&nbsp;</div>|
 | **Session / talk** |  |<div class="green">&nbsp;</div>|<div class="green">&nbsp;</div>|  |  |  |
 | **Hackathon** |  |  |<div class="green">&nbsp;</div>|<div class="green">&nbsp;</div>|<div class="green">&nbsp;</div>|  |
-| **Workshop** |  |  |  |  |<div class="green">&nbsp;</div>|  |
+| **Workshop** |  |  |  |<div class="green">&nbsp;</div>|  |  |
 | **Office Hours** |  |  |  |  |<div class="green">&nbsp;</div>|  |
 | **1:1 Sessions** |  |  |  |<div class="green">&nbsp;</div>|<div class="green">&nbsp;</div>|<div class="green">&nbsp;</div>|
 </div>
@@ -194,4 +181,3 @@ For another way of looking at DevRel's work and how an (even incomplete) visual 
 ---
 
 [^1]: AnDevCon was a series of Android events that was active in the US from 2012 until 2017. It no longer exists today.
-[^2]:   The marketing funnel concept originates from the late 19th century and is attributed to American advertising pioneer Elias St. Elmo Lewis. Lewis developed a model to map the customer journey using a hierarchical, four-step process for effective advertising and salesmanship. This model is known by the acronym AIDA: Awareness/Attention (Attract a viewer's attention), Interest (Maintain their interest in the product or service), Desire (Create a desire or conviction that they want the product), and Action (Spur them to take action and make a purchase). Thinking of these phases and funnel helps businesses plan and measure efforts to attract, engage, and convert prospects by tailoring messaging to their needs at each stage.
