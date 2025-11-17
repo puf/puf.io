@@ -2,6 +2,7 @@
 title: Hot reload for Dart
 pubDate: August 14, 2024
 alsoOn: [https://x.com/puf/status/1823887619811655723, https://www.threads.net/@frankpuf/post/C-q-yQQvqfE, https://bsky.app/profile/puf.bsky.social/post/3kzptyapr5626, https://c.im/@puf/112963363684416756]
+tags: [dart, hot-reload, nodemon]
 ---
 
 

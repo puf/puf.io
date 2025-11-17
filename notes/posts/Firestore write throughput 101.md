@@ -7,6 +7,7 @@ alsoOn:
  - https://c.im/@puf@c.im/114802100493760445
  - https://www.threads.com/@frankpuf/post/DLvJHn1MT1P
  - https://www.linkedin.com/posts/puf_somebody-is-having-write-scalability-activity-7347334527201026048--BJs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAA6E1MBzbF9oPv2cJb9vbv4cyPR-rhR1Zs
+tags: [firebase, firestore, performance]
 ---
 
 A user on /r/Firebase asked for help with their [games' write throughput on Firestore](https://www.reddit.com/r/Firebase/comments/1lrjqab/struggling_with_scaling/), and I ended up writing a long list of things they might not know/realize.

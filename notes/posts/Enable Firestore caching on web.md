@@ -3,6 +3,7 @@ title: "How to enable Firestore caching on web"
 pubDate: "November 25, 2024"
 alsoOn: [https://www.threads.net/@frankpuf/post/DC1sEunMeVj, https://x.com/puf/status/1861425032951411001, https://bsky.app/profile/puf.bsky.social/post/3lbuckdrmuq2h, https://c.im/@puf/113549857482532480, https://www.linkedin.com/posts/puf_firestore-can-cache-recently-read-documents-activity-7267191144722128896-ImrE]
 description: "Firestore can cache recently read documents in the client, to save on server-side document reads (which you pay for). On mobile SDKs this caching is enabled by default, but on the web SDK you have to enable it yourself. Read this post to learn how to enable this caching in JavaScript and Flutter."
+tags: [firestore, firebase, performance, caching]
 ---
 
 According to ChatGPT: Firestore is a flexible, scalable NoSQL database offered by Google Firebase, designed for real-time, serverless applications. It provides powerful querying capabilities, **offline support**, and seamless synchronization of data across client devices.

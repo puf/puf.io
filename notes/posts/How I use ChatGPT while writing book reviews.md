@@ -3,6 +3,7 @@ title: "How I use ChatGPT when writing book reviews"
 pubDate: "Jan 16, 2025"
 alsoOn: [https://www.threads.net/@frankpuf/post/DE77rLDst0M, https://x.com/puf/status/1880318306785063243, https://bsky.app/profile/puf.io/post/3lfxfosgnfi2o, https://c.im/@puf/113845063411477833, https://www.linkedin.com/posts/puf_since-i-write-quite-some-book-reviews-now-activity-7286084160568406016-JmJs]
 description: "When creating reviews of the books I read, I nowadays use ChatGPT for the common tasks of generating alt texts for the book cover images, generating a description for the book series, and generating a set of social posts from a review. I also ran an experiment to rewrite one of my reviews and explain its changes. To learn more on how I use ChatGPT for these actions, read the full post."
+tags: [chatgpt, llm, ai]
 ---
 
 For those of you who follow me (either through this site's [RSS feed](/feed.xml) or on socials), you probably know that I read a lot. In 2024 I read on average more than one book a week. And I posted reviews for many of those books on [puf.io/books](/books) and (in the second half of the year) on GoodReads and socials too.
