@@ -2,10 +2,10 @@
 title: "Oversized Christmas Ornaments on Powell near Union Square"
 pubDate: Nov 16, 2025
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io/
-  - https://c.im/@puf/
+  - https://www.threads.com/@frankpuf/post/DRKoS5WibXw
+  - https://x.com/puf/status/1990473142083403959
+  - https://bsky.app/profile/puf.io/post/3m5tqxu6yuh2d
+  - https://c.im/@puf/115566232152712005
 tags: [san-francisco, powel, union-square, public-art, statue]
 locations: 
  - [37.786840, -122.408100]
