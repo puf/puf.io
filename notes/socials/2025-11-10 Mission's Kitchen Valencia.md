@@ -2,10 +2,11 @@
 title: "Mission's Kitchen coming to Valencia street"
 pubDate: Nov 10, 2025
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io/
-  - https://c.im/@puf/
+  - https://c.im/@puf/115562576370264327
+  - https://bsky.app/profile/puf.io/post/3m5s4zgzfjp2k
+  - https://bsky.app/profile/puf.io/post/3m5cyvw7zxe2d
+  - https://x.com/puf/status/1988058945563361559
+  - https://www.threads.com/@frankpuf/post/DRI93ypjF9X
 tags: [san-francisco, mission, valencia, restaurant]
 locations: 
  - [37.7565189,-122.4213178]
