@@ -2,10 +2,10 @@
 title: "Aura at Grace Cathedral"
 pubDate: Nov 30, 2025
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://bsky.app/profile/puf.io/
-  - https://c.im/@puf/
+  - https://c.im/@puf/115653290378879491
+  - https://bsky.app/profile/puf.io/post/3m72g5ewdgx2m
+  - https://www.threads.com/@frankpuf/post/DRyOAM7gkuL
+  - https://twitter.com/puf
 tags: [san-francisco, grace-cathedral, aura]
 locations: 
  - [37.7919133,-122.4131211]
