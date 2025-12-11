@@ -9,7 +9,7 @@ alsoOn:
 tags: [san-francisco, grace-cathedral, aura]
 locations: 
  - [37.7919133,-122.4131211]
-aliases: []
+aliases: [/socials/2025-11-20-aura-at-grace-cathedral]
 ---
 
 ![](https://i.imgur.com/egRSqin.png)
