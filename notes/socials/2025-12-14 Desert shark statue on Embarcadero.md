@@ -12,7 +12,7 @@ locations:
 aliases: []
 ---
 
-When I was at Musee Mechanique early November, there was a crew working on a new giant sculpture - of a fish:
+When I was at Musée Mécanique early November, there was a crew working on a new giant sculpture - of a fish:
 
 ![](https://i.imgur.com/R2yMgz3.png)
 
