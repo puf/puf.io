@@ -2,10 +2,10 @@
 title: "Tompkins stairway and garden"
 pubDate: December 10, 2025
 alsoOn:
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://www.threads.com/@frankpuf/
-  - https://twitter.com/puf
+  - https://c.im/@puf/115720751894852332
+  - https://bsky.app/profile/puf.io/post/3m7yetcifnv2q
+  - https://www.threads.com/@frankpuf/post/DSQ5aXeidqR
+  - https://x.com/puf/status/2000362393977655551
 tags: [san-francisco, tompkins-stairway, mosaic-stairway, greenway, bernal-heights]
 locations: 
  - [37.7370581,-122.4123196]
