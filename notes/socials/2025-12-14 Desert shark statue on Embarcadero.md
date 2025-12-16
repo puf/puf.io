@@ -2,10 +2,10 @@
 title: "Desert shark statue on Embarcadero"
 pubDate: December 14, 2025
 alsoOn:
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://www.threads.com/@frankpuf/
-  - https://twitter.com/puf
+  - https://www.threads.com/@frankpuf/post/DSSmM0fDV05
+  - https://x.com/puf/status/2000601704086057387  
+  - https://c.im/@puf/115724490761804125
+  - https://bsky.app/profile/puf.io/post/3m7zzxllhpd2f
 tags: [san-francisco, embarcado, public-art, statues, sculptures, musee-mechanique]
 locations: 
  - [37.8090287,-122.415597]
