@@ -2,7 +2,7 @@
 title: "Armageddon (Awaken Online #6)"
 author: "Travis Bagwell"
 startedDate: "2025/12/11"
-finishedDate: "2025/12/25"
+finishedDate: "2025/12/21"
 rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/61997530"
