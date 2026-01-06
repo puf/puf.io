@@ -2,7 +2,7 @@
 title: "Network Effect (The Murderbot Diaries #5)"
 author: "Martha Wells"
 startedDate: "2025/12/23"
-finishedDate: "2026/1/3"
+finishedDate: "2026/1/1"
 rating: 4
 edition: "Ebook"
 link: "https://www.goodreads.com/book/show/52381770"
