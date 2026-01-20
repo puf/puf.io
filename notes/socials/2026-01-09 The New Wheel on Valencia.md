@@ -2,10 +2,10 @@
 title: "The New Wheel store on Valencia street"
 pubDate: January 9, 2026
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
+- https://c.im/@puf/115916800305324235
+- https://c.im/@puf/115872176679096860
+- https://bsky.app/profile/puf.io/post/3mcpgtti6nc2h
+- https://www.threads.com/@frankpuf/post/DTqDJSTDbXG
 tags: [san-francisco, mission, valencia-street]
 locations: 
  - [37.7562999,-122.4211887]
