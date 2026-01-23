@@ -2,10 +2,10 @@
 title: "Mount Tamalpais - Verna Dunshee Loop Trail"
 pubDate: January 20, 2026
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
+  - https://c.im/@puf/115946087482370259
+  - https://bsky.app/profile/puf.io/post/3md4h23odg52q
+  - https://www.threads.com/@frankpuf/post/DT3Xjh3ic8M
+  - https://x.com/puf/status/2014783891945468097
 tags: [san-francisco, mount-tamalpais, hiking, mill-valley, marin-county]
 locations: 
  - [37.9275875,-122.5980706]
