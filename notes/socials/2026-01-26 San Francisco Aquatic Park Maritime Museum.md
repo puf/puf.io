@@ -2,10 +2,10 @@
 title: "The Maritime Museum in the San Francisco Aquatic Park"
 pubDate: January 26, 2026
 alsoOn:
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
+  - https://c.im/@puf/115979594351509969
+  - https://bsky.app/profile/puf.io/post/3mdld6vehf62g
+  - https://www.threads.com/@frankpuf/post/DUGmuNLiT17
+  - https://x.com/puf/status/2016928253861142980
 tags: [san-francisco, nps, aquatic-park, embarcadero, maritime-museum, public-art, statues, mosaic, murals, fishermans-wharf]
 locations: 
  - [37.806305,-122.423905]
