@@ -9,7 +9,7 @@ link: "https://www.goodreads.com/book/show/100701424"
 pageCount: 469
 ---
 
-[Book cover featuring a close-up portrait of Patrick Stewart resting his chin on his hand, with the title “Making It So: A Memoir” and the text “Read by the Author.”](https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1683097487i/100701424.jpg)
+![Book cover featuring a close-up portrait of Patrick Stewart resting his chin on his hand, with the title “Making It So: A Memoir” and the text “Read by the Author.”](https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1683097487i/100701424.jpg)
 
 Patrick Stewart is best known for his roles as Jean-Luc Picard in Star Trek shows and movies, and as Professor X in the X-Men movies. But he's actually been an actor since his early teens and did stage productions for the first few decades of his career.
 
