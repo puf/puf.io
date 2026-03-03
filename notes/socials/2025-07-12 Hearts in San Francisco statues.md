@@ -12,6 +12,7 @@ locations:
  - [37.7977236,-122.4305839]
  - [37.785997,-122.422302]
  - [37.788185, -122.408212]
+ - [37.788597,-122.4043919]
 aliases: [/socials/2025-07-13-hearts-in-san-francisco-statues]
 ---
 
@@ -59,6 +60,15 @@ Update (August 19, 2025): we found another one today, this time near the Bank of
 ![ColorFall of Hope](https://i.imgur.com/8sSd1aK.jpeg)
 *[ColorFall of Hope](https://sfghf.org/deirdre-weinberg-colorfall-of-hope/) by Deirdre Weinberg*
 
+---
+
+Update (March 5, 2026): ooh, we found another heart in downtown, as we were [heading to the SFMOMA]. This one is called Bae Area and was created by Piero Spadaro. It's in a Bank of America branch again, this time on the [corner of Montgomery street and Market street][baeareamap].
+
+![Bae Area](https://i.imgur.com/nRB6skH.png)
+
+Sorry for the not-great pic. The weather was not ideal, the window was dirty, and I couldn't figure out a good angle where we weren't showing. :-/
+
+---
 
 [heartsinsf]: https://sfghf.org/hearts-in-san-francisco/
 [heartssale]: https://sfghf.org/have-a-heart/
@@ -70,3 +80,4 @@ Update (August 19, 2025): we found another one today, this time near the Bank of
 [heartinpark]: https://franciscopark.org/the-heart-of-francisco-park/
 [unionsquaremap]: https://maps.app.goo.gl/4LLT6T6JtvzKKZJa9
 [snake]: /socials/2025-02-01-year-of-the-snake-sculpture-on-union-square
+[baeareamap]: https://sfghf.org/map/#24754
