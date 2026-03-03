@@ -2,10 +2,10 @@
 title: "Stagecoach Greens mini golf in Mission Bay"
 pubDate: January 31, 2026
 alsoOn:
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
+  - https://www.threads.com/@frankpuf/post/DUepoZMDGXg
+  - https://c.im/@puf/116032470955162995
+  - https://www.threads.com/@frankpuf/post/DUi3jEciYEd
+  - https://x.com/puf/status/2020906034227827132
 tags: [san-francisco, mission-bay, mini-golf, stagecoach-greens, spark-social]
 locations: 
  - [37.7710297,-122.3934018]
