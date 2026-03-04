@@ -62,7 +62,7 @@ Update (August 19, 2025): we found another one today, this time near the Bank of
 
 ---
 
-Update (March 5, 2026): ooh, we found another heart in downtown, as we were [heading to the SFMOMA]. This one is called Bae Area and was created by Piero Spadaro. It's in a Bank of America branch again, this time on the [corner of Montgomery street and Market street][baeareamap].
+Update (March 5, 2026): ooh, we found another heart in downtown, as we were [heading to the SFMOMA]. This one is called Bae Area and was created by Piero Spadaro. It's in a Bank of America branch again, this time on the [corner of New Montgomery street and Market street][baeareamap].
 
 ![Bae Area](https://i.imgur.com/nRB6skH.png)
 
