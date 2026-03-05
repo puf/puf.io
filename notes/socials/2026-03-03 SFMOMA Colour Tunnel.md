@@ -28,7 +28,9 @@ From close up it looks pretty simple, but the views it affords make the sky brid
 
 ![yellow green close-up](https://i.imgur.com/ueUNpjG.png)
 
-Despite its name, you can traverse the sky bridge from either side of the atrium. The floor of the bridge is a mesh that you can somewhat see through, so depending on whether you're afraid of heights: don't (forget to) look down!
+The name "one-way" turns out to be the conceptual heart of the piece. The colour-effect acrylic panels only reveal their full prismatic display when you walk through in one direction — walk back the other way and instead of vibrant colour, you're met with the dull black backs of the panels. The magic is directional.
+
+So while you *can* traverse the sky bridge from either side of the atrium, you'll get a completely different experience depending on which way you go. The floor of the bridge is a mesh that you can somewhat see through, so depending on whether you're afraid of heights: don't (forget to) look down!
 
 ![Animation from closer up](https://i.imgur.com/pG9ITvO.gif)
 
