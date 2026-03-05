@@ -23,3 +23,6 @@ Then this weekend when we walked by, they added a "Coming Soon" sign.
 
 If the name [Mission's Kitchen](https://www.yelp.com/biz/missions-kitchen-san-francisco) sounds and the font looks familiar, that's because they already have a location on 2738 Mission street. There's usually a line there during peak hours on the weekend, so we've never been. But the ratings are good, so I look forward to their new location having a similar line. :-)
 
+---
+
+Update (March 4, 2026): After the initial change putting up the Mission's Kitchen sign, nothing much seems to be happening at the site. Fingers crossed that they open the new site at some point. 🤞
