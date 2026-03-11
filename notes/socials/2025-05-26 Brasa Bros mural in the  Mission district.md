@@ -6,7 +6,7 @@ alsoOn:
   - https://x.com/puf/
   - https://bsky.app/profile/puf.io/
   - https://c.im/
-tags: [san-francisco, mission, mission-district, mural, mural-art, mission-murals]
+tags: [san-francisco, mission, mission-district, mural, mural-art, mission-murals, restaurant]
 location: [37.757111,-122.4193229]
 aliases: [/socials/2025-05-26-brasa-bros-mural-in-the--mission-district-copy/]
 ---
