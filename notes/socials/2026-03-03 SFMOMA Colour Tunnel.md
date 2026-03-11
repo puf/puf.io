@@ -2,10 +2,10 @@
 title: "SFMOMA Colour Tunnel"
 pubDate: March 3, 2026
 alsoOn:
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
+  - https://c.im/@puf/116195752032833309
+  - https://bsky.app/profile/puf.io/post/3mglcynm3tr27
+  - https://www.threads.com/@frankpuf/post/DVo5tdJCS12
+  - https://x.com/puf/status/2030762438954451442
 tags: [san-francisco, downtown, museum, moma, sfmoma, sky-bridge, art]
 locations: 
  - [37.7857182,-122.4036311]
