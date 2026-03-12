@@ -5,7 +5,7 @@ startedDate: "2026/02/11"
 finishedDate: "2026/02/26"
 rating: 3
 edition: "Audible Audiobook"
-link: "https://www.goodreads.com/book/show/1191527"
+link: "https://www.goodreads.com/book/show/199731706"
 pageCount: 136
 ---
 
