@@ -3,8 +3,6 @@ import { getNotes, getTypeForNote } from '../components/Notes.astro';
 import { renderStars } from '../components/StarRating.astro';
 
 import sanitizeHtml from 'sanitize-html';
-import MarkdownIt from 'markdown-it';
-const parser = new MarkdownIt();
 
 export async function GET(context) {
   const notes = (
@@ -42,12 +40,12 @@ export async function GET(context) {
               allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
             });
           } else {
-            content = sanitizeHtml(parser.render(note.props.compiledContent()), {
+            content = sanitizeHtml(note.props.compiledContent(), {
               allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
             });
           }
           if (content.length < 50_000) {
-            item.description = content + "\n\n";
+            item.description = content;
           }
           else {
             console.warn(`Skipping content for ${note.params.slug} in feed.xml, as it's too long (${content.length} chars)`);
