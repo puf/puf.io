@@ -2,10 +2,10 @@
 title: "Grand Lake Kitchen in Noe Valley"
 pubDate: March 11, 2026
 alsoOn:
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
+  - https://www.threads.com/@frankpuf/post/DVwyjFyidks
+  - https://c.im/@puf/116213098281581326
+  - https://bsky.app/profile/puf.io/post/3mgszildnzm2d
+  - https://x.com/puf/status/2031872598137565561
 tags: [san-francisco, noe-valley, restaurant, 24th-street, church-street]
 locations: 
  - [37.751822, -122.427337]
