@@ -34,16 +34,9 @@ export async function GET(context) {
       if (!item.description || item.description.length === 0) {
         try {
           let content;
-          if (note.props.file.endsWith('.mdx')) {
-            // TODO: get the renderable (or maybe unrendered) content
-            content = sanitizeHtml(note.props.compiledContent(), {
-              allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
-            });
-          } else {
-            content = sanitizeHtml(note.props.compiledContent(), {
-              allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
-            });
-          }
+          content = sanitizeHtml(note.props.compiledContent(), {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
+          });
           if (content.length < 50_000) {
             item.description = content;
           }
