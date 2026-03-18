@@ -23,8 +23,8 @@ console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}, isSeriesPa
 
 // Prepare series entries for rendering (done here so MemberContent is in scope for the template)
 const seriesEntries = seriesMembers.map((member) => {
-  const memberSlug = getSlugForNote(member);
-  const anchor = memberSlug.substring(memberSlug.lastIndexOf('/') + 1);
+  const d = new Date(member.frontmatter.pubDate);
+  const anchor = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
   return { member, MemberContent: member.Content, anchor };
 });
 
@@ -166,8 +166,8 @@ if (!isSeriesPage) {
               <hr />
               {seriesEntries.map(({ member, MemberContent, anchor }) => (
                 <section id={anchor}>
-                  <h2>{member.frontmatter.title} <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></h2>
-                  <p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /></p>
+                  <h2>{member.frontmatter.title}</h2>
+                  <p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /> <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></p>
                   <MemberContent />
                   <hr />
                 </section>
