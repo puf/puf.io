@@ -20,18 +20,7 @@ aliases:
   - /socials/2025-07-13-hearts-in-san-francisco-statues
 ---
 
-If you've ever spent some time in San Francisco you've probably seen some of these large heart statues, like this one on Union Square:
-
-![](https://i.imgur.com/V2bSy7h.png)
-
-This sculpture is called Butterflight and is part of the [Hearts in San Francisco][heartsinsf] public art project that's been running for over 20 years. New hearts are added each year, and some hearts are also [sold][heartssale] off regularly.
-
-Currently there are over 100 of these large hearts to be found in public places all over SF right now. You can find all of them in this [hearts gallery][heartsgallery] or see them on this map of hearts:
-
-![](https://i.imgur.com/myh8ikw.png)
-[click here for an interactive map][heartsmap]
-
-Or do as I've been doing, and admire them when you randomly bump into them on a city hike. Here are a few of my more recent heart encounters:
+Here are a few of my more recent heart encounters:
 
 * When we were visiting [Sutter Health on 1100 Van Ness][sutterhealthmap] recently (nothing serious, thanks for asking), we saw this gorgeous heart called "City Fruit" painted by prolific SF Mission artist [Sirron Norris][sirronnorris]:
 
@@ -41,7 +30,7 @@ Or do as I've been doing, and admire them when you randomly bump into them on a 
 
   ![](https://i.imgur.com/6jl09TX.png)
 
-* Just like the Butterflight heart at the top of the article, this Tea Time with Laine is on [Union Square][unionsquaremap]. Or actually it *was* there, but it moved to New Hampshire now - the heart goes where the heart goes I guess.
+* Just like the Butterflight heart at the top of the page, this Tea Time with Laine is on [Union Square][unionsquaremap]. Or actually it *was* there, but it moved to New Hampshire now - the heart goes where the heart wants, I guess.
 
   ![](https://i.imgur.com/pOCoSpH.png)
 
