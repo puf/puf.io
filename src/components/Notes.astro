@@ -3,6 +3,10 @@ import path from "path";
 
 export const notesPath = path.join(process.cwd(), "notes");
 export function getSlugForNote(note) {
+  if (note.frontmatter?.slug) {
+    const s = note.frontmatter.slug;
+    return s.startsWith('/') ? s : '/' + s;
+  }
   return (note.file || "")
       .replace(notesPath, "") // remove local path
       .replace(/\.(md|mdx)$/, "") // remove .md or .mdx extension
