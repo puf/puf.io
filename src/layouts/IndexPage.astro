@@ -25,11 +25,13 @@ console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}, isSeriesPa
 const seriesEntries = seriesMembers.map((member) => {
   const d = new Date(member.frontmatter.pubDate);
   const anchor = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const memberSlug = getSlugForNote(member);
+  const slugAnchor = memberSlug.substring(memberSlug.lastIndexOf('/') + 1);
   const fullTitle = member.frontmatter.title;
   const tocTitle = fullTitle.startsWith(title)
     ? fullTitle.slice(title.length).replace(/^\s*[-–—]\s*/, '') || fullTitle
     : fullTitle;
-  return { member, MemberContent: member.Content, anchor, tocTitle };
+  return { member, MemberContent: member.Content, anchor, slugAnchor, tocTitle };
 });
 
 let notes = [];
@@ -148,8 +150,9 @@ if (!isSeriesPage) {
                 ))}
               </ol>
               <hr />
-              {seriesEntries.map(({ member, MemberContent, anchor }) => (
+              {seriesEntries.map(({ member, MemberContent, anchor, slugAnchor }) => (
                 <section id={anchor}>
+                  <span id={slugAnchor} style="display:none"></span>
                   <h2>{member.frontmatter.title}</h2>
                   <p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /> <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></p>
                   <MemberContent />
