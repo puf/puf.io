@@ -148,6 +148,7 @@ if (!isSeriesPage) {
           {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
         </div>
         <div class="prose">
+          {isSeriesPage && <h1>{title}</h1>}
           <slot />
           <hr />
           {isSeriesPage && (
