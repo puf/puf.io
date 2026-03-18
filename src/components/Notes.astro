@@ -150,8 +150,11 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
       const bDate = new Date(getPubDateForNote(b) || '1970/1/1').getTime();
       return aDate - bDate; // chronological
     });
+    const pubDate = getPubDateForNote(note);
+    const nowDate = new Date();
+    const isDraft = ''+((pubDate === undefined || pubDate === '' || new Date(pubDate) > nowDate));
     results.push({
-      params: { slug, type, name, pubDate: undefined, isDraft: 'false' },
+      params: { slug, type, name, pubDate, isDraft },
       props: { ...note, seriesMembers: members }
     });
   }
