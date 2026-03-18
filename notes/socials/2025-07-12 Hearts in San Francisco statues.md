@@ -6,14 +6,14 @@ alsoOn:
   - https://x.com/puf/status/1944190687097799054
   - https://bsky.app/profile/puf.io/post/3ltsm7hymlh26
   - https://c.im/@puf@c.im/114843069695635852
-  - https://www.linkedin.com/posts/puf_if-youve-ever-walked-around-san-francisco-activity-7349956670581587970-mmjJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAA6E1MBzbF9oPv2cJb9vbv4cyPR-rhR1Zs
+  - https://www.linkedin.com/posts/puf_if-youve-ever-walked-around-san-francisco-activity-7349956670581587970-mmjJ
 tags: [san-francisco, hearts-in-san-francisco, public-art, union-square, francisco-park, sutter-health, van-ness]
 locations: 
  - [37.7977236,-122.4305839]
  - [37.785997,-122.422302]
  - [37.788185, -122.408212]
  - [37.788597,-122.4043919]
-aliases: [/socials/2025-07-13-hearts-in-san-francisco-statues]
+aliases: [/socials/2025-07-13-hearts-in-san-francisco-statues, /socials/hearts-in-san-francisco-statues]
 ---
 
 If you've ever spent some time in San Francisco you've probably seen some of these large heart statues, like this one on Union Square:
