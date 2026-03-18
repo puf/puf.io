@@ -36,33 +36,36 @@ let notes = [];
 function hasReview(note) {
   return note.props.rawContent().trim().length > 0;
 }
-let locationString = '', mapFilename = '';
-let seriesLocationString = '', seriesMapFilename = '';
-if (isSeriesPage) {
-  seriesMembers.slice(0, 9).forEach((member, index) => {
-    if (member.frontmatter?.location) {
-      seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.location.join(',')}`;
+
+async function buildMap(items, getFrontmatter, filename) {
+  let locationString = '';
+  items.slice(0, 9).forEach((item, index) => {
+    const fm = getFrontmatter(item);
+    if (fm?.location) {
+      locationString += `&markers=label:${index+1}%7C${fm.location.join(',')}`;
     }
-    if (member.frontmatter?.locations) {
-      seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
+    if (fm?.locations) {
+      locationString += `&markers=label:${index+1}%7C${fm.locations.map(l => l.join(',')).join('|')}`;
     }
   });
-  if (seriesLocationString.length > 0) {
-    const seriesSlugName = slug.substring(slug.lastIndexOf('/') + 1);
-    const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${seriesLocationString}`;
+  if (locationString.length === 0) return '';
 
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const data = new Uint8Array(await blob.arrayBuffer());
+  const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
+  const data = new Uint8Array(await (await (await fetch(url)).blob()).arrayBuffer());
 
-    seriesMapFilename = `map-series-${seriesSlugName}.png`;
+  // TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
+  ["dist", "public"].forEach(async (dir) => {
+    await fs.mkdir(dir, { recursive: true });
+    await fs.writeFile(path.join(process.cwd(), dir, filename), data);
+  });
+  console.log(`Map saved to ${filename}`);
+  return filename;
+}
 
-    ["dist", "public"].forEach(async (dir) => {
-      await fs.mkdir(dir, { recursive: true });
-      await fs.writeFile(path.join(process.cwd(), dir, seriesMapFilename), data);
-    });
-    console.log(`Series map saved to ${seriesMapFilename}`);
-  }
+let mapFilename = '', seriesMapFilename = '';
+if (isSeriesPage) {
+  const seriesSlugName = slug.substring(slug.lastIndexOf('/') + 1);
+  seriesMapFilename = await buildMap(seriesMembers, m => m.frontmatter, `map-series-${seriesSlugName}.png`);
 }
 if (!isSeriesPage) {
   notes = await getNotes({ keepIf: (note) => {
@@ -72,31 +75,8 @@ if (!isSeriesPage) {
     }});
 
   // TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
-  notes.slice(0, 9).forEach((note, index) => {
-    if (note.props?.frontmatter?.location) {
-      locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.location.join(',')}`;
-    }
-    if (note.props?.frontmatter?.locations) {
-      locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
-    }
-  });
-  if (locationString.length > 0) {
-    const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
-
-    const response = await fetch(url);
-    const blob = await response.blob();
-
-    const data = new Uint8Array(await blob.arrayBuffer());
-
-    mapFilename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
-
-    // TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
-    ["dist", "public"].forEach(async (dir) => {
-      await fs.mkdir(dir, { recursive: true });
-      await fs.writeFile(path.join(process.cwd(), dir, mapFilename), data);
-    });
-    console.log(`Image from ${url} downloaded and saved to ${mapFilename} in (dist and public)`);
-  }
+  const filename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
+  mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
 }
 ---
 
@@ -157,7 +137,7 @@ if (!isSeriesPage) {
           <hr />
           {isSeriesPage && (
             <div class="series">
-              {seriesLocationString.length > 0 && (
+              {seriesMapFilename && (
                 <div class="map">
                   <img src={'/' + seriesMapFilename} />
                 </div>
@@ -181,7 +161,7 @@ if (!isSeriesPage) {
           {!isSeriesPage && (
             <div class="list">
               <div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
-              {locationString.length === 0 && (
+              {!mapFilename && (
                 // If there's no map, show one long list
                 <ol>
                   {notes.map((note) => (
@@ -196,7 +176,7 @@ if (!isSeriesPage) {
                   ))}
                 </ol>
               )}
-              {locationString.length > 0 && (
+              {mapFilename && (
                 // If there are locations, show recent posts, a map of them, and then the rest
                 <ol>
                   {notes.slice(0, 9).map((note) => (
