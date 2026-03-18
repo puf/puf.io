@@ -25,7 +25,11 @@ console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}, isSeriesPa
 const seriesEntries = seriesMembers.map((member) => {
   const d = new Date(member.frontmatter.pubDate);
   const anchor = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-  return { member, MemberContent: member.Content, anchor };
+  const fullTitle = member.frontmatter.title;
+  const tocTitle = fullTitle.startsWith(title)
+    ? fullTitle.slice(title.length).replace(/^\s*[-–—]\s*/, '') || fullTitle
+    : fullTitle;
+  return { member, MemberContent: member.Content, anchor, tocTitle };
 });
 
 let notes = [];
@@ -160,7 +164,7 @@ if (!isSeriesPage) {
               )}
               <ol>
                 {seriesEntries.map(({ member, anchor }) => (
-                  <li><a href={`#${anchor}`}>{member.frontmatter.title}</a> <FormattedDate date={new Date(member.frontmatter.pubDate)} /></li>
+                  <li><a href={`#${anchor}`}>{tocTitle}</a> <FormattedDate date={new Date(member.frontmatter.pubDate)} /></li>
                 ))}
               </ol>
               <hr />
