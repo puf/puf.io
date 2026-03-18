@@ -14,20 +14,30 @@ const slug = Astro.props.slug || getSlugForNote(Astro.props);
 let type = slug.substring(0, slug.indexOf("/", 1)); // "socials", "books", "posts" or "tags"
 if (type.charAt(0) === '/') type = type.substring(1); // remove leading slash
 const tag = type === "tags" ? slug.substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
-title = tag
-console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}`);
+const isSeriesPage = Astro.props.frontmatter?.type === 'series';
+const seriesMembers = Astro.props.seriesMembers || [];
+title = isSeriesPage ? (Astro.props.frontmatter?.title || title) : tag;
+console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}, isSeriesPage=${isSeriesPage}`);
 
-const notes = await getNotes({ keepIf: (note) => {
-	return type === 'tags' 
-	  ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
-		: note.params.type === type && !/readme.md$/.test(note.props.file)
-	}});
+// Prepare series entries for rendering (done here so MemberContent is in scope for the template)
+const seriesEntries = seriesMembers.map((member) => {
+  const memberSlug = getSlugForNote(member);
+  const anchor = memberSlug.substring(memberSlug.lastIndexOf('/') + 1);
+  return { member, MemberContent: member.Content, anchor };
+});
 
+let notes = [];
 function hasReview(note) {
 	return note.props.rawContent().trim().length > 0;
 }
 let locationString = '', mapFilename = '';
-if (true) {
+if (!isSeriesPage) {
+	notes = await getNotes({ keepIf: (note) => {
+		return type === 'tags'
+		  ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
+			: note.params.type === type && !/readme.md$/.test(note.props.file)
+		}});
+
 	// TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
 	notes.slice(0, 9).forEach((note, index) => {
 		if (note.props?.frontmatter?.location) {
@@ -114,56 +124,70 @@ if (true) {
 				<div class="prose">
 					<slot />
 					<hr />
-					<div class="list">
-						<div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
-						{locationString.length === 0 && (
-							// If there's no map, show one long list
-							<ol>
-								{notes.map((note) => (
-									<li>
-										{note.params?.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-										<a href={note.params?.slug}>{note.props?.frontmatter.title}</a>
-										{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
-										{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-										{type === 'books' && "Finished on: "}{note.params.pubDate}
-										{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
-									</li>
-								))}
-							</ol>
-						)}
-						{locationString.length > 0 && (
-							// If there are locations, show recent posts, a map of them, and then the rest
-							<ol>
-								{notes.slice(0, 9).map((note) => (
-									<li>
-										{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-										<a href={note.params.slug}>{note.props.frontmatter.title}</a>
-										{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
-										{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-										{type === 'books' && "Finished on: "}{note.params.pubDate}
-										{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
-									</li>
-								))}
-							</ol>
-							<div class="map">
-  							<img src={'/'+mapFilename} />
-							</div>
-							<ul>
-								{notes.slice(9).map((note) => (
-									<li>
-										{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-										<a href={note.params.slug}>{note.props.frontmatter.title}</a>
-										{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
-										{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-										{type === 'books' && "Finished on: "}{note.params.pubDate}
-										{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
-									</li>
-								))}
-							</ul>
-							<hr/>
-						)}
-					<hr/>
-					</div>
+					{isSeriesPage && (
+						<div class="series">
+							{seriesEntries.map(({ member, MemberContent, anchor }) => (
+								<section id={anchor}>
+									<h2>{member.frontmatter.title}</h2>
+									<p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /></p>
+									<MemberContent />
+									<hr />
+								</section>
+							))}
+						</div>
+					)}
+					{!isSeriesPage && (
+						<div class="list">
+							<div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
+							{locationString.length === 0 && (
+								// If there's no map, show one long list
+								<ol>
+									{notes.map((note) => (
+										<li>
+											{note.params?.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+											<a href={note.params?.slug}>{note.props?.frontmatter.title}</a>
+											{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+											{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+											{type === 'books' && "Finished on: "}{note.params.pubDate}
+											{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+										</li>
+									))}
+								</ol>
+							)}
+							{locationString.length > 0 && (
+								// If there are locations, show recent posts, a map of them, and then the rest
+								<ol>
+									{notes.slice(0, 9).map((note) => (
+										<li>
+											{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+											<a href={note.params.slug}>{note.props.frontmatter.title}</a>
+											{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+											{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+											{type === 'books' && "Finished on: "}{note.params.pubDate}
+											{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+										</li>
+									))}
+								</ol>
+								<div class="map">
+									<img src={'/'+mapFilename} />
+								</div>
+								<ul>
+									{notes.slice(9).map((note) => (
+										<li>
+											{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+											<a href={note.params.slug}>{note.props.frontmatter.title}</a>
+											{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+											{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+											{type === 'books' && "Finished on: "}{note.params.pubDate}
+											{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+										</li>
+									))}
+								</ul>
+								<hr/>
+							)}
+						<hr/>
+						</div>
+					)}
 					<div class="date">
 						{
 							<div class="last-updated-on">

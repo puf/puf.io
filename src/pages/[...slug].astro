@@ -26,6 +26,7 @@ const slug = Astro.params.slug || getSlugForNote(post);
 const type = slug.substring(0, slug.indexOf("/", 1));
 const isRedirect = typeof post.redirectTo != 'undefined' && post.redirectTo.length > 0;
 const isTag = 'tags' === type || 'tag' === type;
+const isSeriesPage = post.frontmatter?.type === 'series';
 
 console.log(`Rendering ${slug} (${post.file}) with pubDate: ${pubDate}, type: ${type} isReadme: ${isReadme}, isRedirect: ${isRedirect}, isTag: ${isTag} to ${JSON.stringify(post)}`);
 ---
@@ -35,10 +36,10 @@ console.log(`Rendering ${slug} (${post.file}) with pubDate: ${pubDate}, type: ${
   <Content  components={{ PullQuote }}/>
 </NotePost>
 )}
-{( (isReadme || isTag) && 
+{( (isReadme || isTag || isSeriesPage) &&
   <meta charset="utf-8"/>
   <IndexPage {...post} >
-    {(isReadme && <article><Content /></article>)}
+    {((isReadme || isSeriesPage) && <article><Content /></article>)}
   </IndexPage>
 )}
 

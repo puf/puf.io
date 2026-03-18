@@ -37,6 +37,26 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
   const nowDate = new Date();
   const tags = {};
 
+  // Pre-scan: identify series definition files (type: series) → seriesId -> seriesSlug
+  const seriesDefBySlug = {};
+  for (const note of notes) {
+    if (note.frontmatter?.type === 'series') {
+      const slug = getSlugForNote(note);
+      const seriesId = slug.substring(slug.lastIndexOf('/') + 1);
+      seriesDefBySlug[seriesId] = slug;
+    }
+  }
+
+  // Pre-scan: group series member notes by series ID
+  const seriesMembersBySlug = {};
+  for (const note of notes) {
+    const seriesId = note.frontmatter?.series;
+    if (seriesId) {
+      if (!seriesMembersBySlug[seriesId]) seriesMembersBySlug[seriesId] = [];
+      seriesMembersBySlug[seriesId].push(note);
+    }
+  }
+
   // Convert notes to more usable type, and sort them
   let results: any[] = []; // TODO: define type
   for (const note of notes) {
@@ -44,7 +64,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     const type = getTypeForNote(note)
     const name = getNameForNote(note);
     let pubDate = getPubDateForNote(note);
-    
+
     if (typeof pubDate !== 'undefined' && typeof pubDate !== 'string' && typeof pubDate !== 'number') {
       //console.error("Invalid pubDate value:", pubDate, "skipping:", note.file);
       // Skip this file
@@ -53,6 +73,47 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     if (typeof pubDate === 'string' && pubDate.length === 0) {
       console.log("pubDate:", pubDate, "for:", note.file, "this will lead to complaints from the router later")
     }
+
+    // Series definition files are added in a separate pass below
+    if (note.frontmatter?.type === 'series') continue;
+
+    // Handle series member entries
+    const seriesId = note.frontmatter?.series;
+    if (seriesId) {
+      if (seriesDefBySlug[seriesId]) {
+        // Series definition exists: suppress standalone page, generate redirects
+        const seriesSlug = seriesDefBySlug[seriesId];
+        const anchor = slug.substring(slug.lastIndexOf('/') + 1);
+        const redirectTarget = `${seriesSlug}#${anchor}`;
+        results.push({ params: { slug }, props: { type: 'redirect', redirectTo: redirectTarget } });
+        if (note.frontmatter?.aliases) {
+          for (const alias of note.frontmatter.aliases) {
+            results.push({ params: { slug: alias }, props: { type: 'redirect', redirectTo: redirectTarget } });
+          }
+        }
+      } else {
+        // Series definition missing: warn and publish standalone
+        console.warn(`[series] "${note.file}" references series "${seriesId}" but no series definition file found. Publishing standalone.`);
+        const isDraft = ''+((pubDate==="" || pubDate === undefined || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
+        results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
+        if (note.frontmatter?.aliases) {
+          for (const alias of note.frontmatter.aliases) {
+            results.push({ params: { slug: alias }, props: { type: "redirect", redirectTo: slug } });
+          }
+        }
+        if (note.frontmatter?.tags) {
+          for (const tag of note.frontmatter.tags) {
+            if (tags.hasOwnProperty(tag)) {
+              tags[tag].push({ slug, type, name, pubDate, isDraft });
+            } else {
+              tags[tag] = [{ slug, type, name, pubDate, isDraft }];
+            }
+          }
+        }
+      }
+      continue;
+    }
+
     const isDraft = ''+((pubDate==="" || pubDate === undefined || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
 
     //if (note.file.match("^_") && !note.file.match("_readme.md")) console.error(`Hidden file: ${note.file}`);
@@ -75,6 +136,24 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
         }
       }
     }
+  }
+
+  // Add series definition pages with their sorted member notes as props
+  for (const note of notes) {
+    if (note.frontmatter?.type !== 'series') continue;
+    const slug = getSlugForNote(note);
+    const type = getTypeForNote(note);
+    const name = getNameForNote(note);
+    const seriesId = slug.substring(slug.lastIndexOf('/') + 1);
+    const members = (seriesMembersBySlug[seriesId] || []).sort((a, b) => {
+      const aDate = new Date(getPubDateForNote(a) || '1970/1/1').getTime();
+      const bDate = new Date(getPubDateForNote(b) || '1970/1/1').getTime();
+      return bDate - aDate; // reverse chronological
+    });
+    results.push({
+      params: { slug, type, name, pubDate: undefined, isDraft: 'false' },
+      props: { ...note, seriesMembers: members }
+    });
   }
 
   for (const tag of Object.keys(tags)) {
@@ -100,7 +179,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     results = results.filter(options.keepIf);
   }
 
-  // console.log("getNotes", results.filter(n => n.props.type === "tag" && n.props.tag === "22nd-street").slice(-3))  
+  // console.log("getNotes", results.filter(n => n.props.type === "tag" && n.props.tag === "22nd-street").slice(-3))
   return results;
 }
 
