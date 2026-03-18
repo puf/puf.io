@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro'
 import { getSlugForNote, getNotes } from '../components/Notes.astro';
+import path from 'path';
+import fs from "fs/promises";
 
 console.log("IndexPage.astro: Astro.props=", Astro.props)
 
@@ -42,9 +44,6 @@ if (isSeriesPage) {
     }
   });
   if (seriesLocationString.length > 0) {
-    import path from 'path';
-    import fs from "fs/promises";
-
     const seriesSlugName = slug.substring(slug.lastIndexOf('/') + 1);
     const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${seriesLocationString}`;
 
@@ -78,9 +77,6 @@ if (!isSeriesPage) {
     }
   });
   if (locationString.length > 0) {
-    import path from 'path';
-    import fs from "fs/promises";
-
     const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
 
     const response = await fetch(url);
