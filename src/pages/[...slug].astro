@@ -31,7 +31,7 @@ const isSeriesPage = post.frontmatter?.type === 'series';
 console.log(`Rendering ${slug} (${post.file}) with pubDate: ${pubDate}, type: ${type} isReadme: ${isReadme}, isRedirect: ${isRedirect}, isTag: ${isTag} to ${JSON.stringify(post)}`);
 ---
 
-{(pubDate &&
+{(pubDate && !isSeriesPage &&
 <NotePost {...post} pubDate={pubDate} title={post.frontmatter.title} description={post.frontmatter.description} >
   <Content  components={{ PullQuote }}/>
 </NotePost>
