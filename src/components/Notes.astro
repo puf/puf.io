@@ -79,39 +79,22 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
 
     // Handle series member entries
     const seriesId = note.frontmatter?.series;
-    if (seriesId) {
-      if (seriesDefBySlug[seriesId]) {
-        // Series definition exists: suppress standalone page, generate redirects
-        const seriesSlug = seriesDefBySlug[seriesId];
-        const anchor = slug.substring(slug.lastIndexOf('/') + 1);
-        const redirectTarget = `${seriesSlug}#${anchor}`;
-        results.push({ params: { slug }, props: { type: 'redirect', redirectTo: redirectTarget } });
-        if (note.frontmatter?.aliases) {
-          for (const alias of note.frontmatter.aliases) {
-            results.push({ params: { slug: alias }, props: { type: 'redirect', redirectTo: redirectTarget } });
-          }
-        }
-      } else {
-        // Series definition missing: warn and publish standalone
-        console.error(`[series] "${note.file}" references series "${seriesId}" but no series definition file found. Publishing standalone.`);
-        const isDraft = ''+((pubDate==="" || pubDate === undefined || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
-        results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
-        if (note.frontmatter?.aliases) {
-          for (const alias of note.frontmatter.aliases) {
-            results.push({ params: { slug: alias }, props: { type: "redirect", redirectTo: slug } });
-          }
-        }
-        if (note.frontmatter?.tags) {
-          for (const tag of note.frontmatter.tags) {
-            if (tags.hasOwnProperty(tag)) {
-              tags[tag].push({ slug, type, name, pubDate, isDraft });
-            } else {
-              tags[tag] = [{ slug, type, name, pubDate, isDraft }];
-            }
-          }
+    if (seriesId && seriesDefBySlug[seriesId]) {
+      // Series definition exists: suppress standalone page, generate redirects
+      const seriesSlug = seriesDefBySlug[seriesId];
+      const anchor = slug.substring(slug.lastIndexOf('/') + 1);
+      const redirectTarget = `${seriesSlug}#${anchor}`;
+      results.push({ params: { slug }, props: { type: 'redirect', redirectTo: redirectTarget } });
+      if (note.frontmatter?.aliases) {
+        for (const alias of note.frontmatter.aliases) {
+          results.push({ params: { slug: alias }, props: { type: 'redirect', redirectTo: redirectTarget } });
         }
       }
       continue;
+    }
+    if (seriesId) {
+      // Series definition missing: warn and publish standalone (falls through to normal processing)
+      console.error(`[series] "${note.file}" references series "${seriesId}" but no series definition file found. Publishing standalone.`);
     }
 
     const isDraft = ''+((pubDate==="" || pubDate === undefined || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
