@@ -28,217 +28,217 @@ const seriesEntries = seriesMembers.map((member) => {
 
 let notes = [];
 function hasReview(note) {
-	return note.props.rawContent().trim().length > 0;
+  return note.props.rawContent().trim().length > 0;
 }
 let locationString = '', mapFilename = '';
 let seriesLocationString = '', seriesMapFilename = '';
 if (isSeriesPage) {
-	seriesMembers.slice(0, 9).forEach((member, index) => {
-		if (member.frontmatter?.location) {
-			seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.location.join(',')}`;
-		}
-		if (member.frontmatter?.locations) {
-			seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
-		}
-	});
-	if (seriesLocationString.length > 0) {
-		import path from 'path';
-		import fs from "fs/promises";
+  seriesMembers.slice(0, 9).forEach((member, index) => {
+    if (member.frontmatter?.location) {
+      seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.location.join(',')}`;
+    }
+    if (member.frontmatter?.locations) {
+      seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
+    }
+  });
+  if (seriesLocationString.length > 0) {
+    import path from 'path';
+    import fs from "fs/promises";
 
-		const seriesSlugName = slug.substring(slug.lastIndexOf('/') + 1);
-		const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${seriesLocationString}`;
+    const seriesSlugName = slug.substring(slug.lastIndexOf('/') + 1);
+    const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${seriesLocationString}`;
 
-		const response = await fetch(url);
-		const blob = await response.blob();
-		const data = new Uint8Array(await blob.arrayBuffer());
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const data = new Uint8Array(await blob.arrayBuffer());
 
-		seriesMapFilename = `map-series-${seriesSlugName}.png`;
+    seriesMapFilename = `map-series-${seriesSlugName}.png`;
 
-		["dist", "public"].forEach(async (dir) => {
-			await fs.mkdir(dir, { recursive: true });
-			await fs.writeFile(path.join(process.cwd(), dir, seriesMapFilename), data);
-		});
-		console.log(`Series map saved to ${seriesMapFilename}`);
-	}
+    ["dist", "public"].forEach(async (dir) => {
+      await fs.mkdir(dir, { recursive: true });
+      await fs.writeFile(path.join(process.cwd(), dir, seriesMapFilename), data);
+    });
+    console.log(`Series map saved to ${seriesMapFilename}`);
+  }
 }
 if (!isSeriesPage) {
-	notes = await getNotes({ keepIf: (note) => {
-		return type === 'tags'
-		  ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
-			: note.params.type === type && !/readme.md$/.test(note.props.file)
-		}});
+  notes = await getNotes({ keepIf: (note) => {
+    return type === 'tags'
+      ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
+      : note.params.type === type && !/readme.md$/.test(note.props.file)
+    }});
 
-	// TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
-	notes.slice(0, 9).forEach((note, index) => {
-		if (note.props?.frontmatter?.location) {
-			locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.location.join(',')}`;
-		}
-		if (note.props?.frontmatter?.locations) {
-			locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
-		}
-	});
-	if (locationString.length > 0) {
-		import path from 'path';
-		import fs from "fs/promises";
+  // TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
+  notes.slice(0, 9).forEach((note, index) => {
+    if (note.props?.frontmatter?.location) {
+      locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.location.join(',')}`;
+    }
+    if (note.props?.frontmatter?.locations) {
+      locationString += `&markers=label:${index+1}%7C${note.props.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
+    }
+  });
+  if (locationString.length > 0) {
+    import path from 'path';
+    import fs from "fs/promises";
 
-		const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
+    const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
 
-		const response = await fetch(url);
-		const blob = await response.blob();
+    const response = await fetch(url);
+    const blob = await response.blob();
 
-		const data = new Uint8Array(await blob.arrayBuffer());
+    const data = new Uint8Array(await blob.arrayBuffer());
 
-		mapFilename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
+    mapFilename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
 
-		// TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
-		["dist", "public"].forEach(async (dir) => {
-			await fs.mkdir(dir, { recursive: true });
-			await fs.writeFile(path.join(process.cwd(), dir, mapFilename), data);
-		});
-		console.log(`Image from ${url} downloaded and saved to ${mapFilename} in (dist and public)`);
-	}
+    // TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
+    ["dist", "public"].forEach(async (dir) => {
+      await fs.mkdir(dir, { recursive: true });
+      await fs.writeFile(path.join(process.cwd(), dir, mapFilename), data);
+    });
+    console.log(`Image from ${url} downloaded and saved to ${mapFilename} in (dist and public)`);
+  }
 }
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      main {
+        width: calc(100% - 2em);
+        max-width: 100%;
+        margin: 0;
+      }
+      .hero-image {
+        width: 100%;
+      }
+      .hero-image img {
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: var(--box-shadow);
+      }
+      .prose {
+        width: 720px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 1em;
+        color: rgb(var(--gray-dark));
+      }
+      .title {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .date {
+        margin-bottom: 0.5em;
+        color: rgb(var(--gray));
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
+    </style>
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<slot />
-					<hr />
-					{isSeriesPage && (
-						<div class="series">
-							{seriesLocationString.length > 0 && (
-								<div class="map">
-									<img src={'/' + seriesMapFilename} />
-								</div>
-							)}
-							<ol>
-								{seriesEntries.map(({ member, anchor }) => (
-									<li><a href={`#${anchor}`}>{member.frontmatter.title}</a></li>
-								))}
-							</ol>
-							<hr />
-							{seriesEntries.map(({ member, MemberContent, anchor }) => (
-								<section id={anchor}>
-									<h2>{member.frontmatter.title} <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></h2>
-									<p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /></p>
-									<MemberContent />
-									<hr />
-								</section>
-							))}
-						</div>
-					)}
-					{!isSeriesPage && (
-						<div class="list">
-							<div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
-							{locationString.length === 0 && (
-								// If there's no map, show one long list
-								<ol>
-									{notes.map((note) => (
-										<li>
-											{note.params?.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-											<a href={note.params?.slug}>{note.props?.frontmatter.title}</a>
-											{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
-											{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-											{type === 'books' && "Finished on: "}{note.params.pubDate}
-											{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
-										</li>
-									))}
-								</ol>
-							)}
-							{locationString.length > 0 && (
-								// If there are locations, show recent posts, a map of them, and then the rest
-								<ol>
-									{notes.slice(0, 9).map((note) => (
-										<li>
-											{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-											<a href={note.params.slug}>{note.props.frontmatter.title}</a>
-											{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
-											{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-											{type === 'books' && "Finished on: "}{note.params.pubDate}
-											{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
-										</li>
-									))}
-								</ol>
-								<div class="map">
-									<img src={'/'+mapFilename} />
-								</div>
-								<ul>
-									{notes.slice(9).map((note) => (
-										<li>
-											{note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
-											<a href={note.params.slug}>{note.props.frontmatter.title}</a>
-											{type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
-											{type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-											{type === 'books' && "Finished on: "}{note.params.pubDate}
-											{(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
-										</li>
-									))}
-								</ul>
-								<hr/>
-							)}
-						<hr/>
-						</div>
-					)}
-					<div class="date">
-						{
-							<div class="last-updated-on">
-								Last updated on <FormattedDate date={new Date()} />
-							</div>
-						}
-					</div>
-				</div>
-			</article>
-		</main>
-		<Footer {slug} />
-	</body>
+  <body>
+    <Header />
+    <main>
+      <article>
+        <div class="hero-image">
+          {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+        </div>
+        <div class="prose">
+          <slot />
+          <hr />
+          {isSeriesPage && (
+            <div class="series">
+              {seriesLocationString.length > 0 && (
+                <div class="map">
+                  <img src={'/' + seriesMapFilename} />
+                </div>
+              )}
+              <ol>
+                {seriesEntries.map(({ member, anchor }) => (
+                  <li><a href={`#${anchor}`}>{member.frontmatter.title}</a></li>
+                ))}
+              </ol>
+              <hr />
+              {seriesEntries.map(({ member, MemberContent, anchor }) => (
+                <section id={anchor}>
+                  <h2>{member.frontmatter.title} <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></h2>
+                  <p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /></p>
+                  <MemberContent />
+                  <hr />
+                </section>
+              ))}
+            </div>
+          )}
+          {!isSeriesPage && (
+            <div class="list">
+              <div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
+              {locationString.length === 0 && (
+                // If there's no map, show one long list
+                <ol>
+                  {notes.map((note) => (
+                    <li>
+                      {note.params?.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+                      <a href={note.params?.slug}>{note.props?.frontmatter.title}</a>
+                      {type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+                      {type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+                      {type === 'books' && "Finished on: "}{note.params.pubDate}
+                      {(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+                    </li>
+                  ))}
+                </ol>
+              )}
+              {locationString.length > 0 && (
+                // If there are locations, show recent posts, a map of them, and then the rest
+                <ol>
+                  {notes.slice(0, 9).map((note) => (
+                    <li>
+                      {note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+                      <a href={note.params.slug}>{note.props.frontmatter.title}</a>
+                      {type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+                      {type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+                      {type === 'books' && "Finished on: "}{note.params.pubDate}
+                      {(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+                    </li>
+                  ))}
+                </ol>
+                <div class="map">
+                  <img src={'/'+mapFilename} />
+                </div>
+                <ul>
+                  {notes.slice(9).map((note) => (
+                    <li>
+                      {note.params.isDraft === 'true' && <span title="This is a draft">🚧</span>}
+                      <a href={note.params.slug}>{note.props.frontmatter.title}</a>
+                      {type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
+                      {type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
+                      {type === 'books' && "Finished on: "}{note.params.pubDate}
+                      {(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
+                    </li>
+                  ))}
+                </ul>
+                <hr/>
+              )}
+            <hr/>
+            </div>
+          )}
+          <div class="date">
+            {
+              <div class="last-updated-on">
+                Last updated on <FormattedDate date={new Date()} />
+              </div>
+            }
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer {slug} />
+  </body>
 </html>
