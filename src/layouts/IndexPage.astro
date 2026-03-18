@@ -31,6 +31,36 @@ function hasReview(note) {
 	return note.props.rawContent().trim().length > 0;
 }
 let locationString = '', mapFilename = '';
+let seriesLocationString = '', seriesMapFilename = '';
+if (isSeriesPage) {
+	seriesMembers.slice(0, 9).forEach((member, index) => {
+		if (member.frontmatter?.location) {
+			seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.location.join(',')}`;
+		}
+		if (member.frontmatter?.locations) {
+			seriesLocationString += `&markers=label:${index+1}%7C${member.frontmatter.locations.map(l=>l.join(',')).join('|')}`;
+		}
+	});
+	if (seriesLocationString.length > 0) {
+		import path from 'path';
+		import fs from "fs/promises";
+
+		const seriesSlugName = slug.substring(slug.lastIndexOf('/') + 1);
+		const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${seriesLocationString}`;
+
+		const response = await fetch(url);
+		const blob = await response.blob();
+		const data = new Uint8Array(await blob.arrayBuffer());
+
+		seriesMapFilename = `map-series-${seriesSlugName}.png`;
+
+		["dist", "public"].forEach(async (dir) => {
+			await fs.mkdir(dir, { recursive: true });
+			await fs.writeFile(path.join(process.cwd(), dir, seriesMapFilename), data);
+		});
+		console.log(`Series map saved to ${seriesMapFilename}`);
+	}
+}
 if (!isSeriesPage) {
 	notes = await getNotes({ keepIf: (note) => {
 		return type === 'tags'
@@ -126,9 +156,20 @@ if (!isSeriesPage) {
 					<hr />
 					{isSeriesPage && (
 						<div class="series">
+							{seriesLocationString.length > 0 && (
+								<div class="map">
+									<img src={'/' + seriesMapFilename} />
+								</div>
+							)}
+							<ol>
+								{seriesEntries.map(({ member, anchor }) => (
+									<li><a href={`#${anchor}`}>{member.frontmatter.title}</a></li>
+								))}
+							</ol>
+							<hr />
 							{seriesEntries.map(({ member, MemberContent, anchor }) => (
 								<section id={anchor}>
-									<h2>{member.frontmatter.title}</h2>
+									<h2>{member.frontmatter.title} <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></h2>
 									<p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /></p>
 									<MemberContent />
 									<hr />
