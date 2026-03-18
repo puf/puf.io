@@ -190,7 +190,7 @@ if (!isSeriesPage) {
                       <a href={note.params?.slug}>{note.props?.frontmatter.title}</a>
                       {type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
                       {type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-                      {type === 'books' && "Finished on: "}{note.params.pubDate}
+                      {type === 'books' && "Finished on: "}{note.params.pubDate && <FormattedDate date={new Date(note.params.pubDate)} />}
                       {(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
                     </li>
                   ))}
@@ -205,7 +205,7 @@ if (!isSeriesPage) {
                       <a href={note.params.slug}>{note.props.frontmatter.title}</a>
                       {type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
                       {type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-                      {type === 'books' && "Finished on: "}{note.params.pubDate}
+                      {type === 'books' && "Finished on: "}{note.params.pubDate && <FormattedDate date={new Date(note.params.pubDate)} />}
                       {(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
                     </li>
                   ))}
@@ -220,7 +220,7 @@ if (!isSeriesPage) {
                       <a href={note.params.slug}>{note.props.frontmatter.title}</a>
                       {type === 'books' && <span> - {note.props.frontmatter?.author}</span>}
                       {type === 'books' && <StarRating rating={note.props.frontmatter?.rating}/>}
-                      {type === 'books' && "Finished on: "}{note.params.pubDate}
+                      {type === 'books' && "Finished on: "}{note.params.pubDate && <FormattedDate date={new Date(note.params.pubDate)} />}
                       {(type === 'books' && hasReview(note)) && <span title="I've written a review for this book">📝</span>}
                     </li>
                   ))}
