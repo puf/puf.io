@@ -160,7 +160,7 @@ if (!isSeriesPage) {
               )}
               <ol>
                 {seriesEntries.map(({ member, anchor }) => (
-                  <li><a href={`#${anchor}`}>{member.frontmatter.title}</a></li>
+                  <li><a href={`#${anchor}`}>{member.frontmatter.title}</a> <FormattedDate date={new Date(member.frontmatter.pubDate)} /></li>
                 ))}
               </ol>
               <hr />

@@ -148,7 +148,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
     const members = (seriesMembersBySlug[seriesId] || []).sort((a, b) => {
       const aDate = new Date(getPubDateForNote(a) || '1970/1/1').getTime();
       const bDate = new Date(getPubDateForNote(b) || '1970/1/1').getTime();
-      return bDate - aDate; // reverse chronological
+      return aDate - bDate; // chronological
     });
     results.push({
       params: { slug, type, name, pubDate: undefined, isDraft: 'false' },
