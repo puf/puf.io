@@ -10,10 +10,9 @@ alsoOn:
   - https://www.linkedin.com/posts/puf_if-youve-ever-walked-around-san-francisco-activity-7349956670581587970-mmjJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAA6E1MBzbF9oPv2cJb9vbv4cyPR-rhR1Zs
 tags: [san-francisco, hearts-in-san-francisco, public-art, union-square, francisco-park, sutter-health, van-ness]
 locations:
- - [37.7977236,-122.4305839]
+ - [37.803905,-122.421109]
  - [37.785997,-122.422302]
- - [37.788185, -122.408212]
- - [37.788597,-122.4043919]
+ - [37.788185,-122.408212]
 aliases:
   - /socials/hearts-in-san-francisco-statues/
   - /socials/2025-07-12-hearts-in-san-francisco-statues/
@@ -36,10 +35,6 @@ Here are a few of my more recent heart encounters:
 
 Hmmm... I've definitely seen more than just these, so I need to get better at taking pictures of them. Do you have a favorite (or just a first) Hearts in San Francisco statue? Share it in the links above 👆
 
-[heartsinsf]: https://sfghf.org/hearts-in-san-francisco/
-[heartssale]: https://sfghf.org/have-a-heart/
-[heartsmap]: https://sfghf.org/map/
-[heartsgallery]: https://sfghf.org/heart-gallery/
 [sutterhealthmap]: https://g.co/kgs/8XEz8NV
 [sirronnorris]: https://www.sirronnorris.com/
 [heartinpark]: https://franciscopark.org/the-heart-of-francisco-park/

@@ -4,7 +4,7 @@ pubDate: August 3, 2025
 series: hearts-in-san-francisco
 tags: [san-francisco, hearts-in-san-francisco, public-art, union-square]
 locations:
- - [37.788185, -122.408212]
+ - [37.7875893,-122.4071575]
 ---
 
 Today we saw two more heart statues on Union Square.
