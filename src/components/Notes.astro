@@ -93,7 +93,7 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
         }
       } else {
         // Series definition missing: warn and publish standalone
-        console.warn(`[series] "${note.file}" references series "${seriesId}" but no series definition file found. Publishing standalone.`);
+        console.error(`[series] "${note.file}" references series "${seriesId}" but no series definition file found. Publishing standalone.`);
         const isDraft = ''+((pubDate==="" || pubDate === undefined || typeof pubDate === 'undefined' || new Date(pubDate) > nowDate) && !/readme.md$/.test(note.file));
         results.push({ params: { slug, type, name, pubDate, isDraft }, props: note });
         if (note.frontmatter?.aliases) {
