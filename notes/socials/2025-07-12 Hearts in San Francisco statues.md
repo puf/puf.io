@@ -1,6 +1,7 @@
 ---
 title: "Hearts in San Francisco - 100+ large statues"
 pubDate: July 12, 2025
+series: hearts-in-san-francisco
 alsoOn:
   - https://www.threads.com/@frankpuf/post/DMBxibwM2Jd
   - https://x.com/puf/status/1944190687097799054
@@ -8,29 +9,17 @@ alsoOn:
   - https://c.im/@puf@c.im/114843069695635852
   - https://www.linkedin.com/posts/puf_if-youve-ever-walked-around-san-francisco-activity-7349956670581587970-mmjJ
 tags: [san-francisco, hearts-in-san-francisco, public-art, union-square, francisco-park, sutter-health, van-ness]
-locations: 
- - [37.7977236,-122.4305839]
+locations:
+ - [37.803905,-122.421109]
  - [37.785997,-122.422302]
- - [37.788185, -122.408212]
- - [37.788597,-122.4043919]
-slug: socials/hearts-in-san-francisco-statues
+ - [37.788185,-122.408212]
 aliases:
+  - /socials/hearts-in-san-francisco-statues/
   - /socials/2025-07-12-hearts-in-san-francisco-statues/
   - /socials/2025-07-13-hearts-in-san-francisco-statues
 ---
 
-If you've ever spent some time in San Francisco you've probably seen some of these large heart statues, like this one on Union Square:
-
-![](https://i.imgur.com/V2bSy7h.png)
-
-This sculpture is called Butterflight and is part of the [Hearts in San Francisco][heartsinsf] public art project that's been running for over 20 years. New hearts are added each year, and some hearts are also [sold][heartssale] off regularly. 
-
-Currently there are over 100 of these large hearts to be found in public places all over SF right now. You can find all of them in this [hearts gallery][heartsgallery] or see them on this map of hearts:
-
-![](https://i.imgur.com/myh8ikw.png)
-[click here for an interactive map][heartsmap]
-
-Or do as I've been doing, and admire them when you randomly bump into them on a city hike. Here are a few of my more recent heart encounters:
+Here are a few of my more recent heart encounters:
 
 * When we were visiting [Sutter Health on 1100 Van Ness][sutterhealthmap] recently (nothing serious, thanks for asking), we saw this gorgeous heart called "City Fruit" painted by prolific SF Mission artist [Sirron Norris][sirronnorris]:
 
@@ -40,47 +29,13 @@ Or do as I've been doing, and admire them when you randomly bump into them on a 
 
   ![](https://i.imgur.com/6jl09TX.png)
 
-* Just like the Butterflight heart at the top of the article, this Tea Time with Laine is on [Union Square][unionsquaremap]. Or actually it *was* there, but it moved to New Hampshire now - the heart goes where the heart goes I guess.
+* Just like the Butterflight heart at the top of the page, this Tea Time with Laine is on [Union Square][unionsquaremap]. Or actually it *was* there, but it moved to New Hampshire now - the heart goes where the heart wants, I guess.
 
   ![](https://i.imgur.com/pOCoSpH.png)
 
 Hmmm... I've definitely seen more than just these, so I need to get better at taking pictures of them. Do you have a favorite (or just a first) Hearts in San Francisco statue? Share it in the links above 👆
 
----
-
-Update (August 3, 2025): today we saw two more heart statues on Union Square.
-
-![](https://i.imgur.com/Yai5WWJ.png)
-*[Double Delight](https://sfghf.org/michael-osborne-double-delight/) by Michael Osborne*
-
-![](https://i.imgur.com/XqSLrVi.png)
-*[There is no try](https://sfghf.org/lawrence-noble-there-is-no-try/) by Lawrence Noble*
-
----
-
-Update (August 19, 2025): we found another one today, this time near the Bank of America on Castro:
-
-![ColorFall of Hope](https://i.imgur.com/8sSd1aK.jpeg)
-*[ColorFall of Hope](https://sfghf.org/deirdre-weinberg-colorfall-of-hope/) by Deirdre Weinberg*
-
----
-
-Update (March 5, 2026): ooh, we found another heart in downtown, as we were [heading to the SFMOMA]. This one is called Bae Area and was created by Piero Spadaro. It's in a Bank of America branch again, this time on the [corner of New Montgomery street and Market street][baeareamap].
-
-![Bae Area](https://i.imgur.com/nRB6skH.png)
-
-Sorry for the not-great pic. The weather was not ideal, the window was dirty, and I couldn't figure out a good angle where we weren't showing. :-/
-
----
-
-[heartsinsf]: https://sfghf.org/hearts-in-san-francisco/
-[heartssale]: https://sfghf.org/have-a-heart/
-[heartsmap]: https://sfghf.org/map/
 [sutterhealthmap]: https://g.co/kgs/8XEz8NV
-[norrisdirections]: https://www.google.com/maps/dir/?api=1&origin=5911%20US-101%2C%20San%20Francisco%2C%20CA%2094103%2C%20USA&destination=1101%20Van%20Ness%20Ave%2C%20San%20Francisco%2C%20USA%2C%20&travelmode=driving
 [sirronnorris]: https://www.sirronnorris.com/
-[heartsgallery]: https://sfghf.org/heart-gallery/
 [heartinpark]: https://franciscopark.org/the-heart-of-francisco-park/
 [unionsquaremap]: https://maps.app.goo.gl/4LLT6T6JtvzKKZJa9
-[snake]: /socials/2025-02-01-year-of-the-snake-sculpture-on-union-square
-[baeareamap]: https://sfghf.org/map/#24754
