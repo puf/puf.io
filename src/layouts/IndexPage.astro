@@ -152,7 +152,7 @@ if (!isSeriesPage) {
               <hr />
               {seriesEntries.map(({ member, MemberContent, anchor, slugAnchor }) => (
                 <section id={anchor}>
-                  <span id={slugAnchor} style="display:none"></span>
+                  <span id={slugAnchor}></span>
                   <h2>{member.frontmatter.title}</h2>
                   <p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /> <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></p>
                   <MemberContent />
