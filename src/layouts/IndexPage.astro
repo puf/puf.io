@@ -52,7 +52,7 @@ async function buildMap(items, getFrontmatter, filename) {
   });
   if (locationString.length === 0) return '';
 
-  const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}&markers=${locationString}`;
+  const url = `https://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=roadmap&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}${locationString}`;
   const data = new Uint8Array(await (await (await fetch(url)).blob()).arrayBuffer());
 
   // TODO: should this write directly into dist? Or should that happen in a build:done hook like here: https://github.com/LyonSyonII/astro-preload/blob/main/index.ts
