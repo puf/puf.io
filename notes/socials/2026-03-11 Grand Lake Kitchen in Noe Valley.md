@@ -21,12 +21,18 @@ Their SF home will be on the north-east corner of Church and 24th street in Noe 
 
 ![](https://i.imgur.com/Dfq1BsL.png)
 
-From the signage outside it looks like they'll be soft-opening for dinner on Saturday March 14, and adding a brunch service on March 21st. Open 7 days a week from 9am til 9pm, and they're already taking [reservations][glk].
+From the signage outside it looks like they'll be soft-opening for dinner on Saturday March 14, and adding a brunch service on March 21st. From April 1, they'll be open 7 days a week from 9am til 9pm, and they're already taking [reservations][glk].
 
 ![](https://i.imgur.com/dJfkNt6.png)
 
 Fingers crossed that the outside seating and beautiful parklet will come back too.
 
+---
+
+March 24, 2026: the Grand Lake Kitchen site now has a section for the new [Noe Valley location][glknv], and even the [menu][menu].
+
 
 [glk]: https://www.grandlakekitchen.com/
+[glknv]: https://www.grandlakekitchen.com/location/noe-valley/
+[menu]: https://www.grandlakekitchen.com/noe-valley-menus/
 [digbys]: https://www.mrdigbys.com/menus/
