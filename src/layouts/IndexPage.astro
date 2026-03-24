@@ -16,23 +16,8 @@ const slug = Astro.props.slug || getSlugForNote(Astro.props);
 let type = slug.substring(0, slug.indexOf("/", 1)); // "socials", "books", "posts" or "tags"
 if (type.charAt(0) === '/') type = type.substring(1); // remove leading slash
 const tag = type === "tags" ? slug.substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
-const isSeriesPage = Astro.props.frontmatter?.type === 'series';
-const seriesMembers = Astro.props.seriesMembers || [];
-title = isSeriesPage ? (Astro.props.frontmatter?.title || title) : tag;
-console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}, isSeriesPage=${isSeriesPage}`);
-
-// Prepare series entries for rendering (done here so MemberContent is in scope for the template)
-const seriesEntries = seriesMembers.map((member) => {
-  const d = new Date(member.frontmatter.pubDate);
-  const anchor = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-  const memberSlug = getSlugForNote(member);
-  const slugAnchor = memberSlug.substring(memberSlug.lastIndexOf('/') + 1);
-  const fullTitle = member.frontmatter.title;
-  const tocTitle = fullTitle.startsWith(title)
-    ? fullTitle.slice(title.length).replace(/^\s*[-–—]\s*/, '') || fullTitle
-    : fullTitle;
-  return { member, MemberContent: member.Content, anchor, slugAnchor, tocTitle };
-});
+title = tag;
+console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}`);
 
 let notes = [];
 function hasReview(note) {
@@ -64,22 +49,16 @@ async function buildMap(items, getFrontmatter, filename) {
   return filename;
 }
 
-let mapFilename = '', seriesMapFilename = '';
-if (isSeriesPage) {
-  const seriesSlugName = slug.substring(slug.lastIndexOf('/') + 1);
-  seriesMapFilename = await buildMap(seriesMembers, m => m.frontmatter, `map-series-${seriesSlugName}.png`);
-}
-if (!isSeriesPage) {
-  notes = await getNotes({ keepIf: (note) => {
+let mapFilename = '';
+notes = await getNotes({ keepIf: (note) => {
     return type === 'tags'
       ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
       : note.params.type === type && !/readme.md$/.test(note.props.file)
     }});
 
-  // TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
-  const filename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
-  mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
-}
+// TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
+const filename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
+mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
 ---
 
 <html lang="en">
@@ -134,35 +113,9 @@ if (!isSeriesPage) {
           {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
         </div>
         <div class="prose">
-          {isSeriesPage && <h1>{title}</h1>}
           <slot />
           <hr />
-          {isSeriesPage && (
-            <div class="series">
-              {seriesMapFilename && (
-                <div class="map">
-                  <img src={'/' + seriesMapFilename} alt="Map of the articles in this series" />
-                </div>
-              )}
-              <ol>
-                {seriesEntries.map(({ member, anchor, tocTitle }) => (
-                  <li><a href={`#${anchor}`}>{tocTitle}</a> <FormattedDate date={new Date(member.frontmatter.pubDate)} /></li>
-                ))}
-              </ol>
-              <hr />
-              {seriesEntries.map(({ member, MemberContent, anchor, slugAnchor }) => (
-                <section id={anchor}>
-                  <span id={slugAnchor}></span>
-                  <h2>{member.frontmatter.title}</h2>
-                  <p class="date"><FormattedDate date={new Date(member.frontmatter.pubDate)} /> <a href={`#${anchor}`} class="anchor-link" title="Link to this section">#</a></p>
-                  <MemberContent />
-                  <hr />
-                </section>
-              ))}
-            </div>
-          )}
-          {!isSeriesPage && (
-            <div class="list">
+          <div class="list">
               <div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
               {!mapFilename && (
                 // If there's no map, show one long list
@@ -211,8 +164,7 @@ if (!isSeriesPage) {
                 <hr/>
               )}
             <hr/>
-            </div>
-          )}
+          </div>
           <div class="date">
             {
               <div class="last-updated-on">

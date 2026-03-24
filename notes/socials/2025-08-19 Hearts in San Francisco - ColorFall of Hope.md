@@ -1,7 +1,6 @@
 ---
 title: "Hearts in San Francisco - ColorFall of Hope"
 pubDate: August 19, 2025
-series: hearts-in-san-francisco
 tags: [san-francisco, hearts-in-san-francisco, public-art, castro]
 locations:
  - [37.760683, -122.434862]

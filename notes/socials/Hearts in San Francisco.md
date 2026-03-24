@@ -1,6 +1,5 @@
 ---
 title: Hearts in San Francisco
-type: series
 pubDate: 2025-07-12
 description: Encounters with the Hearts in San Francisco public art project around the city.
 ---
