@@ -131,7 +131,6 @@ await getNotes({ keepIf: (other) => {
 				<div class="prose">
 					<div class="title">
 						<h1>{title}</h1>
-						<hr />
 					</div>
 					{type === "books" && (
 					  <ul class="props">
@@ -151,6 +150,7 @@ await getNotes({ keepIf: (other) => {
 						alsoOn={frontmatter?.alsoOn}
 						location={location}
 						tags={frontmatter?.tags}
+						hr={true}
 					>
 						<slot />
 					</NoteEntry>

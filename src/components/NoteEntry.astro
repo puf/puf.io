@@ -11,6 +11,7 @@ const {
   tags = [],
   tagCounts = {},
   filterTag,
+  hr = false,
 } = Astro.props;
 
 const displayTags = (tags as string[]).filter((t: string) => t !== filterTag);
@@ -22,6 +23,7 @@ const tc = tagCounts as Record<string, number>;
   {updatedDate && <div class="last-updated-on">Last updated on <FormattedDate date={updatedDate} /></div>}
   {permalink && <> <a href={permalink}>#</a></>}
 </div>
+{hr && <hr />}
 <AlsoOn links={alsoOn} />
 <slot />
 {location && (
