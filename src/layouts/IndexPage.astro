@@ -138,17 +138,21 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
                 const sectionId = note.params.slug.split('/').filter(Boolean).pop();
                 const tags = note.props.frontmatter.tags || [];
                 return (
-                  <section id={sectionId}>
-                    <h2>{note.props.frontmatter.title}</h2>
-                    <div class="note-meta">
-                      {note.params.pubDate && <FormattedDate date={new Date(note.params.pubDate)} />}
-                      {' '}<a href={`#${sectionId}`}>#</a>
-                      {tags.length > 0 && <span class="tags">{tags.map(t => <a href={`/tags/${t}`}>{t}</a>)}</span>}
-                    </div>
-                    <NoteContent />
-                  </section>
+                  <>
+                    <hr />
+                    <section id={sectionId}>
+                      <h2>{note.props.frontmatter.title}</h2>
+                      <div class="note-meta">
+                        {note.params.pubDate && <FormattedDate date={new Date(note.params.pubDate)} />}
+                        {' '}<a href={`#${sectionId}`}>#</a>
+                      </div>
+                      <NoteContent />
+                      {tags.length > 0 && <div class="tags">{tags.map(t => <a href={`/tags/${t}`}>{t}</a>)}</div>}
+                    </section>
+                  </>
                 );
               })}
+              <hr />
             </>
           ) : (
           <div class="list">
