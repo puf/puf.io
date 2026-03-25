@@ -15,7 +15,7 @@ let { title, description, heroImage } = Astro.props;
 const slug = Astro.props.slug || getSlugForNote(Astro.props);
 let type = slug.substring(0, slug.indexOf("/", 1)); // "socials", "books", "posts" or "tags"
 if (type.charAt(0) === '/') type = type.substring(1); // remove leading slash
-const tag = type === "tags" ? slug.substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
+const tag = type === "tags" ? slug.replace(/^\//, '').substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
 title = tag;
 console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}`);
 
