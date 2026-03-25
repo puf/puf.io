@@ -3,12 +3,10 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro';
 import { getTypeForNote, getSlugForNote, getNotes } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
 import NoteEntry from '../components/NoteEntry.astro';
-import { Picture } from 'astro:assets';
 
 type Props = CollectionEntry<'blog'>['data'] & {
   frontmatter: {
