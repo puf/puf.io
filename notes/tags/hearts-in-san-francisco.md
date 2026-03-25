@@ -1,7 +1,9 @@
 ---
 title: Hearts in San Francisco
+tags: [hearts-in-san-francisco]
 pubDate: 2025-07-12
 description: Encounters with the Hearts in San Francisco public art project around the city.
+aliases: [socials/hearts-in-san-francisco]
 ---
 
 If you've ever spent some time in San Francisco you've probably seen some of these large heart statues, like this one on Union Square:

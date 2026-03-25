@@ -14,7 +14,6 @@ locations:
  - [37.788185,-122.408212]
 aliases:
   - /socials/hearts-in-san-francisco-statues/
-  - /socials/2025-07-12-hearts-in-san-francisco-statues/
   - /socials/2025-07-13-hearts-in-san-francisco-statues
 ---
 
