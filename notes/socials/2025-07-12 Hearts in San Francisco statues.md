@@ -1,7 +1,6 @@
 ---
 title: "Hearts in San Francisco - 100+ large statues"
 pubDate: July 12, 2025
-series: hearts-in-san-francisco
 alsoOn:
   - https://www.threads.com/@frankpuf/post/DMBxibwM2Jd
   - https://x.com/puf/status/1944190687097799054

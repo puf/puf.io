@@ -1,7 +1,6 @@
 ---
 title: "Hearts in San Francisco - Double Delight and There Is No Try"
 pubDate: August 3, 2025
-series: hearts-in-san-francisco
 tags: [san-francisco, hearts-in-san-francisco, public-art, union-square]
 locations:
  - [37.7875893,-122.4071575]

@@ -1,7 +1,6 @@
 ---
 title: "Hearts in San Francisco - Bae Area"
 pubDate: March 5, 2026
-series: hearts-in-san-francisco
 tags: [san-francisco, hearts-in-san-francisco, public-art, downtown, sfmoma]
 locations:
  - [37.788597,-122.401817]
