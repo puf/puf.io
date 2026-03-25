@@ -23,6 +23,17 @@ const tc = tagCounts as Record<string, number>;
   {updatedDate && <div class="last-updated-on">Last updated on <FormattedDate date={updatedDate} /></div>}
   {permalink && <> <a href={permalink}>#</a></>}
 </div>
+
+<style>
+  .note-meta {
+    margin-bottom: 0.5em;
+    color: rgb(var(--gray));
+    text-align: center;
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+</style>
 {hr && <hr />}
 <AlsoOn links={alsoOn} />
 <slot />
