@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro'
 import { getSlugForNote, getNotes } from '../components/Notes.astro';
+import AlsoOn from '../components/AlsoOn.astro';
 import path from 'path';
 import fs from "fs/promises";
 
@@ -126,11 +127,12 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
           {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
         </div>
         <div class="prose">
+          {expandNotes && <h1>{title}</h1>}
           <slot />
+          {expandNotes && <AlsoOn links={Astro.props.frontmatter?.alsoOn} />}
           <hr />
           {expandNotes ? (
             <>
-              <h1>{title}</h1>
               <nav>
                 <ol>
                   {notes.map(note => {
