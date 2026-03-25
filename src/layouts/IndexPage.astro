@@ -62,6 +62,7 @@ notes = allNotes.filter(note =>
     ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
     : note.params.type === type && !/readme.md$/.test(note.props.file)
 );
+if (expandNotes && Astro.props.frontmatter?.sortOrder === 'asc') notes = notes.toReversed();
 
 // TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
 const filename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
