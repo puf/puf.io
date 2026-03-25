@@ -30,7 +30,7 @@ const isTag = 'tags' === type || 'tag' === type;
 console.log(`Rendering ${slug} (${post.file}) with pubDate: ${pubDate}, type: ${type} isReadme: ${isReadme}, isRedirect: ${isRedirect}, isTag: ${isTag} to ${JSON.stringify(post)}`);
 ---
 
-{(pubDate &&
+{(pubDate && !isTag &&
 <NotePost {...post} pubDate={pubDate} title={post.frontmatter.title} description={post.frontmatter.description} >
   <Content  components={{ PullQuote }}/>
 </NotePost>
@@ -38,7 +38,7 @@ console.log(`Rendering ${slug} (${post.file}) with pubDate: ${pubDate}, type: ${
 {( (isReadme || isTag) &&
   <meta charset="utf-8"/>
   <IndexPage {...post} >
-    {(isReadme && <article><Content /></article>)}
+    {((isReadme || isTag) && Content && <article><Content /></article>)}
   </IndexPage>
 )}
 

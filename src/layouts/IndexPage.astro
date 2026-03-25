@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro'
 import { getSlugForNote, getNotes } from '../components/Notes.astro';
+import AlsoOn from '../components/AlsoOn.astro';
+import NoteEntry from '../components/NoteEntry.astro';
 import path from 'path';
 import fs from "fs/promises";
 
@@ -15,8 +17,10 @@ let { title, description, heroImage } = Astro.props;
 const slug = Astro.props.slug || getSlugForNote(Astro.props);
 let type = slug.substring(0, slug.indexOf("/", 1)); // "socials", "books", "posts" or "tags"
 if (type.charAt(0) === '/') type = type.substring(1); // remove leading slash
-const tag = type === "tags" ? slug.substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
-title = tag;
+const tag = type === "tags" ? slug.replace(/^\//, '').substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
+const hasTagContent = type === 'tags' && !!Astro.props.file;
+const expandNotes = hasTagContent && !!Astro.props.frontmatter?.expandNotes;
+title = Astro.props.frontmatter?.title || tag;
 console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}`);
 
 let notes = [];
@@ -50,11 +54,17 @@ async function buildMap(items, getFrontmatter, filename) {
 }
 
 let mapFilename = '';
-notes = await getNotes({ keepIf: (note) => {
-    return type === 'tags'
-      ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
-      : note.params.type === type && !/readme.md$/.test(note.props.file)
-    }});
+const allNotes = await getNotes();
+const tagCounts: Record<string, number> = {};
+allNotes.forEach(n => (n.props.frontmatter?.tags || []).forEach((t: string) => {
+  tagCounts[t] = (tagCounts[t] || 0) + 1;
+}));
+notes = allNotes.filter(note =>
+  type === 'tags'
+    ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
+    : note.params.type === type && !/readme.md$/.test(note.props.file)
+);
+if (expandNotes && Astro.props.frontmatter?.sortOrder === 'asc') notes = notes.toReversed();
 
 // TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
 const filename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
@@ -113,8 +123,52 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
           {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
         </div>
         <div class="prose">
+          {expandNotes && <h1>{title}</h1>}
           <slot />
+          {expandNotes && <AlsoOn links={Astro.props.frontmatter?.alsoOn} />}
           <hr />
+          {expandNotes ? (
+            <>
+              <nav>
+                <ol>
+                  {notes.map(note => {
+                    const sectionId = note.params.slug.split('/').filter(Boolean).pop();
+                    return (
+                      <li>
+                        <a href={`#${sectionId}`}>{note.props.frontmatter.title}</a>
+                        {note.params.pubDate && <> — <FormattedDate date={new Date(note.params.pubDate)} /></>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </nav>
+              {mapFilename && <div class="map"><img src={'/'+mapFilename} /></div>}
+              {notes.map(note => {
+                const NoteContent = note.props.Content;
+                const sectionId = note.params.slug.split('/').filter(Boolean).pop();
+                return (
+                  <>
+                    <hr />
+                    <section id={sectionId}>
+                      <h2>{note.props.frontmatter.title}</h2>
+                      <NoteEntry
+                        pubDate={note.params.pubDate}
+                        permalink={`#${sectionId}`}
+                        alsoOn={note.props.frontmatter.alsoOn}
+                        location={note.props.frontmatter.location || note.props.frontmatter.locations?.[0]}
+                        tags={note.props.frontmatter.tags}
+                        tagCounts={tagCounts}
+                        filterTag={tag}
+                      >
+                        <NoteContent />
+                      </NoteEntry>
+                    </section>
+                  </>
+                );
+              })}
+              <hr />
+            </>
+          ) : (
           <div class="list">
               <div>There are {notes.length} {type != 'tags' ? type : `pages about ${tag}`}:</div>
               {!mapFilename && (
@@ -165,6 +219,7 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
               )}
             <hr/>
           </div>
+          )}
           <div class="date">
             {
               <div class="last-updated-on">

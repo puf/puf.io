@@ -79,9 +79,11 @@ export async function getNotes(options?: { keepIf?: (note: any) => boolean }) {
   }
 
   for (const tag of Object.keys(tags)) {
-    // Create a tag page for each tag
+    // Create a tag page for each tag, unless a file-based tag page already exists
     const tagSlug = 'tags/'+tag.replace(/\s/g, '-').toLowerCase(); // normalize tag slug
-    results.push({ params: { slug: tagSlug }, props: { type: "tag", tag, slug: tagSlug, notes: tags[tag] } });
+    if (!results.some(r => r.params.slug === '/'+tagSlug)) {
+      results.push({ params: { slug: tagSlug }, props: { type: "tag", tag, slug: tagSlug, notes: tags[tag] } });
+    }
   }
 
   if (process.env.NODE_ENV === 'production') {
