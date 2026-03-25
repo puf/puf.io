@@ -18,7 +18,7 @@ if (type.charAt(0) === '/') type = type.substring(1); // remove leading slash
 const tag = type === "tags" ? slug.replace(/^\//, '').substring(type.length + 1) : ""; // e.g. "javascript" or "react" or "astro"
 const hasTagContent = type === 'tags' && !!Astro.props.file;
 const expandNotes = hasTagContent && !!Astro.props.frontmatter?.expandNotes;
-title = tag;
+title = Astro.props.frontmatter?.title || tag;
 console.log(`IndexPage.astro: type=${type}, slug=${slug}, tag=${tag}`);
 
 let notes = [];
@@ -52,11 +52,16 @@ async function buildMap(items, getFrontmatter, filename) {
 }
 
 let mapFilename = '';
-notes = await getNotes({ keepIf: (note) => {
-    return type === 'tags'
-      ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
-      : note.params.type === type && !/readme.md$/.test(note.props.file)
-    }});
+const allNotes = await getNotes();
+const tagCounts: Record<string, number> = {};
+allNotes.forEach(n => (n.props.frontmatter?.tags || []).forEach((t: string) => {
+  tagCounts[t] = (tagCounts[t] || 0) + 1;
+}));
+notes = allNotes.filter(note =>
+  type === 'tags'
+    ? note.props.frontmatter?.tags?.indexOf(tag) >= 0 && note.params.isDraft != 'true'
+    : note.params.type === type && !/readme.md$/.test(note.props.file)
+);
 
 // TODO: Create separate maps for [san-francisco, new-york, and tags], use that to also generate the filenames
 const filename = type === 'tags' ? `map-tags-${tag}.png` : `map-${type}-san-francisco.png`;
@@ -104,6 +109,11 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
       .last-updated-on {
         font-style: italic;
       }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+      }
     </style>
   </head>
 
@@ -119,6 +129,7 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
           <hr />
           {expandNotes ? (
             <>
+              <h1>{title}</h1>
               <nav>
                 <ol>
                   {notes.map(note => {
@@ -147,7 +158,13 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
                         {' '}<a href={`#${sectionId}`}>#</a>
                       </div>
                       <NoteContent />
-                      {tags.length > 0 && <div class="tags">{tags.map(t => <a href={`/tags/${t}`}>{t}</a>)}</div>}
+                      {tags.filter(t => t !== tag).length > 0 && (
+                        <div class="tags">
+                          {tags.filter((t: string) => t !== tag).map((t: string) => (
+                            <a href={`/tags/${t}`}>{t} ({tagCounts[t] || 0})</a>
+                          ))}
+                        </div>
+                      )}
                     </section>
                   </>
                 );
