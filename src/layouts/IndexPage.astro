@@ -7,6 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro'
 import { getSlugForNote, getNotes } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
+import NoteEntry from '../components/NoteEntry.astro';
 import path from 'path';
 import fs from "fs/promises";
 
@@ -150,24 +151,22 @@ mapFilename = await buildMap(notes, n => n.props?.frontmatter, filename);
               {notes.map(note => {
                 const NoteContent = note.props.Content;
                 const sectionId = note.params.slug.split('/').filter(Boolean).pop();
-                const tags = note.props.frontmatter.tags || [];
                 return (
                   <>
                     <hr />
                     <section id={sectionId}>
                       <h2>{note.props.frontmatter.title}</h2>
-                      <div class="note-meta">
-                        {note.params.pubDate && <FormattedDate date={new Date(note.params.pubDate)} />}
-                        {' '}<a href={`#${sectionId}`}>#</a>
-                      </div>
-                      <NoteContent />
-                      {tags.filter(t => t !== tag).length > 0 && (
-                        <div class="tags">
-                          {tags.filter((t: string) => t !== tag).map((t: string) => (
-                            <a href={`/tags/${t}`}>{t} ({tagCounts[t] || 0})</a>
-                          ))}
-                        </div>
-                      )}
+                      <NoteEntry
+                        pubDate={note.params.pubDate}
+                        permalink={`#${sectionId}`}
+                        alsoOn={note.props.frontmatter.alsoOn}
+                        location={note.props.frontmatter.location || note.props.frontmatter.locations?.[0]}
+                        tags={note.props.frontmatter.tags}
+                        tagCounts={tagCounts}
+                        filterTag={tag}
+                      >
+                        <NoteContent />
+                      </NoteEntry>
                     </section>
                   </>
                 );

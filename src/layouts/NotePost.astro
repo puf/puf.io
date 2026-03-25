@@ -7,6 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import StarRating from '../components/StarRating.astro';
 import { getTypeForNote, getSlugForNote, getNotes } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
+import NoteEntry from '../components/NoteEntry.astro';
 import { Picture } from 'astro:assets';
 
 type Props = CollectionEntry<'blog'>['data'] & {
@@ -129,48 +130,30 @@ await getNotes({ keepIf: (other) => {
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={new Date(pubDate)} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
 						<h1>{title}</h1>
 						<hr />
 					</div>
-					<div class="frontmatter">
-						{type === "books" ? (
-						  <ul class="props">
-							<!-- Get rid of the red squiggles on frontmatter -->
-							<li>Author: {frontmatter?.author}</li>
-							<li>Page count: {frontmatter.pageCount}</li>
-							<li>Started on: {frontmatter.startedDate}</li>
-							<li>Finished on: {frontmatter.finishedDate}</li>
-							<li>Rating: {frontmatter.rating} out of 5 stars</li> <!-- render star rating -->
-							<StarRating rating={frontmatter.rating} /><br/>
-							<li><AlsoOn links={[frontmatter.link]} /></li>
-						  </ul>
-						  <hr/>
-						) : ( "" )}
-						
-						<AlsoOn links={frontmatter?.alsoOn} />
-					</div>
-					<slot />
-					{location && (
-						<p>Location of this post on  
-							<a href={`https://www.google.com/maps/@${location[0]},${location[1]},17z`} target="_blank">
-								Google Maps
-								<svg width="12px" height="12px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
-									<path stroke="#535358" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 3h7v7M27.5 4.5L20 12M17 5H8a3 3 0 00-3 3v16a3 3 0 003 3h16a3 3 0 003-3v-9"/>
-								</svg>
-								<span class="sr-only"> opens a new window</span>
-							</a>
-						</p>
+					{type === "books" && (
+					  <ul class="props">
+						<li>Author: {frontmatter?.author}</li>
+						<li>Page count: {frontmatter.pageCount}</li>
+						<li>Started on: {frontmatter.startedDate}</li>
+						<li>Finished on: {frontmatter.finishedDate}</li>
+						<li>Rating: {frontmatter.rating} out of 5 stars</li>
+						<StarRating rating={frontmatter.rating} /><br/>
+						<li><AlsoOn links={[frontmatter.link]} /></li>
+					  </ul>
+					  <hr/>
 					)}
+					<NoteEntry
+						pubDate={pubDate}
+						updatedDate={updatedDate}
+						alsoOn={frontmatter?.alsoOn}
+						location={location}
+						tags={frontmatter?.tags}
+					>
+						<slot />
+					</NoteEntry>
 				</div>
 			</article>
 		{Object.keys(otherNotesForTags).length > 0 && (
