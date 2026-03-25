@@ -33,6 +33,14 @@ const tc = tagCounts as Record<string, number>;
   .last-updated-on {
     font-style: italic;
   }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 </style>
 {hr && <hr />}
 <AlsoOn links={alsoOn} />
@@ -49,9 +57,9 @@ const tc = tagCounts as Record<string, number>;
   </p>
 )}
 {displayTags.length > 0 && (
-  <div class="tags">
+  <ul class="tags">
     {displayTags.map((t: string) => (
-      <a href={`/tags/${t}`}>{t}{tc[t] ? ` (${tc[t]})` : ''}</a>
+      <li><a href={`/tags/${t}`}>{t}{tc[t] ? ` (${tc[t]})` : ''}</a></li>
     ))}
-  </div>
+  </ul>
 )}
