@@ -14,8 +14,11 @@ const {
   hr = false,
 } = Astro.props;
 
-const displayTags = (tags as string[]).filter((t: string) => t !== filterTag);
 const tc = tagCounts as Record<string, number>;
+const hasTagCounts = Object.keys(tc).length > 0;
+const displayTags = (tags as string[]).filter((t: string) =>
+  t !== filterTag && (!hasTagCounts || tc[t] > 1)
+);
 ---
 
 <div class="note-meta">
