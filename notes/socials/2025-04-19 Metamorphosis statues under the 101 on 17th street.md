@@ -6,7 +6,7 @@ alsoOn:
   - https://x.com/puf/status/1914139064548065375
   - https://bsky.app/profile/puf.io/post/3lnc3fo74yc2w
   - https://c.im/@puf/114373512237688071
-tags: [san-francisco, potrero-hill, mission, mission-creek, mission-bay, sculptures]
+tags: [san-francisco, potrero-hill, mission-creek, sculptures]
 location: [37.76451,-122.405278]
 aliases: [/socials/metamorphosis-17th-101]
 ---
