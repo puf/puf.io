@@ -9,7 +9,7 @@ alsoOn:
 tags: [san-francisco, hearts-in-san-francisco, public-art, china-basin, china-basin-park, mission-bay]
 locations: 
  - [37.776323, -122.388803]
-aliases: []
+aliases: [/socials/2026-03-25-hears-in-san-francisco---fibers-of-life/]
 ---
 
 ![pic of heart with buildings in the background](https://i.imgur.com/hoZp1uw.png)
