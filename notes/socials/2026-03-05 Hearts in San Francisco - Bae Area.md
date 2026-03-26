@@ -1,6 +1,11 @@
 ---
 title: "Hearts in San Francisco - Bae Area"
 pubDate: March 5, 2026
+alsoOn:
+  - https://bsky.app/profile/puf.io/post/3mgt75eaao62y
+  - https://x.com/puf/status/2031898039783162229
+  - https://www.threads.com/@frankpuf/post/DVw-HlWiavx
+  - https://c.im/@puf/116213495778888665
 tags: [san-francisco, hearts-in-san-francisco, public-art, downtown, sfmoma]
 locations:
  - [37.788597,-122.401817]
