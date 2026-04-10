@@ -2,7 +2,7 @@
 title: "Daisy Jones & The Six"
 author: "Taylor Jenkins Reid"
 startedDate: "2026/03/31"
-finishedDate: "2026/04/11"
+finishedDate: "2026/04/09"
 rating: 4
 edition: "Audiobook"
 link: "https://www.goodreads.com/book/show/43998386"
