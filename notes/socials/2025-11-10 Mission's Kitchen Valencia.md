@@ -32,6 +32,7 @@ Update (March 4, 2026): After the initial change putting up the Mission's Kitche
 ---
 
 <a name="2026-04-12">
+<a name="2024-04-12"><!-- oops, this is for a typo in a link I posted on socials -->
 
 Update (April 12, 2026): Mission Kitchen on Valencia opened its doors last week, and is now open from 7am daily. We had breakfast there today, and while it was a bit cold inside, the food was great!
 
