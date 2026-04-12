@@ -25,4 +25,14 @@ If the name [Mission's Kitchen](https://www.yelp.com/biz/missions-kitchen-san-fr
 
 ---
 
+<a name="2026-03-04">
+
 Update (March 4, 2026): After the initial change putting up the Mission's Kitchen sign, nothing much seems to be happening at the site. Fingers crossed that they open the new site at some point. 🤞
+
+---
+
+<a name="2026-04-12">
+
+Update (April 12, 2026): Mission Kitchen on Valencia opened its doors last week, and is now open from 7am daily. We had breakfast there today, and while it was a bit cold inside, the food was great!
+
+![](https://i.imgur.com/BBkTarL.png)
