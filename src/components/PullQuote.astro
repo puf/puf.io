@@ -1,5 +1,5 @@
 ---
-const { align, author } = Astro.props;
+const { align, author, width = "40%" } = Astro.props;
 ---
 <aside class="pquote">
   <blockquote>
@@ -7,10 +7,10 @@ const { align, author } = Astro.props;
   </blockquote>
   <figcaption>— <cite>{author}</cite></figcaption>
 </aside>
-<style define:vars={{ align }} is:global>
+<style define:vars={{ align, width }} is:global>
   .pquote {
     float: var(--align);
-    width: 40%;
+    width: var(--width);
     font-size: 150%;
     line-height: 0.9;
     font-style: italic;
