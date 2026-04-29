@@ -1,0 +1,97 @@
+---
+title: "Flutter web is a deployment strategy"
+pubDate: "April 30, 2026"
+alsoOn: [https://bsky.app/profile/puf.io/post/3mjv73i2oob2e, https://x.com/puf/status/2046021057996275796, https://www.threads.com/@frankpuf/post/DXVUhaJCWeO, https://c.im/@puf/116434167945088220]
+tags: [flutter, flutter-web, web, ai, mobile-deployment, mobile-apps, app-store, play-store]
+---
+
+I recently posted this on socials:
+
+> Instead of thinking of Flutter web as a web platform, I prefer to think of it as a deployment mechanism for Flutter apps outside of the App/Play stores.
+
+I got quite some responses, but socials are a bit too short to explain my thinking. So I decided to write a longer post about it.
+
+<details>
+<summary>Click to see how Claude interpreted my social post</summary>
+I pasted my post into Claude, and here's what it made of it:
+
+> That's a really clean reframing, and it cuts to something Flutter web has been awkward about for years.
+> 
+> The tension with "Flutter on web as a web platform" is that Flutter ships its own rendering stack (CanvasKit or the newer Skwasm/WebAssembly path), bypasses the DOM for most content, and historically has been rough on the things the web is actually good at: SEO, text selection, accessibility, deep-linkable semantic HTML, low bundle size, fast first paint. Judged as a web framework against React/Svelte/etc., it loses on most of those axes and it's not really trying to win them.
+> 
+> But judged as "how do I get my Flutter app to a user without making them install anything" — a URL instead of an app store listing — it's actually compelling. You get the same widget tree, same Dart code, same pixel-perfect rendering as mobile, and the user just clicks a link. That's a genuine distribution win, especially for internal tools, demos, onboarding flows, or markets where app store friction is real.
+>
+> It also explains why the Flutter team's priorities there (WasmGC, Skwasm, tree-shaking improvements) make more sense through a "shipping apps" lens than a "competing with Next.js" lens. They're optimizing for fidelity and startup of an app experience, not for being a good citizen of the document web.
+> 
+> The honest caveat is that if your "web" surface is a marketing site, a blog, or anything Google needs to crawl and rank, this framing tells you to reach for something else. Flutter web is for the app-shaped slice of the web, not the document-shaped slice — and Puf's framing is basically giving people permission to stop apologizing for that.
+
+Not bad at all Claude. Let's see how that compares to me using my own words. 👇
+</details>
+
+---
+
+There is (and has always been) a lot of discussion about Flutter web. Flutter started life as a platform to build native mobile apps for iOS and Android from a single codebase. So why does it also support web? Why would you use Flutter for your web projects, rather than a more native, web-only framework like React/Next.js, Angular, or even only JavaScript/HTML/CSS? 
+
+When the Flutter team talks about Flutter web, they often frame it as: "Flutter is great for building web *apps*, but not as good for building web *sites*." So they position Flutter web as a way to build web apps with Flutter. And while this may be why they created Flutter web, I prefer to frame it differently: 
+
+<PullQuote author="puf" width="80%">
+Flutter web lets you deploy your mobile application to users without publishing it to the App Store and Play Store.
+</PullQuote>
+
+Flutter web is a low-friction way to deploy your mobile applications to users, bypassing the App Store and Play Store. As a developer, deploying to web means that you don't need to go through a review cycle, which can (especially for a new app) be unpredictable. For your users, it means that they can start using your app without installing it from the App/Play Store.
+
+If I want to build a pure web application, I'd probably reach for a more web-native framework. But if I have a Flutter app that I want to share with users, Flutter web is the fastest way to do so. Just share the URL/QR code with them, and they can start using it immediately. This is especially useful for internal tools, demos, onboarding flows, auth handoffs, or markets where App/Play Store friction is real.
+
+In a sense, I treat Flutter web apps as a "preview" of my mobile app. It's not so much a web app (as there are some limitations to be aware of), but rather a quick way to get my mobile app into the hands of users without the friction of App Store and Play Store distribution.
+
+---
+
+At most **tech conferences and meetups**, speakers share links in their slides with QR codes. I have also seen people demo their Flutter apps by sharing the URL of their Flutter web app, and asking the audience to open it on their phones. Heck, I've *given* plenty of demos that way myself. 
+
+At a conference, sharing a URL as a QR code is likely the only way to get people to try your app - without asking them to install it. This sort of demo used to be done mostly for web-native apps, but you can do it with Flutter web as well.
+
+---
+
+**React Native** doesn't have this deployment strategy. 
+
+Sure, there's [React Native for Web](https://necolas.github.io/react-native-web/), but that translates React Native components (like `<View>` and `<Text>`) into the closest HTML equivalents (like `<div>` and `<span>`). This means that the web version of your React Native app is a real web app as most users would expect, but it's not pixel-perfect to the mobile version. 
+
+Flutter web, on the other hand, uses its own rendering engine (CanvasKit or Skwasm) to render the same pixels on web as on mobile. This makes it feel less web-native, but makes it a better choice as a deployment strategy for your mobile app.
+
+*Note: I'm not trying to start a React Native vs Flutter debate here, as I know there are plenty of advantages and disadvantages to both. I'm just pointing out that the web deployment strategy I'm describing is not available in React Native today. And yes, I know of Expo and wish Flutter (or maybe Shorebird nowadays) offered something similar.*
+
+---
+
+When the Flutter team started moving Flutter web to **Wasm**, and I saw how much effort that took, I was skeptical. While I looked forward to performance improvements, I thought there were better places in Flutter to invest that time and energy. 
+
+But now I see that it was a necessary step to make Flutter web a viable deployment target for mobile apps. The faster startup times and smaller bundle sizes that Wasm provides are crucial for making Flutter web a good experience for users.
+
+---
+
+There's still work to be done to make Flutter web an even better deployment target.
+
+**What Flutter can still improve**:
+
+* Load times for Flutter web apps can still be quite long, especially on mobile devices with lower bandwidth. The Flutter team is already working on reducing the bundle size, so this one is in progress. :-)
+
+* The initial load is always going to be slower than a reload, and while the reduced bundle size will help, it would be better to signal to the user that the app is "installing" rather than "loading". This is a UX problem that the Flutter team could help solve by providing a better loading/installation experience for Flutter web apps.
+
+* Text selection and accessibility are still not great in Flutter web, and while they may not be crucial for all apps, they are important for many. The Flutter team could (and may already) be investing more in improving these areas.
+
+These are all areas where either the Flutter team or the Flutter community can make Flutter web a better deployment target for mobile apps. But there are also some limitations of the web platform itself that are outside Flutter's control.
+
+**What the web platform doesn't let Flutter fix**:
+
+* The app won't show up as an icon on the user's home screen, or app drawer/library. This is a limitation of the web platform, but it means discoverability of the Flutter web app will be lower than for a native app. There are some workarounds for this (like using a [PWA manifest](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)), but it's not a perfect solution (especially on iOS, where adding to the Home Screen remains a manual, unprompted action).
+
+* Mobile browsers (especially Safari) also lack certain APIs that native apps on the same platforms can use. APIs like Web USB, Web Bluetooth, Web Serial, and Web NFC are not universally supported, and specifically Safari has shown no movement towards implementing them. This means that Flutter web apps can't use those features. 
+
+* The File System Access API is also not supported in all browsers, which means you'll typically need separate code paths for Flutter native and Flutter web to handle file access. You'll either call out to the browser APIs to upload (`file_picker`) and download (`<a download>`) files, or you can store your data in IndexedDB or localStorage, or you can use the powerful, newer OPFS (Origin Private File System) standard (`navigator.storage.getDirectory()`). For all of these though, on iOS this storage can be evicted after 7 days of non-use unless the user has added the web app to their Home Screen.
+
+These are limitations of the web platform as a whole, rather than Flutter web itself. If the web platform evolves to support these features and browsers implement them, then Flutter web will be able to take advantage of them as well.
+
+---
+
+In summary: I don't think of Flutter web as a web platform, but rather as a deployment target for mobile Flutter apps. Making your existing mobile Flutter app run smoothly in mobile browsers will likely require work on your end, but it leads to a simpler deployment strategy.
+
+This strategy won't work for all apps though. If your app needs features that are not supported in all mobile browsers, you may want to stick to the traditional store-based deployment strategy. But if your app can work within the limitations of mobile browsers, Flutter web can be a great way to get your app into the hands of users without the friction of app store distribution.
