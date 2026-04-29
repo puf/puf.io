@@ -1,0 +1,1 @@
+I find myself entering the same basic information about myself into ChatGPT, Claude, and Tasklet - and even to a lesser extent into Gemini (because Google already knows so much about me).
