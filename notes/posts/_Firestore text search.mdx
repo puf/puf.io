@@ -1,0 +1,33 @@
+---
+title: "Full-text search in Firestore"
+pubDate: "May 10, 2026"
+alsoOn: [https://bsky.app/profile/puf.io, https://x.com/puf, https://www.threads.com/@frankpuf, https://c.im/@puf]
+tags: [firebase, firestore, search, text-search, google-cloud, google-cloud-platform]
+---
+
+For years, whatever new feature we announced for Firestore, the bulk of the responses was some variant of:
+
+> Again, no full-text search
+
+And while I think that text-search is inherently quite different from a database query, I always understood where the commenters and mockers were coming from: it's quite ridiculous that a company that is known for its Search product has not ofference a full-text search API since the downturn of the original App Engine.
+
+Well... we're in 2026, and things are quite different now. 
+
+<PullQuote width="70%">
+Firestore now has a full-text search API. In fact, it has multiple!
+</PullQuote>
+
+In this post, I'll give an overview of the full-text search options available for Firestore users, and shows some results and performance characteristics. Since this is brand new, I expect there will be a lot of improvements and changes in the coming months, but this is what we have as of this writing.
+
+## Firestore Enterprise edition 
+
+## APIs that allow full-text search
+
+### LIKE
+
+### REGEX
+
+### SEARCH with documentMatches (early access)
+
+Requires a special index to be build.
+Only can match on the whole document, not on a specific field.
