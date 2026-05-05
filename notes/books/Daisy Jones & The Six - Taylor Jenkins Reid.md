@@ -7,6 +7,7 @@ rating: 4
 edition: "Audiobook"
 link: "https://www.goodreads.com/book/show/43998386"
 pageCount: 368
+aliases: [/books/daisy-jones-]
 ---
 
 ![Book cover of Daisy Jones & The Six by Taylor Jenkins Reid, featuring a close-up of a woman with tousled dark hair partially covering her face, styled in a vintage rock aesthetic. The title appears at the top, and a badge notes it includes a PDF of song lyrics.](https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1550039160i/43998386.jpg)
