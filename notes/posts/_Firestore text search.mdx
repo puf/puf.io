@@ -1,10 +1,9 @@
 ---
 title: "Full-text search in Firestore"
-pubDate: "May 10, 2026"
+pubDate: "May 30, 2026"
 alsoOn: [https://bsky.app/profile/puf.io, https://x.com/puf, https://www.threads.com/@frankpuf, https://c.im/@puf]
 tags: [firebase, firestore, search, text-search, google-cloud, google-cloud-platform]
 ---
-
 For years, whatever new feature we announced for Firestore, the bulk of the responses was some variant of:
 
 > Again, no full-text search
@@ -18,6 +17,48 @@ Firestore now has a full-text search API. In fact, it has multiple!
 </PullQuote>
 
 In this post, I'll give an overview of the full-text search options available for Firestore users, and shows some results and performance characteristics. Since this is brand new, I expect there will be a lot of improvements and changes in the coming months, but this is what we have as of this writing.
+
+---
+
+### Initial testing during Cloud Next 2026
+
+I started testing the new search capabilities during Cloud Next 2026, and shared some of my findings on socials. Here's a summary of what I found:
+
+https://x.com/puf/status/2046690939700162577 (thread)
+
+> From my initial testing, the search is case-insensitive - which is what most you'll usually want.
+> 
+> I haven't found any flag yet to make it case-sensitive though, which I also sometimes want.
+---
+> It seems:
+> 
+> * The `like` operation is case-sensitive
+> * The `documentMatches` operation is case-insensitive
+> 
+> One example, because length:
+> ```js
+> db.pipeline().collection('Test')
+>   .where(like(field('textField'), "%Flutter%"))
+>   .search({
+>     query: documentMatches('flutter')
+>   })
+> ```
+---
+> It also looks like the `like()` operation can compare against another field value, something that used to be impossible before it:
+> ```js
+> // Check if the 'title' field contains the string "guide"
+> like(field("title"), field("pattern"));
+> ```
+
+And a follow up next day: 
+https://x.com/puf/status/2047076188645122353
+
+> I'm continuing to play with the text search capabilities of Firestore.
+> 
+> One of the interesting differences is in billing. The first example charges 2 read units (for 1 match), while the second example (using the newer search API) charges 6 read units.
+> ![](https://pbs.twimg.com/media/HGis6DtbsAAfFmo?format=jpg&name=medium)
+
+---
 
 ## Firestore Enterprise edition 
 
