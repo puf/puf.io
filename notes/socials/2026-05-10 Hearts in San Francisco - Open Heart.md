@@ -21,7 +21,7 @@ This statue in the [Hearts in San Francisco](/tags/hearts-in-san-francisco) seri
 
 ![pic of the heart looking landward](https://i.imgur.com/9EjgaTZ.png)
 
-I recommend shooting pics from both sides, as both the wooden pier as the bay make beautiful backdrops.
+I recommend shooting pics from both sides, as both the wooden pier and the bay make beautiful backdrops.
 
 ![pic of the heard looking bayward](https://i.imgur.com/KxkeIeJ.png)
 
