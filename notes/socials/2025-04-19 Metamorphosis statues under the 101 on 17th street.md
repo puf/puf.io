@@ -6,7 +6,7 @@ alsoOn:
   - https://x.com/puf/status/1914139064548065375
   - https://bsky.app/profile/puf.io/post/3lnc3fo74yc2w
   - https://c.im/@puf/114373512237688071
-tags: [san-francisco, potrero-hill, mission-creek, sculptures]
+tags: [san-francisco, potrero-hill, mission-creek, sculptures, public-art, statues]
 location: [37.76451,-122.405278]
 aliases: [/socials/metamorphosis-17th-101]
 ---
@@ -42,3 +42,12 @@ These are the two sculptures on the eastern/Potrero Hill side of 101:
 ![second statue on the east side](https://i.imgur.com/dPUyMD3.png)
 
 More artworks in the city? Yes yes please!
+
+---
+
+### Update May 2026
+
+I happened to pass by these statues again today and noticed how much more greens and flowers are around them. So pretty!
+
+![west side statue in flowers](https://i.imgur.com/pNpcOEM.png)
+![east side statue in flowers](https://i.imgur.com/mUbxRPn.png)
