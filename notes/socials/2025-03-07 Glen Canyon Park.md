@@ -6,7 +6,7 @@ alsoOn:
   - https://x.com/puf
   - https://bsky.app/profile/puf.bsky.social
   - https://c.im/@puf/
-tags: [san-francisco, glen-park, glen-canyon-park]
+tags: [san-francisco, glen-park, glen-canyon-park, parks]
 location: [37.741563,-122.44576]
 ---
 

@@ -6,7 +6,7 @@ alsoOn:
   - https://x.com/puf
   - https://bsky.app/profile/puf.bsky.social
   - https://c.im/@puf/
-tags: [san-francisco, glen-park, greenway]
+tags: [san-francisco, glen-park, greenway, parks]
 locations:
   - [37.7341462, -122.4377365]
   - [37.7341971, -122.4396033]

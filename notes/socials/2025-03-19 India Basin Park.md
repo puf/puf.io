@@ -6,7 +6,7 @@ alsoOn:
   - https://x.com/puf
   - https://bsky.app/profile/puf.bsky.social
   - https://c.im/@puf/
-tags: [san-francisco, bayview, india-basin-park]
+tags: [san-francisco, bayview, india-basin-park, parks]
 location: [37.7331837,-122.3784331]
 ---
 

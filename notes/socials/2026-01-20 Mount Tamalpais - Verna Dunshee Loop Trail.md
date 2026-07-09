@@ -6,7 +6,7 @@ alsoOn:
   - https://bsky.app/profile/puf.io/post/3md4h23odg52q
   - https://www.threads.com/@frankpuf/post/DT3Xjh3ic8M
   - https://x.com/puf/status/2014783891945468097
-tags: [san-francisco, mount-tamalpais, hiking, mill-valley, marin-county]
+tags: [san-francisco, mount-tamalpais, hiking, mill-valley, marin-county, parks]
 locations: 
  - [37.9275875,-122.5980706]
 aliases: []

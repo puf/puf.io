@@ -7,7 +7,7 @@ alsoOn:
   - https://bsky.app/profile/puf.io
   - https://c.im/@puf@c.im/
   - https://www.linkedin.com/
-tags: [san-francisco, golden-gate-park, jfk-drive, statue]
+tags: [san-francisco, golden-gate-park, jfk-drive, statue, parks]
 locations: 
  - [37.7714856508727, -122.4745515615687] 
 aliases: []
