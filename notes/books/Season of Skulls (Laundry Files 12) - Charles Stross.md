@@ -9,7 +9,7 @@ link: "https://www.goodreads.com/review/show/5735619523"
 pageCount: 376
 ---
 
-![Book cover for Season of Skulls by Charles Stross. The cover features the author's name in large tan letters at the top and the title in white capital letters at the bottom. Between them is an image of a dark, rocky cave with a tunnel leading outside, showing a barren landscape under a gray sky. A small overturned vehicle is in the cave. The cover also includes a label indicating it’s part of The Laundry Files series and a quote praising the book.](https://upload.wikimedia.org/wikipedia/en/2/2b/Charles_Stross_-_Season_of_Skulls.jpg)
+![Book cover for Season of Skulls by Charles Stross. The cover features the author's name in large tan letters at the top and the title in white capital letters at the bottom. Between them is an image of a dark, rocky cave with a tunnel leading outside, showing a barren landscape under a gray sky. A small overturned vehicle is in the cave. The cover also includes a label indicating it’s part of The Laundry Files series and a quote praising the book.](https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1679496484l/62595513._SY475_.jpg)
 
 The [Laundry Files series](https://www.goodreads.com/series/50764-laundry-files) by Charles Stross blends elements of horror, espionage, and dark humor in a current/recent era world where math and computers allow magic, and open portals to other (not good) worlds. 
 
