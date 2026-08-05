@@ -2,10 +2,10 @@
 title: "Mount Sutro Open Space Reserve"
 pubDate: July 9, 2026
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://x.com/puf/
+  - https://c.im/@puf/116988749386479486
+  - https://bsky.app/profile/puf.io/post/3mqwwzi5kvq2u
+  - https://www.threads.com/@frankpuf/post/Da8fLPoCafZ
+  - https://x.com/puf/status/2078554788648644755
 tags: [san-francisco, parks, mount-sutro, ucsf, parnassus, 17th-street, stanyan-street, clarendon-avenue]
 locations: 
  - [37.7592201,-122.4598053]
