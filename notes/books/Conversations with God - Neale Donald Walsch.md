@@ -7,6 +7,7 @@ rating: 3
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/6608834"
 pageCount: 197
+aliases: ["/books/conversations-with-god,-an-uncommon-dialogue:-living-in-the-world-with-honesty,-courage,-and-love---volume-1---neale-donald-walsch"]
 ---
 
 
