@@ -30,6 +30,7 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true" # Suppresses the Node 20 forced upgrade warning banners
   # BUILD_PATH: subfolder
 
 jobs:
