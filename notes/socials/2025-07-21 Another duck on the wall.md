@@ -13,6 +13,16 @@ locations:
 aliases: []
 ---
 
+---
+
+## The ducks are gone
+
+Update (August 1, 2026): When we drove by the duckwall today, I noticed that the ducks had gone. I like to imagine that they've flown on to greener pastures.
+
+Read their story below...
+
+---
+
 Walking Divisadero from North to the South is always a fun trip, and if you stick to the western side of the street just south of Oak street you can't miss this wall full of rubber ducks:
 
 ![](https://i.imgur.com/cte8TZr.png)
@@ -30,5 +40,7 @@ I'd walked by and photographed the rubber duckies many times before, but this wa
 Corny humor aside, there's something just plain fun about the duck wall. So go check it out when you have a chance.
 
 ![](https://i.imgur.com/oc0ntlw.png)
+
+
 
 [duckwall]: https://maps.app.goo.gl/2YDg4YpFT4L55H168
