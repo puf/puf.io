@@ -17,7 +17,7 @@ aliases: []
 
 ## The ducks are gone
 
-Update (August 1, 2026): When we drove by the duckwall today, I noticed that the ducks had gone. I like to imagine that they've flown on to greener pastures.
+Update (August 1, 2026): When we drove by the duckwall today, I noticed that the ducks had gone. It seems the building needed a new coat of paint, but I like to imagine that they've flown on to greener pastures.
 
 Read their story below...
 
