@@ -15,4 +15,8 @@ The Dragon Republic is the second book in The Poppy War trilogy by R.F. Kuang (Y
 
 I read the audio edition of this book, narrated by Emily Woo Zeller. As before, I found it hard to like Rin: she's just too self-absorbed. This may be unusual for the protagonist of a book, but it's a common theme in works I've read from Kuang. By now, I’ve gotten used to that, as well as the rather two-dimensional nature of most characters. I was mostly able to enjoy the plot and the ups and downs of Rin’s psych unit. There are quite a few shocking-yet-predictable face/heel turns in this installment, so I’m eager to see where everyone lands in the final book.
 
-Also see my [review of The Poppy War](/books/the-poppy-war---r.f.-kuang) (book 1 of the trilogy).
+Also see my reviews of the first book [The Poppy War][poppywar1] and second book [*The Burning God*][poppywar2] in the trilogy.
+
+[poppywar1]: /books/the-poppy-war---r.f.-kuang
+[poppywar2]: /books/the-burning-god---r.f.-kuang
+[poppywar3]: /books/the-dragon-republic---r.f.-kuang

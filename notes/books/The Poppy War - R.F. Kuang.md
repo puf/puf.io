@@ -19,6 +19,11 @@ Many of the plot elements reminded me of [The Fourth Wing][fourthwing], but I gu
 
 As with Kuang's [Yellowface][yellowface], I found it difficult to connect with Rin. She comes across a bit too whiny, and self-pitying - and I found most characters lacked emotional depth. They're interesting archetypes though and the plot itself sped along really nicely. I have the rest of the [audiobook trilogy][trilogy] ready to go on my Libro.fm app, so expect reviews of the other two books in the coming months.
 
+Also see my reviews of the second book [*The Burning God*][poppywar2] and third book [The Dragon Republic][poppywar3] in the trilogy.
+
 [yellowface]: /books/yellowface---r.f.-kuang/
 [fourthwing]: /books/fourth-wing---rebecca-yarros
 [trilogy]: https://libro.fm/audiobooks/9780063347762-the-complete-poppy-war-trilogy
+[poppywar1]: /books/the-poppy-war---r.f.-kuang
+[poppywar2]: /books/the-burning-god---r.f.-kuang
+[poppywar3]: /books/the-dragon-republic---r.f.-kuang
