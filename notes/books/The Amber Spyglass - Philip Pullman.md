@@ -15,7 +15,7 @@ pageCount: 480
 
 In *The Amber Spyglass*, Lyra and Will journey to and through the world of the dead, join a rebellion against the Authority, and discover the significance of Dust and how to preserve it for the future of conscious beings.
 
-This third book is much more philosophical than the previous two, and explores concepts like free will, divine authority, and how love can take many different forms. I found some of the characters and their choices a bit too obvious and over-the-top (like Mrs. Coulter), and others are a bit too subtle and drawn out (like Balthamos and Baruch), but overall enjoyed the story. Given how explicitly it deals with religion and ends with the idea that life is finite and it is up to us to build a better world, I get how that may make the book hard to stomach for certain folks. For me, though, it was a fascinating exploration of these idead, and it felt like a good ending to an interesting trilogy.
+This third book is much more philosophical than the previous two, and explores concepts like free will, divine authority, and how love can take many different forms. I found some of the characters and their choices a bit too obvious and over-the-top (like Mrs. Coulter), and others are a bit too subtle and drawn out (like Balthamos and Baruch), but overall enjoyed the story. Given how explicitly it deals with religion and ends with the idea that life is finite and it is up to us to build a better world, I get how that may make the book hard to stomach for certain folks. For me, though, it was a fascinating exploration of these ideas, and it felt like a good ending to an interesting trilogy.
 
  [book1]: /books/the-golden-compass---philip-pullman
  [book2]: /books/the-subtle-knife---philip-pullman
