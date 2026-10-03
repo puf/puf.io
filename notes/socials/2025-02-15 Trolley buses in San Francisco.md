@@ -8,7 +8,7 @@ alsoOn:
   - https://c.im/@puf/
 tags: [san-francisco, muni, public-transport, trolley-bus]
 locations:
-  - [37.754776,-122.4234855]
+  - [37.7555454,-122.4195188]
   - [37.74791,-122.431589]
 ---
 
