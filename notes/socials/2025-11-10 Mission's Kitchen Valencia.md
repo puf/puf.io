@@ -7,7 +7,7 @@ alsoOn:
   - https://bsky.app/profile/puf.io/post/3m5cyvw7zxe2d
   - https://x.com/puf/status/1988058945563361559
   - https://www.threads.com/@frankpuf/post/DRI93ypjF9X
-tags: [san-francisco, mission, valencia, restaurant]
+tags: [san-francisco, mission, valencia-street, restaurant]
 locations: 
  - [37.7565189,-122.4213178]
 aliases: []
