@@ -1,6 +1,6 @@
 ---
 title: "Florecita Panaderia on 23rd and Barlett"
-pubDate: October 9, 2026
+pubDate: October 8, 2026
 alsoOn:
   - https://c.im/@puf/
   - https://bsky.app/profile/puf.io/
