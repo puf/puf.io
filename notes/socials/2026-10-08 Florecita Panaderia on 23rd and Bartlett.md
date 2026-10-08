@@ -1,5 +1,5 @@
 ---
-title: "Florecita Panaderia on 23rd and Barlett"
+title: "Florecita Panaderia on 23rd and Bartlett"
 pubDate: October 8, 2026
 alsoOn:
   - https://c.im/@puf/
