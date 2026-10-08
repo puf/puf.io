@@ -19,7 +19,7 @@ I first encountered Florecita Panaderia, in its original location in a Bryant st
 
 Since September 2026 Florecita Panaderia has [relocated][articleonmove] to the [corner of 23rd street and Bartlett street][mapslink], in the location that used to host Shuggies (and Velvet Cantina before that). Florecita Bakery is attracting a lot of people to their new location; and for a good reason, as their made-from-scratch pan dulce are delicious!
 
-The site contains two spaces, connected by a passage. You typically enter from the corner into the space where the concha's are sold and made.
+The site consists of two spaces, connected by a passage. You typically enter from the corner into the space where the concha's are sold and made.
 
 ![dough](https://i.postimg.cc/ZK98sdP5/IMG-20261008-114128904-HDR-2.jpg)
 ![rack](https://i.postimg.cc/m2cYpH3Z/IMG-20261008-114122127-HDR-2.jpg)
