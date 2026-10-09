@@ -30,7 +30,7 @@ Based on the <span id="count"></span> values above there are an estimated <span 
 
 [^5]: While Firestore nowadays has a dedicated API for counting results, this can [in my testing](https://stackoverflow.com/q/75317067/) only handle results into the 10s of millions, and also become expensive (counting 10 million documents costs 10 thousand document reads). While the approach used in this page only gives an estimate of the document count, it as a fixed cost (of 100-200 document reads). For what counter approach to use in what scenarios, see [How to handle aggregated values in Firestore](https://stackoverflow.com/questions/77461961/how-should-i-handle-aggregated-values-in-firestore)
 
-[^6]: I rewrote the estimator to be much simpler on Oct 9, 2026, to just use the first and last ID and the ID count. This reduced the error margin in tests by a third.
+[^6]: I rewrote the estimator to be much simpler on Oct 9, 2026. It now just uses the first and last ID, and the ID count. This reduced the error margin in tests by a third.
 
 
 <script>
