@@ -5,7 +5,7 @@ startedDate: "2026/09/30"
 finishedDate: "2026/10/07"
 rating: 4
 edition: "Kindle Edition"
-link: "https://www.goodreads.com/book/show/123811874"
+alsoOn: [https://www.goodreads.com/book/show/123811874, https://bookhive.buzz/books/bk_1Z0wFqfgNA8WenJHvNPs]
 pageCount: 434
 ---
 

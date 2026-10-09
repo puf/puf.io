@@ -5,7 +5,7 @@ startedDate: "2026/09/05"
 finishedDate: "2026/10/02"
 rating: 4
 edition: "Audiobook"
-link: "https://www.goodreads.com/book/show/61221927"
+alsoOn: [https://www.goodreads.com/book/show/61221927, https://bookhive.buzz/books/bk_URkrr1iZnJnopQxcmptv]
 pageCount: 352
 audioMinutes: 612
 ---

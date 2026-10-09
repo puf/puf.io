@@ -5,6 +5,7 @@ startedDate: {{date}}
 finishedDate: {{date}}
 rating: 3
 edition: 
-link: 
+alsoOn: []
 pageCount: 
+audioMinutes: 
 ---

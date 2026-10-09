@@ -7,6 +7,7 @@ import StarRating from '../components/StarRating.astro';
 import { getTypeForNote, getSlugForNote, getNotes } from '../components/Notes.astro';
 import AlsoOn from '../components/AlsoOn.astro';
 import NoteEntry from '../components/NoteEntry.astro';
+import { normalizeBookLinks } from '../utils/externalLinks.js';
 
 type Props = CollectionEntry<'blog'>['data'] & {
   frontmatter: {
@@ -15,8 +16,8 @@ type Props = CollectionEntry<'blog'>['data'] & {
 		startedDate: Date;
 		finishedDate: Date;
 		rating: number;
-		link: string;
-		alsoOn: string[];
+		link?: string;
+		alsoOn?: string[];
 		location?: [number, number];
 		locations?: [number, number][];
 		tags?: string[];
@@ -40,6 +41,9 @@ if (!slug) {
 const note = Astro.props;
 const typeurl = "/" + type;
 const location = frontmatter?.location || frontmatter?.locations?.[0];
+const bookLinks = type === "books"
+	? normalizeBookLinks(frontmatter?.link, frontmatter?.alsoOn)
+	: [];
 
 const otherNotesForTags = {};
 const otherNoteCountForTags = {};
@@ -138,14 +142,14 @@ await getNotes({ keepIf: (other) => {
 						<li>Finished on: {frontmatter.finishedDate}</li>
 						<li>Rating: {frontmatter.rating} out of 5 stars</li>
 						<StarRating rating={frontmatter.rating} /><br/>
-						<li><AlsoOn links={[frontmatter.link]} /></li>
+						<li><AlsoOn links={bookLinks} /></li>
 					  </ul>
 					  <hr/>
 					)}
 					<NoteEntry
 						pubDate={pubDate}
 						updatedDate={updatedDate}
-						alsoOn={frontmatter?.alsoOn}
+						alsoOn={type === "books" ? undefined : frontmatter?.alsoOn}
 						location={location}
 						tags={frontmatter?.tags}
 						hr={true}
