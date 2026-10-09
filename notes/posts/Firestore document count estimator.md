@@ -4,7 +4,7 @@ pubDate: "Aug 14, 2025"
 alsoOn: []
 tags: [firestore, firebase]
 ---
-If you use Firestore's built-in `add` method, you can get a rough estimate of the number of documents in a collection[^5] by providing a relatively small number of consecutive document IDs.[^1]
+If you use Firestore's built-in `add` method, you can get a rough estimate of the number of documents in a collection[^5] by providing a relatively small number of monotonically increasing document IDs.[^1]
 
 Follow these steps to got an "order of magnitude" estimation of the number of documents in a large collection[^2]:
 
@@ -18,17 +18,20 @@ Follow these steps to got an "order of magnitude" estimation of the number of do
 <textarea rows=10 cols="40">    
 </textarea>
 
-Based on the <span id="count"></span> values above there are an estimated <span id="estimate">???</span> documents in the collection (group).
+Based on the <span id="count"></span> values above there are an estimated <span id="estimate">???</span> documents in the collection (group)[^6].
 
 [^1]: I first learnt about this approach from original Firestore product manager Dan McGrath, but I can't find any write-up of his about it.
 
-[^2]: To learn more about this approach, see <a href="https://jfhr.me/estimate-firestore-collection-count/">Estimate Firestore collection count from a small sample of documents</a> where I also got most of the code that this page uses. Thanks jfhr! 🙏
+[^2]: To learn more about this approach, see <a href="https://jfhr.me/estimate-firestore-collection-count/">Estimate Firestore collection count from a small sample of documents</a>. I also got some of the code from there, although I now use a simpler (and less error prone) estimator. Thanks jfhr! 🙏
 
-[^3]: For a collection with 22,833 the estimate based on the first 100 IDs was 19,155 documents (so off by 17%). With 200 IDs the estimate became 20,326 document (so off by 11%). Both are a bit further off than I recalled, but well within range for my needs - YMMV of course
+[^3]: For a collection with 22,833 the estimate based on the first 100 IDs was 20,250 documents (so off by 11%). With 200 IDs the estimate became 21,267 document (so off by 6%). Both are a bit further off than I recalled, but well within range for my needs - YMMV of course
 
-[^4]: On Datastore (and Firestore and Datastore more) this sort of [keys-only query](https://cloud.google.com/datastore/pricing#small_operations) can be performed for the cost of one entity read, but Firestore in native mode unfortunately doesn't have such an option (yet).
+[^4]: On Datastore (and Firestore in Datastore more) this sort of [keys-only query](https://cloud.google.com/datastore/pricing#small_operations) can be performed for the cost of one entity read, but Firestore in native mode unfortunately doesn't have such an option (yet).
 
 [^5]: While Firestore nowadays has a dedicated API for counting results, this can [in my testing](https://stackoverflow.com/q/75317067/) only handle results into the 10s of millions, and also become expensive (counting 10 million documents costs 10 thousand document reads). While the approach used in this page only gives an estimate of the document count, it as a fixed cost (of 100-200 document reads). For what counter approach to use in what scenarios, see [How to handle aggregated values in Firestore](https://stackoverflow.com/questions/77461961/how-should-i-handle-aggregated-values-in-firestore)
+
+[^6]: I rewrote the estimator to be much simpler on Oct 9, 2026, to just use the first and last ID and the ID count. This reduced the error margin in tests by a third.
+
 
 <script>
 const D0 = '0'.charCodeAt(0);
@@ -62,7 +65,7 @@ function id2Number(id) {
     return n;
 }
 
-const max = id2Number('zzzzzzzzzzzzzzzzzzzz');
+const keyspaceSize = id2Number('zzzzzzzzzzzzzzzzzzzz');
 
 /**
  * Estimate the collection size from a list
@@ -83,16 +86,17 @@ let count = document.getElementById('count');
 let output = document.getElementById('estimate');
 input.addEventListener('change', (e) => {
   try {
-  let text = input.value;
-  let lines = text.split('\n').map((l) => l.trim()).filter(l => l.length > 0);
-  console.log('lines', lines);
-  count.innerText = lines.length;
-  let estimate = estimateN(lines);
-  console.log('estimate', estimate);
-  output.innerText = estimate.toLocaleString();
+    let text = input.value;
+    let lines = text.split('\n').map((l) => l.trim()).filter(l => l.length > 0).map(l => l.substring(0,20));
+    count.innerText = lines.length;
+    const firstId = id2Number(lines[0]);
+    const lastId = id2Number(lines.at(-1));
+    const estimate = BigInt(lines.length - 2) * keyspaceSize / (lastId - firstId);    
+    console.log('estimate', estimate);
+    output.innerText = estimate.toLocaleString();
   }
   catch (e) {
-    console.error(`Error parsing input`, input.value);
+    console.error(`Error parsing input`, input.value, e);
     alert('Error parsing input. Make sure that you only paste document IDs, one per line');
   }
 });
