@@ -37,6 +37,8 @@ The statue will stay in its current location for 6 to 12 months, something I'm s
 
 For one hour per day the statue will seem to be breathing with a rising and falling chest, and at night it is illuminated. Well, I guess we'll have to go back at night to admire that. :-)
 
+Update Oct 2026: the statue was taken down from its temporary home in front of the Ferry Building this week. For more on that, see [Giant nude sculpture comes down in dramatic S.F. spectacle](https://www.sfchronicle.com/sf/article/giant-nude-sculpture-dismantled-22474262.php) (sigh, SF Chronicle, did you really need to emphasize the nudeness of the statue to attract more clicks?) Anyway... *R Evolution* is now known as *I Am*, and the artist is taking bids from potential new owners.
+
 
  [the-park]: https://maps.app.goo.gl/U5mANSebMdV8LrrN7
  [artist]: https://www.marcocochrane.com/
