@@ -13,6 +13,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
   frontmatter: {
 		author: string;
 		pageCount: number;
+		audioMinutes?: number;
 		startedDate: Date;
 		finishedDate: Date;
 		rating: number;
@@ -138,6 +139,7 @@ await getNotes({ keepIf: (other) => {
 					  <ul class="props">
 						<li>Author: {frontmatter?.author}</li>
 						<li>Page count: {frontmatter.pageCount}</li>
+						{frontmatter.audioMinutes > 0 && <li>Audio length: {frontmatter.audioMinutes} minutes</li>}
 						<li>Started on: {frontmatter.startedDate}</li>
 						<li>Finished on: {frontmatter.finishedDate}</li>
 						<li>Rating: {frontmatter.rating} out of 5 stars</li>
