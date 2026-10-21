@@ -21,6 +21,6 @@ In *Hyperpolitics*, Anton Jäger explores how we got to the current state of pol
 
 In Jäger's thesis, we've become better at expressing our (political) opinions and mobilizing around controversies, but we no longer translate that energy into building the institutions that traditionally would convert it into longer-lasting (political) power.
 
-I learned about *Hyperpolitics* from one of Cory Doctorow's posts. This book is pretty far from my "normal" reading, but It was fascinating to read Jäger's analysis of each historical political phase and his take on the causes of the transitions. I just wish it had been written in a bit more accessible language, even if that meant increasing the page count.
+I learned about *Hyperpolitics* from one of Cory Doctorow's posts. This book is pretty far from my "normal" reading, but it was fascinating to read Jäger's analysis of each historical political phase and his take on the causes of the transitions. I just wish it had been written in a bit more accessible language, even if that meant increasing the page count.
 
 [^1] I'm writing these terms as the author does, even though the inconsistency triggers my OCD.
