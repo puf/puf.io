@@ -5,23 +5,66 @@ interface Props {
 
 const { rating } = Astro.props as Props;
 
-export function renderStars(rating: number): string {
-  const fullStar = '★';
-  const emptyStar = '☆';
-  let stars = '';
+type StarState = 'full' | 'half' | 'empty';
 
-  for (let i = 1; i <= 5; i++) {
-    if (i <= rating) {
-      stars += fullStar;
-    } else {
-      stars += emptyStar;
-    }
-  }
+export function getStarStates(rating: number): StarState[] {
+  const normalizedRating = Math.round(Math.max(0, Math.min(5, rating)) * 2) / 2;
 
-  return stars;
+  return Array.from({ length: 5 }, (_, index) => {
+    const starNumber = index + 1;
+    if (normalizedRating >= starNumber) return 'full';
+    if (normalizedRating === starNumber - 0.5) return 'half';
+    return 'empty';
+  });
 }
+
+export function renderStars(rating: number): string {
+  return getStarStates(rating)
+    .map((state) => state === 'full' ? '★' : state === 'half' ? '½' : '☆')
+    .join('');
+}
+
+const starStates = getStarStates(rating);
+const normalizedRating = starStates.reduce(
+  (total, state) => total + (state === 'full' ? 1 : state === 'half' ? 0.5 : 0),
+  0,
+);
 ---
 
-<div>
-  {renderStars(rating)}
+<div class="stars" role="img" aria-label={`${normalizedRating} out of 5 stars`}>
+  {starStates.map((state) => <span class:list={['star', state]} aria-hidden="true"></span>)}
 </div>
+
+<style>
+  .stars {
+    display: inline-flex;
+  }
+
+  .star {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .star::before {
+    content: '☆';
+  }
+
+  .star::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    content: '★';
+  }
+
+  .star.half::after {
+    width: 50%;
+  }
+
+  .star.full::after {
+    width: 100%;
+  }
+</style>
