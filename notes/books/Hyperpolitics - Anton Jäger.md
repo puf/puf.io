@@ -7,6 +7,7 @@ rating: 3
 edition: "Kindle Edition"
 alsoOn:
   - "https://www.goodreads.com/book/show/234241274"
+  - https://bookhive.buzz/books/bk_vkB67jF1bcvGZcxupNXg
 pageCount: 128
 ---
 
