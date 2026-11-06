@@ -2,10 +2,10 @@
 title: "Florecita Panaderia on 23rd and Bartlett"
 pubDate: October 8, 2026
 alsoOn:
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://www.threads.com/@frankpuf/
-  - https://x.com/puf/
+  - https://c.im/@puf/117504386203289005
+  - https://bsky.app/profile/puf.io/post/3myqhsdojqm2b
+  - https://x.com/puf/status/2114515025624752405
+  - https://www.threads.com/@frankpuf/post/De7__YOCWt9
 tags: [san-francisco, mission, coffee, mexican-food, restaurant, 23rd-street, bartlett-street]
 locations: 
  - [37.7536803,-122.4221143]
