@@ -2,10 +2,10 @@
 title: "Hearts in San Francisco - Outerlands"
 pubDate: Nov 3, 2026
 alsoOn:
-  - https://www.threads.com/@frankpuf/
-  - https://c.im/@puf/
-  - https://bsky.app/profile/puf.io/
-  - https://x.com/puf/
+  - https://c.im/@puf/117559098892415897
+  - https://bsky.app/profile/puf.io/post/3mzircrwmb72f
+  - https://www.threads.com/@frankpuf/post/DfU4UjyG9OY
+  - https://x.com/puf/status/2118016637148221761
 tags: [san-francisco, hearts-in-san-francisco, public-art, union-square]
 locations: 
  - [37.787544,-122.408103]
