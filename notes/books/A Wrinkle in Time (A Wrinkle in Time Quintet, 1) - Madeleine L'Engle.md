@@ -7,6 +7,7 @@ rating: 3
 edition: "Paperback"
 link: "https://www.goodreads.com/book/show/18131"
 pageCount: 211
+aliases: ["/books/a-wrinkle-in-time-a-wrinkle-in-time-quintet,-1---madeleine-l'engle"]
 ---
 
 

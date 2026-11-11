@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/8156551"
 pageCount: 420
+aliases: ["/books/zoe's-tale-old-man's-war,-4---john-scalzi"]
 ---
 
 

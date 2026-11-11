@@ -10,7 +10,7 @@ alsoOn:
 tags: [san-francisco, mission, valencia-street, restaurant]
 locations: 
  - [37.7565189,-122.4213178]
-aliases: []
+aliases: ["/socials/2025-11-10-mission's-kitchen-valencia"]
 ---
 
 When I walked by 1020 Valencia street between 22nd and 21st last week, I noticed something different about the signage on what used to be Flor de Cafe and Ma's Tacos.

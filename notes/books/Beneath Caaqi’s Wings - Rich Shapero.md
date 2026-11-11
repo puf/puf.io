@@ -7,6 +7,7 @@ rating: 3
 edition: "Hardcover"
 link: "https://www.goodreads.com/book/show/162876287"
 pageCount: 200
+aliases: ["/books/beneath-caaqi’s-wings---rich-shapero"]
 ---
 
 A bit like lord of the flies, but then set in a jungle rather than on an island. Not bad, but it felt like the stories got cut shorter a bit than they should.

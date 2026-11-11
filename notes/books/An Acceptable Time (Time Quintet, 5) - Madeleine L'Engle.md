@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/10620776"
 pageCount: 351
+aliases: ["/books/an-acceptable-time-time-quintet,-5---madeleine-l'engle"]
 ---
 
 

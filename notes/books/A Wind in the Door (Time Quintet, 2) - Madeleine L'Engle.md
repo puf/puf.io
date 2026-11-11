@@ -7,6 +7,7 @@ rating: 3
 edition: "Mass Market Paperback"
 link: "https://www.goodreads.com/book/show/18130"
 pageCount: 236
+aliases: ["/books/a-wind-in-the-door-time-quintet,-2---madeleine-l'engle"]
 ---
 
 

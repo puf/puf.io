@@ -7,6 +7,7 @@ rating: 3
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/57021145"
 pageCount: 317
+aliases: ["/books/the-last-shadow-ender's-saga,-6---orson-scott-card"]
 ---
 
 

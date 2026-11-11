@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/18626894"
 pageCount: 384
+aliases: ["/books/his-majesty's-dragon-temeraire,-1---naomi-novik"]
 ---
 
 

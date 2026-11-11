@@ -7,6 +7,7 @@ rating: 5
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/51625073"
 pageCount: 437
+aliases: ["/books/the-lincoln-conspiracy:-the-secret-plot-to-kill-america's-16th-president--and-why-it-failed---brad-meltzer"]
 ---
 
 

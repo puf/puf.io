@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/8370773"
 pageCount: 434
+aliases: ["/books/the-river-of-doubt:-theodore-roosevelt's-darkest-journey---candice-millard"]
 ---
 
 

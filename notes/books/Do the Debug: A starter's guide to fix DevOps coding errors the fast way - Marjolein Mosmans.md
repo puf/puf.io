@@ -7,6 +7,7 @@ rating: 0
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/110011308"
 pageCount: 42
+aliases: ["/books/do-the-debug:-a-starter's-guide-to-fix-devops-coding-errors-the-fast-way---marjolein-mosmans"]
 ---
 
 

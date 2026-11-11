@@ -7,6 +7,7 @@ rating: 4
 edition: "Audible Audio"
 link: "https://www.goodreads.com/book/show/30283483"
 pageCount: 22
+aliases: ["/books/the-dark-forest-remembrance-of-earth’s-past-2---liu-cixin"]
 ---
 
 

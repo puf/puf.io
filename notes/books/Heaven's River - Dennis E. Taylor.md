@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/56078386"
 pageCount: 608
+aliases: ["/books/heaven's-river---dennis-e.-taylor"]
 ---
 
 

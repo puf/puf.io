@@ -7,6 +7,7 @@ rating: 4
 edition: "Paperback"
 link: "https://www.goodreads.com/book/show/27652"
 pageCount: 384
+aliases: ["/books/accidental-empires:-how-the-boys-of-silicon-valley-make-their-millions,-battle-foreign-competition,-and-still-can't-get-a-date---robert-x.-cringely"]
 ---
 
 

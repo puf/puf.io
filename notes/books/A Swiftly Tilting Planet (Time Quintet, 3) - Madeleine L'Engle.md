@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/8581887"
 pageCount: 300
+aliases: ["/books/a-swiftly-tilting-planet-time-quintet,-3---madeleine-l'engle"]
 ---
 
 

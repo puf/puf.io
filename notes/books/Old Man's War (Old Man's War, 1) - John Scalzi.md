@@ -7,6 +7,7 @@ rating: 3
 edition: "Mass Market Paperback"
 link: "https://www.goodreads.com/book/show/51964"
 pageCount: 355
+aliases: ["/books/old-man's-war-old-man's-war,-1---john-scalzi"]
 ---
 
 

@@ -7,6 +7,7 @@ rating: 4
 edition: "Hardcover"
 link: "https://www.goodreads.com/book/show/15698479"
 pageCount: 431
+aliases: ["/books/the-human-division-old-man's-war,-5---john-scalzi"]
 ---
 
 
