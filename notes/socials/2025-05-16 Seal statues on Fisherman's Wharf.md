@@ -9,7 +9,7 @@ alsoOn:
   - https://www.linkedin.com/posts/puf_walking-on-san-franciscos-fishermans-wharf-activity-7329937229072474112-bh20
 tags: [san-francisco, fishermans-wharf, pier-39, sculptures, statues, seals]
 location: [37.808701,-122.4158329]
-aliases: []
+aliases: ["/socials/2025-05-16-seal-statues-on-fisherman's-wharf"]
 ---
 
 As we were walking across [Fisherman's Wharf][fishermans-wharf] in San Francisco recently, I noticed this brightly colored status of a seal in front of the [SkyStar Ferris Wheel][skystar]:

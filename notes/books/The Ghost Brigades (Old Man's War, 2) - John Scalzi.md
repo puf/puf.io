@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/9303705"
 pageCount: 356
+aliases: ["/books/the-ghost-brigades-old-man's-war,-2---john-scalzi"]
 ---
 
 

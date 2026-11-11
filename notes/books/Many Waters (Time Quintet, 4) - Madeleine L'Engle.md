@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/10838718"
 pageCount: 368
+aliases: ["/books/many-waters-time-quintet,-4---madeleine-l'engle"]
 ---
 
 

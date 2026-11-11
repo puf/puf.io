@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/8180987"
 pageCount: 336
+aliases: ["/books/the-last-colony-old-man's-war,-3---john-scalzi"]
 ---
 
 

@@ -7,6 +7,7 @@ rating: 4
 edition: "Paperback"
 link: "https://www.goodreads.com/book/show/1684446"
 pageCount: 376
+aliases: ["/books/sid-meier's-civilization-or-rome-on-640k-a-day---johnny-l.-wilson"]
 ---
 
 

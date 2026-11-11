@@ -7,6 +7,7 @@ rating: 3
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/62980366"
 pageCount: 80
+aliases: ["/books/the-belief-equation-t-+-e-=-b:-the-last-self-help-book-you'll-ever-need---dr.-peter-salerno"]
 ---
 
 

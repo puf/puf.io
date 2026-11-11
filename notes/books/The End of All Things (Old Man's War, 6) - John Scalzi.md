@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/24661365"
 pageCount: 384
+aliases: ["/books/the-end-of-all-things-old-man's-war,-6---john-scalzi"]
 ---
 
 

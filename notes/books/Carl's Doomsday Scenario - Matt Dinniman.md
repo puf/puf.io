@@ -9,6 +9,7 @@ alsoOn:
   - https://www.goodreads.com/book/show/56377548
   - https://bookhive.buzz/books/bk_4JaykCDNqXRIff9mlwKg
 pageCount: 400
+aliases: ["/books/carl's-doomsday-scenario---matt-dinniman"]
 ---
 
 ![Book cover for Carl’s Doomsday Scenario by Matt Dinniman, featuring Carl in heart-patterned boxer shorts reaching toward the viewer, with a crowned cat on his shoulder and a snarling reptilian creature behind him.](https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1608612407i/56377548.jpg)

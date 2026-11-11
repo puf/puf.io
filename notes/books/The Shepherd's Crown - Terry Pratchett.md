@@ -7,6 +7,7 @@ rating: 4
 edition: "Audiobook"
 link: "https://www.goodreads.com/book/show/25343430"
 pageCount: 276
+aliases: ["/books/the-shepherd's-crown---terry-pratchett"]
 ---
 
 ![Cover of the audiobook The Shepherd’s Crown by Terry Pratchett, featuring the title in large gold and white lettering over a blue background with a sand dollar shell at the center, surrounded by illustrated bees. Text at the bottom notes it is “A Tiffany Aching Adventure” performed by Stephen Briggs.](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1442829960i/25343430.jpg)

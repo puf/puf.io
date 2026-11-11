@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/53714202"
 pageCount: 294
+aliases: ["/books/sid-meier's-memoir!:-a-life-in-computer-games---sid-meier"]
 ---
 
 

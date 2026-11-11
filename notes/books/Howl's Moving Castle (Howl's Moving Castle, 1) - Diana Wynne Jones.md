@@ -7,6 +7,7 @@ rating: 4
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/16204601"
 pageCount: 308
+aliases: ["/books/howl's-moving-castle-howl's-moving-castle,-1---diana-wynne-jones"]
 ---
 
 

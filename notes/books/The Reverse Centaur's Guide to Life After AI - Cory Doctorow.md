@@ -7,6 +7,7 @@ rating: 4
 edition: "Ebook"
 link: "https://www.goodreads.com/book/show/245835653"
 pageCount: 241
+aliases: ["/books/the-reverse-centaur's-guide-to-life-after-ai---cory-doctorow"]
 ---
 
 ![Book cover for "The Reverse Centaur’s Guide to Life After AI" by Cory Doctorow, showing a stylized horse-headed human figure on a cracked white background.](https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1776395701i/245835653.jpg)

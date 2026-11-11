@@ -7,6 +7,7 @@ rating: 3
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/44074800"
 pageCount: 410
+aliases: ["/books/the-southern-book-club's-guide-to-slaying-vampires---grady-hendrix"]
 ---
 
 

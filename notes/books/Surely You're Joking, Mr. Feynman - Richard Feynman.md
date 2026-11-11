@@ -7,6 +7,7 @@ rating: 3
 edition: "Kindle Edition"
 link: "https://www.goodreads.com/book/show/36634322"
 pageCount: 356
+aliases: ["/books/surely-you're-joking,-mr.-feynman---richard-feynman"]
 ---
 
 ![Book cover of "Surely You’re Joking, Mr. Feynman!: Adventures of a Curious Character" by Richard P. Feynman, with an introduction by Bill Gates. The cover features a black-and-white photo of Richard Feynman smiling, leaning casually against a desk in front of a chalkboard. Text highlights it as a New York Times bestseller.](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1511250237i/36634322.jpg)

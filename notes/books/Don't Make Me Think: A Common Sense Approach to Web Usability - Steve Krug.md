@@ -7,6 +7,7 @@ rating: 5
 edition: "Paperback"
 link: "https://www.goodreads.com/book/show/3368"
 pageCount: 201
+aliases: ["/books/don't-make-me-think:-a-common-sense-approach-to-web-usability---steve-krug"]
 ---
 
 

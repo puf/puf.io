@@ -7,6 +7,7 @@ rating: 3
 edition: "Paperback"
 link: "https://www.goodreads.com/book/show/3762"
 pageCount: 259
+aliases: ["/books/on-her-majesty's-secret-service-james-bond,-11---ian-fleming"]
 ---
 
 

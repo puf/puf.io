@@ -9,6 +9,7 @@ alsoOn:
   - https://www.goodreads.com/book/show/243615622
   - https://bookhive.buzz/books/bk_kNH00FSADGbEifhZqhMn
 pageCount: 296
+aliases: ["/books/philippa-flynn's-year-of-panic-and-piracy---jacqueline-firkins"]
 ---
 
 ![Book cover for “Year of Panic and Piracy” by Jacqueline Firkins, featuring large pink lettering over a bright blue sea, with a red sun setting behind a small sailboat on the horizon.](https://bookhive.buzz/images/books/bk_kNH00FSADGbEifhZqhMn)
