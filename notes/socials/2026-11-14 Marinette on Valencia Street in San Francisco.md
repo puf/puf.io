@@ -1,5 +1,5 @@
 ---
-title: "Marinette on Valencia street (used to be Aslam's Rasoi)"
+title: "Marinette on Valencia street"
 pubDate: Nov 14, 2026
 alsoOn:
   - https://c.im/@puf/117618530054675440
@@ -12,7 +12,7 @@ locations:
 aliases: []
 ---
 
-I just noticed these signs today on Valencia street in San Francisco today, on the space formerly occupied by Aslam's Rasoi..
+I just noticed these signs today on Valencia street in San Francisco today, on the space formerly occupied by Aslam's Rasoi.
 
 ![](https://i.postimg.cc/RVM2k9fF/IMG-20261114-103727402-HDR.jpg)
 
